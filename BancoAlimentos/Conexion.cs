@@ -13,7 +13,8 @@ namespace BancoAlimentos
 {
     class Conexion
     {
-        private static string BASE_DATOS = "BancoAlimentos";
+        private const string BASE_DATOS = "BancoAlimentos";
+
         /// <summary>
         /// Establece la configuración de conexión con la base de datos
         /// </summary>

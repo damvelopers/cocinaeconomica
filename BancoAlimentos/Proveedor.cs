@@ -13,15 +13,17 @@ namespace BancoAlimentos
         private string InformacionContacto;
 
         public Proveedor()
-        {
+        { 
+            this.Id = -1;
             this.Nombre = "";
+            this.InformacionContacto = "";
         }
 
-        public Proveedor(string nombre, string informacionContacto)
+        public Proveedor(int Id, string Nombre, string InformacionContacto)
         {
-            this.Nombre = nombre;
+            this.Id = Id;
+            this.Nombre = Nombre;
+            this.InformacionContacto = InformacionContacto;
         }
-
-
     }
 }

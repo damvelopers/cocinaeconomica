@@ -29,7 +29,20 @@ namespace BancoAlimentos
         public static ArrayList GetFamilias()
         {
             ArrayList familias = new ArrayList();
-            // selects
+            SqlDataReader reader;
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString);
+            string selectString = "select * from Familia";
+            SqlCommand selectCommand = new SqlCommand(selectString, conn);
+            conn.Open();
+            reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+            while (reader.Read())
+            {
+                Familia f = new Familia();
+                f.Id = reader.GetInt32(0);
+                f.Nombre = reader.GetString(1);
+                familias.Add(f);
+            }
+            conn.Close();
             return familias;
         }
         
@@ -37,7 +50,7 @@ namespace BancoAlimentos
         {
             SqlDataReader reader;
             Familia f = new Familia();
-            SqlConnection conn = new SqlConnection(Constantes.CONNECTION_STRING);
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString);
             string selectString = "select * from Familia where Id = @id";
             SqlCommand selectCommand = new SqlCommand(selectString, conn);
             selectCommand.Parameters.Add("@id", SqlDbType.Int).Value = Id;
@@ -55,8 +68,8 @@ namespace BancoAlimentos
         public static Familia GetFamilia(string Nombre)
         {
             SqlDataReader reader;
-            Familia f = new Familia();
-            SqlConnection conn = new SqlConnection(Constantes.CONNECTION_STRING);
+            Familia f = null;
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString);
             string selectString = "select * from Familia where Nombre like @nombre";
             SqlCommand selectCommand = new SqlCommand(selectString, conn);
             selectCommand.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = Nombre;
@@ -64,6 +77,7 @@ namespace BancoAlimentos
             reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
             while (reader.Read())
             {
+                f = new Familia();
                 f.Id = reader.GetInt32(0);
                 f.Nombre = reader.GetString(1);
             }

@@ -16,7 +16,7 @@ namespace BancoAlimentos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormConexion());
+            Application.Run(new FormularioPrincipal());
         }
     }
 }

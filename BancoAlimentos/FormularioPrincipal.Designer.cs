@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conexiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,16 +38,6 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.añadirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoBarrasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaEntradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCaducidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ubicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaConsPrefDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.familiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bancoAlimentosDataSet = new BancoAlimentos.BancoAlimentosDataSet();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,12 +53,16 @@
             this.insertarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nombreLabel1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dtGrVwAlimentos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoAlimentosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenBindingSource)).BeginInit();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrVwAlimentos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -77,14 +72,12 @@
             this.menuStrip1.Size = new System.Drawing.Size(1270, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
-            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
             // 
             // conexiónToolStripMenuItem
             // 
@@ -122,88 +115,6 @@
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
             this.buscarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nombreDataGridViewTextBoxColumn,
-            this.codigoBarrasDataGridViewTextBoxColumn,
-            this.fechaEntradaDataGridViewTextBoxColumn,
-            this.fechaCaducidadDataGridViewTextBoxColumn,
-            this.ubicacionDataGridViewTextBoxColumn,
-            this.fechaConsPrefDataGridViewTextBoxColumn,
-            this.familiaDataGridViewTextBoxColumn,
-            this.proveedorDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.productoBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 183);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1244, 306);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // codigoBarrasDataGridViewTextBoxColumn
-            // 
-            this.codigoBarrasDataGridViewTextBoxColumn.DataPropertyName = "CodigoBarras";
-            this.codigoBarrasDataGridViewTextBoxColumn.HeaderText = "CodigoBarras";
-            this.codigoBarrasDataGridViewTextBoxColumn.Name = "codigoBarrasDataGridViewTextBoxColumn";
-            // 
-            // fechaEntradaDataGridViewTextBoxColumn
-            // 
-            this.fechaEntradaDataGridViewTextBoxColumn.DataPropertyName = "FechaEntrada";
-            this.fechaEntradaDataGridViewTextBoxColumn.HeaderText = "FechaEntrada";
-            this.fechaEntradaDataGridViewTextBoxColumn.Name = "fechaEntradaDataGridViewTextBoxColumn";
-            this.fechaEntradaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // fechaCaducidadDataGridViewTextBoxColumn
-            // 
-            this.fechaCaducidadDataGridViewTextBoxColumn.DataPropertyName = "FechaCaducidad";
-            this.fechaCaducidadDataGridViewTextBoxColumn.HeaderText = "FechaCaducidad";
-            this.fechaCaducidadDataGridViewTextBoxColumn.Name = "fechaCaducidadDataGridViewTextBoxColumn";
-            this.fechaCaducidadDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // ubicacionDataGridViewTextBoxColumn
-            // 
-            this.ubicacionDataGridViewTextBoxColumn.DataPropertyName = "Ubicacion";
-            this.ubicacionDataGridViewTextBoxColumn.HeaderText = "Ubicacion";
-            this.ubicacionDataGridViewTextBoxColumn.Name = "ubicacionDataGridViewTextBoxColumn";
-            this.ubicacionDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // fechaConsPrefDataGridViewTextBoxColumn
-            // 
-            this.fechaConsPrefDataGridViewTextBoxColumn.DataPropertyName = "FechaConsPref";
-            this.fechaConsPrefDataGridViewTextBoxColumn.HeaderText = "FechaConsPref";
-            this.fechaConsPrefDataGridViewTextBoxColumn.Name = "fechaConsPrefDataGridViewTextBoxColumn";
-            this.fechaConsPrefDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // familiaDataGridViewTextBoxColumn
-            // 
-            this.familiaDataGridViewTextBoxColumn.DataPropertyName = "Familia";
-            this.familiaDataGridViewTextBoxColumn.HeaderText = "Familia";
-            this.familiaDataGridViewTextBoxColumn.Name = "familiaDataGridViewTextBoxColumn";
-            // 
-            // proveedorDataGridViewTextBoxColumn
-            // 
-            this.proveedorDataGridViewTextBoxColumn.DataPropertyName = "Proveedor";
-            this.proveedorDataGridViewTextBoxColumn.HeaderText = "Proveedor";
-            this.proveedorDataGridViewTextBoxColumn.Name = "proveedorDataGridViewTextBoxColumn";
             // 
             // productoBindingSource
             // 
@@ -281,6 +192,7 @@
             this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
             this.conectarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.conectarToolStripMenuItem.Text = "Conectar";
+            this.conectarToolStripMenuItem.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem1
             // 
@@ -310,28 +222,69 @@
             this.nombreLabel1.TabIndex = 15;
             this.nombreLabel1.Text = "label1";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(153, 157);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(288, 20);
+            this.textBox1.TabIndex = 16;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1106, 156);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 20);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Añadir nuevo alimento";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(948, 153);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(152, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Actualizar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dtGrVwAlimentos
+            // 
+            this.dtGrVwAlimentos.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dtGrVwAlimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGrVwAlimentos.Location = new System.Drawing.Point(6, 183);
+            this.dtGrVwAlimentos.Name = "dtGrVwAlimentos";
+            this.dtGrVwAlimentos.Size = new System.Drawing.Size(1252, 314);
+            this.dtGrVwAlimentos.TabIndex = 19;
+            // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1270, 509);
+            this.Controls.Add(this.dtGrVwAlimentos);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.nombreLabel1);
             this.Controls.Add(this.imagenPictureBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormularioPrincipal";
             this.Text = "FormularioPrincipal";
             this.Load += new System.EventHandler(this.FormularioPrincipal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoAlimentosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenBindingSource)).EndInit();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrVwAlimentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,20 +300,10 @@
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem añadirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label5;
         private BancoAlimentosDataSet bancoAlimentosDataSet;
         private System.Windows.Forms.BindingSource productoBindingSource;
         private BancoAlimentosDataSetTableAdapters.ProductoTableAdapter productoTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoBarrasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaEntradaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaCaducidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ubicacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaConsPrefDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn familiaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proveedorDataGridViewTextBoxColumn;
         private BancoAlimentosDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private BancoAlimentosDataSetTableAdapters.ImagenTableAdapter imagenTableAdapter;
         private System.Windows.Forms.BindingSource imagenBindingSource;
@@ -372,5 +315,9 @@
         private System.Windows.Forms.ToolStripMenuItem insertarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeProductosToolStripMenuItem;
         private System.Windows.Forms.Label nombreLabel1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dtGrVwAlimentos;
     }
 }

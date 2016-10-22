@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioInsertar));
+            this.imagenAlimento = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxFamilia = new System.Windows.Forms.ComboBox();
@@ -36,19 +37,21 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnAddFamilia = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenAlimento)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // imagenAlimento
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 267);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.imagenAlimento.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.imagenAlimento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imagenAlimento.Location = new System.Drawing.Point(3, 12);
+            this.imagenAlimento.Name = "imagenAlimento";
+            this.imagenAlimento.Size = new System.Drawing.Size(216, 267);
+            this.imagenAlimento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imagenAlimento.TabIndex = 0;
+            this.imagenAlimento.TabStop = false;
+            this.imagenAlimento.Click += new System.EventHandler(this.imagenAlimento_Click);
             // 
             // label1
             // 
@@ -73,7 +76,7 @@
             this.cbxFamilia.FormattingEnabled = true;
             this.cbxFamilia.Location = new System.Drawing.Point(225, 70);
             this.cbxFamilia.Name = "cbxFamilia";
-            this.cbxFamilia.Size = new System.Drawing.Size(267, 21);
+            this.cbxFamilia.Size = new System.Drawing.Size(186, 21);
             this.cbxFamilia.TabIndex = 10;
             // 
             // btnInsertar
@@ -84,7 +87,7 @@
             this.btnInsertar.TabIndex = 11;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
-            this.btnInsertar.Click += new System.EventHandler(this.button1_Click);
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // txtNombre
             // 
@@ -95,27 +98,38 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(225, 117);
+            this.txtDescripcion.Location = new System.Drawing.Point(225, 123);
+            this.txtDescripcion.MaxLength = 200;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(267, 162);
+            this.txtDescripcion.Size = new System.Drawing.Size(267, 156);
             this.txtDescripcion.TabIndex = 18;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(225, 101);
+            this.label2.Location = new System.Drawing.Point(228, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 19;
             this.label2.Text = "Descripción";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // btnAddFamilia
+            // 
+            this.btnAddFamilia.Location = new System.Drawing.Point(417, 70);
+            this.btnAddFamilia.Name = "btnAddFamilia";
+            this.btnAddFamilia.Size = new System.Drawing.Size(75, 23);
+            this.btnAddFamilia.TabIndex = 20;
+            this.btnAddFamilia.Text = "Añadir familia";
+            this.btnAddFamilia.UseVisualStyleBackColor = true;
+            this.btnAddFamilia.Click += new System.EventHandler(this.btnAddFamilia_Click);
             // 
             // FormularioInsertar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 327);
+            this.Controls.Add(this.btnAddFamilia);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtNombre);
@@ -123,14 +137,16 @@
             this.Controls.Add(this.cbxFamilia);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imagenAlimento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormularioInsertar";
-            this.Text = "Insertar producto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Insertar alimento";
             this.Load += new System.EventHandler(this.FormularioInsertar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenAlimento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,7 +154,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imagenAlimento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbxFamilia;
@@ -146,5 +162,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAddFamilia;
     }
 }

@@ -13,13 +13,11 @@ namespace BancoAlimentos
 {
     class Producto
     {
-        private static int Cantidad;
         public int Id;
         public Alimento Alimento;
         public DateTime FechaEntrada;
         public DateTime FechaCaducidad;
         public DateTime FechaConsumirPreferente;
-        public Proveedor Proveedor;
         public string Ubicacion;
 
         public Producto()
@@ -27,16 +25,18 @@ namespace BancoAlimentos
             Alimento = null;
             FechaEntrada = DateTime.Today;
             FechaCaducidad = DateTime.Today;
+            FechaConsumirPreferente = DateTime.Today;
             Ubicacion = "";
         }
-
+        
         public Producto(int Id, Alimento Alimento, DateTime FechaEntrada, 
-            DateTime FechaCaducidad, string Ubicacion)
+            DateTime FechaCaducidad, DateTime FechaConsumirPreferente, string Ubicacion)
         {
             this.Id = Id;
             this.Alimento = Alimento;
             this.FechaEntrada = FechaEntrada;
             this.FechaCaducidad = FechaCaducidad;
+            this.FechaConsumirPreferente = FechaConsumirPreferente;
             this.Ubicacion = Ubicacion;
         }
 
@@ -46,7 +46,6 @@ namespace BancoAlimentos
         {
             ArrayList productos = new ArrayList();
             SqlDataReader reader;
-
             SqlConnection conn = new SqlConnection(Constantes.CONNECTION_STRING);
             string selectString = "select * from Producto ";
             SqlCommand selectCommand = new SqlCommand(selectString, conn);
@@ -76,7 +75,7 @@ namespace BancoAlimentos
             {
                 conexion.Open();
                 string insert = "INSERT into dbo.Producto(Alimento, FechaCaducidad, FechaConsPref, Ubicacion, Proveedor, FechaEntrada)" +
-                    " VALUES (@alimento, @fechacaducidad, @fechaconspref, @ubicacion, @proveedor, @fechaentrada)";
+                    " VALUES (@alimento, @fechacaducidad, @fechaconspref, @ubicacion, @fechaentrada)";
 
                 using (SqlCommand query = new SqlCommand(insert))
                 {
@@ -85,7 +84,6 @@ namespace BancoAlimentos
                     query.Parameters.Add("@fechacaducidad", SqlDbType.Date).Value = p.FechaCaducidad;
                     query.Parameters.Add("@fechaconspref", SqlDbType.Date).Value = p.FechaConsumirPreferente;
                     query.Parameters.Add("@ubicacion", SqlDbType.VarChar, 200).Value = p.Ubicacion;
-                    query.Parameters.Add("@proveedor", SqlDbType.VarChar, 200).Value = p.Proveedor;
                     query.Parameters.Add("@fechaentrada", SqlDbType.Date).Value = p.FechaEntrada;
 
                     query.ExecuteNonQuery();
@@ -95,6 +93,5 @@ namespace BancoAlimentos
         }
 
         #endregion
-
     }
 }
