@@ -45,7 +45,7 @@ namespace BancoAlimentos
             SqlConnection c = new SqlConnection();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(select,
                 Properties.Settings.Default.ConnectionString);
-
+            
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
@@ -103,6 +103,12 @@ namespace BancoAlimentos
         {
             FormConexion f = new FormConexion();
             f.ShowDialog();
+        }
+
+        private void crearProducto(object sender, EventArgs e)
+        {
+            crearProducto crearProducto = new crearProducto();
+            crearProducto.ShowDialog();
         }
     }
 }
