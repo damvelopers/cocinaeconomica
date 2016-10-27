@@ -85,7 +85,7 @@ namespace BancoAlimentos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormularioInsertar f = new FormularioInsertar();
+            CrearAlimento f = new CrearAlimento();
             f.ShowDialog();
         }
 
@@ -109,6 +109,12 @@ namespace BancoAlimentos
         {
             crearProducto crearProducto = new crearProducto();
             crearProducto.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CrearFamilia crearAlimento = new CrearFamilia();
+            crearAlimento.ShowDialog();
         }
     }
 }

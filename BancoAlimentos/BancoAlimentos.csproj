@@ -62,11 +62,11 @@
     <Compile Include="BaseDeDatos.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Constantes.cs" />
-    <Compile Include="CrearAlimento.cs">
+    <Compile Include="CrearFamilia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearAlimento.Designer.cs">
-      <DependentUpon>CrearAlimento.cs</DependentUpon>
+    <Compile Include="CrearFamilia.Designer.cs">
+      <DependentUpon>CrearFamilia.cs</DependentUpon>
     </Compile>
     <Compile Include="CrearProducto.cs">
       <SubType>Form</SubType>
@@ -87,11 +87,11 @@
     <Compile Include="FormProductosNombre.Designer.cs">
       <DependentUpon>FormProductosNombre.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioInsertar.cs">
+    <Compile Include="CrearAlimento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioInsertar.Designer.cs">
-      <DependentUpon>FormularioInsertar.cs</DependentUpon>
+    <Compile Include="CrearAlimento.Designer.cs">
+      <DependentUpon>CrearAlimento.cs</DependentUpon>
     </Compile>
     <Compile Include="FormularioPrincipal.cs">
       <SubType>Form</SubType>
@@ -109,8 +109,8 @@
     <Compile Include="VentanaInicio.Designer.cs">
       <DependentUpon>VentanaInicio.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CrearAlimento.resx">
-      <DependentUpon>CrearAlimento.cs</DependentUpon>
+    <EmbeddedResource Include="CrearFamilia.resx">
+      <DependentUpon>CrearFamilia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearProducto.resx">
       <DependentUpon>CrearProducto.cs</DependentUpon>
@@ -121,8 +121,8 @@
     <EmbeddedResource Include="FormProductosNombre.resx">
       <DependentUpon>FormProductosNombre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioInsertar.resx">
-      <DependentUpon>FormularioInsertar.cs</DependentUpon>
+    <EmbeddedResource Include="CrearAlimento.resx">
+      <DependentUpon>CrearAlimento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>

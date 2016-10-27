@@ -28,210 +28,140 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxOrigen = new System.Windows.Forms.ComboBox();
-            this.origen = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtAlimento = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearAlimento));
+            this.imagenAlimento = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnInsertar = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnAddFamilia = new System.Windows.Forms.Button();
+            this.txt_familia = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.cantidad = new System.Windows.Forms.Label();
-            this.btnAnadir = new System.Windows.Forms.Button();
-            this.dateTimeFechaPref = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeFechaCad = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeFechaEn = new System.Windows.Forms.DateTimePicker();
-            this.fechaPref = new System.Windows.Forms.Label();
-            this.fechaCad = new System.Windows.Forms.Label();
-            this.lblFechaEn = new System.Windows.Forms.Label();
-            this.lbl = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenAlimento)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBoxOrigen
+            // imagenAlimento
             // 
-            this.comboBoxOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxOrigen.FormattingEnabled = true;
-            this.comboBoxOrigen.Items.AddRange(new object[] {
-            "Donado",
-            "Comprado",
-            "Banco de alimentos"});
-            this.comboBoxOrigen.Location = new System.Drawing.Point(275, 280);
-            this.comboBoxOrigen.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxOrigen.Name = "comboBoxOrigen";
-            this.comboBoxOrigen.Size = new System.Drawing.Size(160, 21);
-            this.comboBoxOrigen.TabIndex = 41;
+            this.imagenAlimento.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.imagenAlimento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imagenAlimento.Location = new System.Drawing.Point(3, 80);
+            this.imagenAlimento.Name = "imagenAlimento";
+            this.imagenAlimento.Size = new System.Drawing.Size(216, 267);
+            this.imagenAlimento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imagenAlimento.TabIndex = 0;
+            this.imagenAlimento.TabStop = false;
+            this.imagenAlimento.Click += new System.EventHandler(this.imagenAlimento_Click);
             // 
-            // origen
+            // label1
             // 
-            this.origen.AutoSize = true;
-            this.origen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.origen.Location = new System.Drawing.Point(55, 290);
-            this.origen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.origen.Name = "origen";
-            this.origen.Size = new System.Drawing.Size(55, 17);
-            this.origen.TabIndex = 40;
-            this.origen.Text = "Origen:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(225, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nombre";
             // 
-            // btnBuscar
+            // label4
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(550, 100);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
-            this.btnBuscar.TabIndex = 39;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(228, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Familia";
             // 
-            // txtAlimento
+            // btnInsertar
             // 
-            this.txtAlimento.Location = new System.Drawing.Point(275, 103);
-            this.txtAlimento.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAlimento.Name = "txtAlimento";
-            this.txtAlimento.ReadOnly = true;
-            this.txtAlimento.Size = new System.Drawing.Size(252, 20);
-            this.txtAlimento.TabIndex = 38;
+            this.btnInsertar.Location = new System.Drawing.Point(385, 353);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(107, 34);
+            this.btnInsertar.TabIndex = 11;
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(225, 96);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(267, 20);
+            this.txtNombre.TabIndex = 17;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(225, 191);
+            this.txtDescripcion.MaxLength = 200;
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(267, 156);
+            this.txtDescripcion.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(228, 175);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Descripción";
+            // 
+            // btnAddFamilia
+            // 
+            this.btnAddFamilia.Location = new System.Drawing.Point(417, 138);
+            this.btnAddFamilia.Name = "btnAddFamilia";
+            this.btnAddFamilia.Size = new System.Drawing.Size(75, 23);
+            this.btnAddFamilia.TabIndex = 20;
+            this.btnAddFamilia.Text = "Añadir familia";
+            this.btnAddFamilia.UseVisualStyleBackColor = true;
+            this.btnAddFamilia.Click += new System.EventHandler(this.btnAddFamilia_Click);
+            // 
+            // txt_familia
+            // 
+            this.txt_familia.Location = new System.Drawing.Point(225, 141);
+            this.txt_familia.Name = "txt_familia";
+            this.txt_familia.ReadOnly = true;
+            this.txt_familia.Size = new System.Drawing.Size(186, 20);
+            this.txt_familia.TabIndex = 21;
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(42)))), ((int)(((byte)(126)))));
-            this.lblTitulo.Location = new System.Drawing.Point(228, 35);
+            this.lblTitulo.Location = new System.Drawing.Point(145, 23);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(247, 20);
-            this.lblTitulo.TabIndex = 37;
-            this.lblTitulo.Text = "AÑADIR NUEVO PRODUCTO";
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Location = new System.Drawing.Point(548, 389);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(100, 28);
-            this.btnCerrar.TabIndex = 36;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(275, 324);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(99, 20);
-            this.txtCantidad.TabIndex = 35;
-            // 
-            // cantidad
-            // 
-            this.cantidad.AutoSize = true;
-            this.cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantidad.Location = new System.Drawing.Point(55, 328);
-            this.cantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Size = new System.Drawing.Size(68, 17);
-            this.cantidad.TabIndex = 34;
-            this.cantidad.Text = "Cantidad:";
-            // 
-            // btnAnadir
-            // 
-            this.btnAnadir.Location = new System.Drawing.Point(58, 389);
-            this.btnAnadir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(100, 28);
-            this.btnAnadir.TabIndex = 33;
-            this.btnAnadir.Text = "Añadir";
-            this.btnAnadir.UseVisualStyleBackColor = true;
-            // 
-            // dateTimeFechaPref
-            // 
-            this.dateTimeFechaPref.Location = new System.Drawing.Point(275, 233);
-            this.dateTimeFechaPref.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimeFechaPref.Name = "dateTimeFechaPref";
-            this.dateTimeFechaPref.Size = new System.Drawing.Size(373, 20);
-            this.dateTimeFechaPref.TabIndex = 32;
-            // 
-            // dateTimeFechaCad
-            // 
-            this.dateTimeFechaCad.Location = new System.Drawing.Point(275, 189);
-            this.dateTimeFechaCad.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimeFechaCad.Name = "dateTimeFechaCad";
-            this.dateTimeFechaCad.Size = new System.Drawing.Size(373, 20);
-            this.dateTimeFechaCad.TabIndex = 31;
-            // 
-            // dateTimeFechaEn
-            // 
-            this.dateTimeFechaEn.Location = new System.Drawing.Point(275, 146);
-            this.dateTimeFechaEn.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimeFechaEn.Name = "dateTimeFechaEn";
-            this.dateTimeFechaEn.Size = new System.Drawing.Size(373, 20);
-            this.dateTimeFechaEn.TabIndex = 30;
-            // 
-            // fechaPref
-            // 
-            this.fechaPref.AutoSize = true;
-            this.fechaPref.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaPref.Location = new System.Drawing.Point(55, 242);
-            this.fechaPref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.fechaPref.Name = "fechaPref";
-            this.fechaPref.Size = new System.Drawing.Size(182, 17);
-            this.fechaPref.TabIndex = 29;
-            this.fechaPref.Text = "Fecha consumo preferente:";
-            // 
-            // fechaCad
-            // 
-            this.fechaCad.AutoSize = true;
-            this.fechaCad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaCad.Location = new System.Drawing.Point(55, 197);
-            this.fechaCad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.fechaCad.Name = "fechaCad";
-            this.fechaCad.Size = new System.Drawing.Size(120, 17);
-            this.fechaCad.TabIndex = 28;
-            this.fechaCad.Text = "Fecha caducidad:";
-            // 
-            // lblFechaEn
-            // 
-            this.lblFechaEn.AutoSize = true;
-            this.lblFechaEn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaEn.Location = new System.Drawing.Point(55, 153);
-            this.lblFechaEn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFechaEn.Name = "lblFechaEn";
-            this.lblFechaEn.Size = new System.Drawing.Size(104, 17);
-            this.lblFechaEn.TabIndex = 27;
-            this.lblFechaEn.Text = "Fecha entrada:";
-            // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(55, 106);
-            this.lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(66, 17);
-            this.lbl.TabIndex = 26;
-            this.lbl.Text = "Alimento:";
+            this.lblTitulo.Size = new System.Drawing.Size(238, 20);
+            this.lblTitulo.TabIndex = 38;
+            this.lblTitulo.Text = "AÑADIR NUEVO ALIMENTO";
             // 
             // CrearAlimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 453);
-            this.Controls.Add(this.comboBoxOrigen);
-            this.Controls.Add(this.origen);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtAlimento);
+            this.BackgroundImage = global::BancoAlimentos.Properties.Resources.fondo;
+            this.ClientSize = new System.Drawing.Size(504, 399);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.txtCantidad);
-            this.Controls.Add(this.cantidad);
-            this.Controls.Add(this.btnAnadir);
-            this.Controls.Add(this.dateTimeFechaPref);
-            this.Controls.Add(this.dateTimeFechaCad);
-            this.Controls.Add(this.dateTimeFechaEn);
-            this.Controls.Add(this.fechaPref);
-            this.Controls.Add(this.fechaCad);
-            this.Controls.Add(this.lblFechaEn);
-            this.Controls.Add(this.lbl);
+            this.Controls.Add(this.txt_familia);
+            this.Controls.Add(this.btnAddFamilia);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.btnInsertar);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.imagenAlimento);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CrearAlimento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearAlimento";
+            this.Load += new System.EventHandler(this.FormularioInsertar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.imagenAlimento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,21 +169,15 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBoxOrigen;
-        private System.Windows.Forms.Label origen;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtAlimento;
+        private System.Windows.Forms.PictureBox imagenAlimento;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnInsertar;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAddFamilia;
+        private System.Windows.Forms.TextBox txt_familia;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.Label cantidad;
-        private System.Windows.Forms.Button btnAnadir;
-        private System.Windows.Forms.DateTimePicker dateTimeFechaPref;
-        private System.Windows.Forms.DateTimePicker dateTimeFechaCad;
-        private System.Windows.Forms.DateTimePicker dateTimeFechaEn;
-        private System.Windows.Forms.Label fechaPref;
-        private System.Windows.Forms.Label fechaCad;
-        private System.Windows.Forms.Label lblFechaEn;
-        private System.Windows.Forms.Label lbl;
     }
 }
