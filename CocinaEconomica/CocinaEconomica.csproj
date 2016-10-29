@@ -60,6 +60,12 @@
       <DependentUpon>BancoAlimentosDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
+    <Compile Include="CrearAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearAlmacen.Designer.cs">
+      <DependentUpon>CrearAlmacen.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrearFamilia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     <Compile Include="VentanaInicio.Designer.cs">
       <DependentUpon>VentanaInicio.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CrearAlmacen.resx">
+      <DependentUpon>CrearAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearFamilia.resx">
       <DependentUpon>CrearFamilia.cs</DependentUpon>
     </EmbeddedResource>

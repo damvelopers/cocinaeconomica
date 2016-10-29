@@ -51,7 +51,7 @@
             // 
             this.lblAlimento.AutoSize = true;
             this.lblAlimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlimento.Location = new System.Drawing.Point(52, 108);
+            this.lblAlimento.Location = new System.Drawing.Point(13, 108);
             this.lblAlimento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAlimento.Name = "lblAlimento";
             this.lblAlimento.Size = new System.Drawing.Size(66, 17);
@@ -63,7 +63,7 @@
             // 
             this.lblFechaEn.AutoSize = true;
             this.lblFechaEn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaEn.Location = new System.Drawing.Point(52, 155);
+            this.lblFechaEn.Location = new System.Drawing.Point(13, 153);
             this.lblFechaEn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaEn.Name = "lblFechaEn";
             this.lblFechaEn.Size = new System.Drawing.Size(104, 17);
@@ -74,7 +74,7 @@
             // 
             this.fechaCad.AutoSize = true;
             this.fechaCad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaCad.Location = new System.Drawing.Point(52, 199);
+            this.fechaCad.Location = new System.Drawing.Point(13, 197);
             this.fechaCad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fechaCad.Name = "fechaCad";
             this.fechaCad.Size = new System.Drawing.Size(120, 17);
@@ -85,7 +85,7 @@
             // 
             this.fechaPref.AutoSize = true;
             this.fechaPref.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaPref.Location = new System.Drawing.Point(52, 244);
+            this.fechaPref.Location = new System.Drawing.Point(13, 242);
             this.fechaPref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fechaPref.Name = "fechaPref";
             this.fechaPref.Size = new System.Drawing.Size(182, 17);
@@ -94,31 +94,31 @@
             // 
             // dateTimeFechaEn
             // 
-            this.dateTimeFechaEn.Location = new System.Drawing.Point(272, 148);
+            this.dateTimeFechaEn.Location = new System.Drawing.Point(229, 147);
             this.dateTimeFechaEn.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeFechaEn.Name = "dateTimeFechaEn";
-            this.dateTimeFechaEn.Size = new System.Drawing.Size(373, 23);
+            this.dateTimeFechaEn.Size = new System.Drawing.Size(354, 23);
             this.dateTimeFechaEn.TabIndex = 12;
             // 
             // dateTimeFechaCad
             // 
-            this.dateTimeFechaCad.Location = new System.Drawing.Point(272, 191);
+            this.dateTimeFechaCad.Location = new System.Drawing.Point(229, 192);
             this.dateTimeFechaCad.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeFechaCad.Name = "dateTimeFechaCad";
-            this.dateTimeFechaCad.Size = new System.Drawing.Size(373, 23);
+            this.dateTimeFechaCad.Size = new System.Drawing.Size(354, 23);
             this.dateTimeFechaCad.TabIndex = 13;
             // 
             // dateTimeFechaPref
             // 
-            this.dateTimeFechaPref.Location = new System.Drawing.Point(272, 235);
+            this.dateTimeFechaPref.Location = new System.Drawing.Point(229, 237);
             this.dateTimeFechaPref.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeFechaPref.Name = "dateTimeFechaPref";
-            this.dateTimeFechaPref.Size = new System.Drawing.Size(373, 23);
+            this.dateTimeFechaPref.Size = new System.Drawing.Size(354, 23);
             this.dateTimeFechaPref.TabIndex = 14;
             // 
             // btnAnadir
             // 
-            this.btnAnadir.Location = new System.Drawing.Point(55, 391);
+            this.btnAnadir.Location = new System.Drawing.Point(13, 372);
             this.btnAnadir.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(100, 28);
@@ -130,7 +130,7 @@
             // 
             this.cantidad.AutoSize = true;
             this.cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantidad.Location = new System.Drawing.Point(52, 330);
+            this.cantidad.Location = new System.Drawing.Point(13, 328);
             this.cantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cantidad.Name = "cantidad";
             this.cantidad.Size = new System.Drawing.Size(68, 17);
@@ -140,15 +140,15 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(272, 326);
+            this.txtCantidad.Location = new System.Drawing.Point(229, 325);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(99, 23);
+            this.txtCantidad.Size = new System.Drawing.Size(129, 23);
             this.txtCantidad.TabIndex = 17;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(545, 391);
+            this.btnCerrar.Location = new System.Drawing.Point(591, 372);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(100, 28);
@@ -170,16 +170,16 @@
             // 
             // txtAlimento
             // 
-            this.txtAlimento.Location = new System.Drawing.Point(272, 105);
+            this.txtAlimento.Location = new System.Drawing.Point(229, 105);
             this.txtAlimento.Margin = new System.Windows.Forms.Padding(4);
             this.txtAlimento.Name = "txtAlimento";
             this.txtAlimento.ReadOnly = true;
-            this.txtAlimento.Size = new System.Drawing.Size(252, 23);
+            this.txtAlimento.Size = new System.Drawing.Size(354, 23);
             this.txtAlimento.TabIndex = 22;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(547, 102);
+            this.btnBuscar.Location = new System.Drawing.Point(591, 102);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 28);
@@ -191,7 +191,7 @@
             // 
             this.origen.AutoSize = true;
             this.origen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.origen.Location = new System.Drawing.Point(52, 292);
+            this.origen.Location = new System.Drawing.Point(13, 290);
             this.origen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.origen.Name = "origen";
             this.origen.Size = new System.Drawing.Size(55, 17);
@@ -206,10 +206,10 @@
             "Donado",
             "Comprado",
             "Banco de alimentos"});
-            this.comboBoxOrigen.Location = new System.Drawing.Point(272, 282);
+            this.comboBoxOrigen.Location = new System.Drawing.Point(229, 287);
             this.comboBoxOrigen.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxOrigen.Name = "comboBoxOrigen";
-            this.comboBoxOrigen.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxOrigen.Size = new System.Drawing.Size(243, 24);
             this.comboBoxOrigen.TabIndex = 25;
             // 
             // crearProducto
@@ -217,7 +217,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(704, 453);
+            this.ClientSize = new System.Drawing.Size(704, 413);
             this.Controls.Add(this.comboBoxOrigen);
             this.Controls.Add(this.origen);
             this.Controls.Add(this.btnBuscar);

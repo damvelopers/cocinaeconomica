@@ -32,16 +32,16 @@
             this.txtFamilia = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnAnadir = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnAnadir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtFamilia
             // 
-            this.txtFamilia.Location = new System.Drawing.Point(177, 85);
+            this.txtFamilia.Location = new System.Drawing.Point(111, 85);
             this.txtFamilia.Margin = new System.Windows.Forms.Padding(4);
             this.txtFamilia.Name = "txtFamilia";
-            this.txtFamilia.Size = new System.Drawing.Size(252, 20);
+            this.txtFamilia.Size = new System.Drawing.Size(354, 20);
             this.txtFamilia.TabIndex = 38;
             // 
             // lblTitulo
@@ -58,7 +58,8 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(329, 142);
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCerrar.Location = new System.Drawing.Point(387, 162);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(100, 28);
@@ -66,26 +67,27 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(13, 85);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(62, 17);
+            this.lblNombre.TabIndex = 26;
+            this.lblNombre.Text = "Nombre:";
+            // 
             // btnAnadir
             // 
-            this.btnAnadir.Location = new System.Drawing.Point(58, 142);
+            this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAnadir.Location = new System.Drawing.Point(13, 162);
             this.btnAnadir.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(100, 28);
             this.btnAnadir.TabIndex = 33;
             this.btnAnadir.Text = "Añadir";
             this.btnAnadir.UseVisualStyleBackColor = true;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(55, 88);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(62, 17);
-            this.lblNombre.TabIndex = 26;
-            this.lblNombre.Text = "Nombre:";
             // 
             // CrearFamilia
             // 
@@ -98,7 +100,10 @@
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAnadir);
             this.Controls.Add(this.lblNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CrearFamilia";
             this.Text = "CrearFamilia";
             this.ResumeLayout(false);
@@ -110,7 +115,7 @@
         private System.Windows.Forms.TextBox txtFamilia;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnAnadir;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Button btnAnadir;
     }
 }
