@@ -1,4 +1,4 @@
-﻿namespace BancoAlimentos
+﻿namespace CocinaEconomica
 {
     partial class FormConexion
     {

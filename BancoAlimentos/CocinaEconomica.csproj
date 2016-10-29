@@ -7,8 +7,8 @@
     <ProjectGuid>{B439F27B-1DAF-4107-9734-9033818FBC45}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BancoAlimentos</RootNamespace>
-    <AssemblyName>BancoAlimentos</AssemblyName>
+    <RootNamespace>CocinaEconomica</RootNamespace>
+    <AssemblyName>CocinaEconomica</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -37,7 +37,7 @@
     </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>BancoAlimentos.Program</StartupObject>
+    <StartupObject>CocinaEconomica.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

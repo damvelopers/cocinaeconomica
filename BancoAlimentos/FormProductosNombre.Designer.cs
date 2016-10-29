@@ -1,4 +1,4 @@
-﻿namespace BancoAlimentos
+﻿namespace CocinaEconomica
 {
     partial class FormProductosNombre
     {
@@ -33,15 +33,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bancoAlimentosDataSet = new BancoAlimentos.BancoAlimentosDataSet();
+            this.bancoAlimentosDataSet = new CocinaEconomica.BancoAlimentosDataSet();
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productoTableAdapter = new BancoAlimentos.BancoAlimentosDataSetTableAdapters.ProductoTableAdapter();
-            this.tableAdapterManager = new BancoAlimentos.BancoAlimentosDataSetTableAdapters.TableAdapterManager();
+            this.productoTableAdapter = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.ProductoTableAdapter();
+            this.tableAdapterManager = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.TableAdapterManager();
             this.fechaConsPrefDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fechaCaducidadDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fechaEntradaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.imagenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.imagenTableAdapter = new BancoAlimentos.BancoAlimentosDataSetTableAdapters.ImagenTableAdapter();
+            this.imagenTableAdapter = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.ImagenTableAdapter();
             this.imagenPictureBox = new System.Windows.Forms.PictureBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -131,7 +131,7 @@
             this.tableAdapterManager.ImagenTableAdapter = this.imagenTableAdapter;
             this.tableAdapterManager.ProductoTableAdapter = this.productoTableAdapter;
             this.tableAdapterManager.ProveedorTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = BancoAlimentos.BancoAlimentosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = CocinaEconomica.BancoAlimentosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // fechaConsPrefDateTimePicker
             // 

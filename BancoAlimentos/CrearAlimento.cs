@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BancoAlimentos
+namespace CocinaEconomica
 {
     public partial class CrearAlimento : Form
     {

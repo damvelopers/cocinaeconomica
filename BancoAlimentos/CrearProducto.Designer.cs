@@ -1,4 +1,4 @@
-﻿namespace BancoAlimentos
+﻿namespace CocinaEconomica
 {
     partial class crearProducto
     {
@@ -216,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::BancoAlimentos.Properties.Resources.fondo;
+            this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(704, 453);
             this.Controls.Add(this.comboBoxOrigen);
             this.Controls.Add(this.origen);

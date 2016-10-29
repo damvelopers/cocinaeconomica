@@ -1,4 +1,4 @@
-﻿namespace BancoAlimentos
+﻿namespace CocinaEconomica
 {
     partial class FormularioPrincipal
     {
@@ -39,13 +39,13 @@
             this.añadirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bancoAlimentosDataSet = new BancoAlimentos.BancoAlimentosDataSet();
+            this.bancoAlimentosDataSet = new CocinaEconomica.BancoAlimentosDataSet();
             this.label5 = new System.Windows.Forms.Label();
             this.imagenPictureBox = new System.Windows.Forms.PictureBox();
             this.imagenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productoTableAdapter = new BancoAlimentos.BancoAlimentosDataSetTableAdapters.ProductoTableAdapter();
-            this.tableAdapterManager = new BancoAlimentos.BancoAlimentosDataSetTableAdapters.TableAdapterManager();
-            this.imagenTableAdapter = new BancoAlimentos.BancoAlimentosDataSetTableAdapters.ImagenTableAdapter();
+            this.productoTableAdapter = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.ProductoTableAdapter();
+            this.tableAdapterManager = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.TableAdapterManager();
+            this.imagenTableAdapter = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.ImagenTableAdapter();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.conectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -162,7 +162,7 @@
             this.tableAdapterManager.ImagenTableAdapter = this.imagenTableAdapter;
             this.tableAdapterManager.ProductoTableAdapter = this.productoTableAdapter;
             this.tableAdapterManager.ProveedorTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = BancoAlimentos.BancoAlimentosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = CocinaEconomica.BancoAlimentosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // imagenTableAdapter
             // 
