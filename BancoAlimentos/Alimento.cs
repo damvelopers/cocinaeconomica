@@ -45,7 +45,7 @@ namespace BancoAlimentos
             ArrayList alimentos = new ArrayList();
             SqlDataReader reader;
 
-            SqlConnection conn = new SqlConnection(Constantes.CONNECTION_STRING);
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString);
             string selectString = "select * from Alimento ";
             SqlCommand selectCommand = new SqlCommand(selectString, conn);
             conn.Open();
@@ -68,7 +68,7 @@ namespace BancoAlimentos
         {
             SqlDataReader reader;
             Alimento a = new Alimento();
-            SqlConnection conn = new SqlConnection(Constantes.CONNECTION_STRING);
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString);
             string selectString = "select * from Alimento where Id = @id  ";
             SqlCommand selectCommand = new SqlCommand(selectString, conn);
             selectCommand.Parameters.Add("@id", SqlDbType.Int).Value = Id;
@@ -91,7 +91,7 @@ namespace BancoAlimentos
             Image result = null;
             SqlDataReader imageReader;
 
-            SqlConnection conn = new SqlConnection(Constantes.CONNECTION_STRING);
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString);
             string selectString = "select Imagen from Imagen where Id = @id";
             SqlCommand selectCommand = new SqlCommand(selectString, conn);
             selectCommand.Parameters.Add("@id", SqlDbType.Int).Value = id;

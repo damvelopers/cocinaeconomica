@@ -46,7 +46,7 @@ namespace BancoAlimentos
         {
             ArrayList productos = new ArrayList();
             SqlDataReader reader;
-            SqlConnection conn = new SqlConnection(Constantes.CONNECTION_STRING);
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString);
             string selectString = "select * from Producto ";
             SqlCommand selectCommand = new SqlCommand(selectString, conn);
             conn.Open();
@@ -91,7 +91,6 @@ namespace BancoAlimentos
                 conexion.Close();
             }
         }
-
         #endregion
     }
 }

@@ -59,9 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BancoAlimentosDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BaseDeDatos.cs" />
     <Compile Include="Conexion.cs" />
-    <Compile Include="Constantes.cs" />
     <Compile Include="CrearFamilia.cs">
       <SubType>Form</SubType>
     </Compile>
