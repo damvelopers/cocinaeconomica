@@ -40,6 +40,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnAddFamilia = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.imagenAlimento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,5 +199,6 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnAddFamilia;
         private System.Windows.Forms.Button btnCerrar;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
