@@ -67,58 +67,65 @@
             // 
             // tbBuscar
             // 
-            this.tbBuscar.Location = new System.Drawing.Point(220, 50);
+            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbBuscar.Location = new System.Drawing.Point(220, 69);
             this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(259, 20);
+            this.tbBuscar.Size = new System.Drawing.Size(259, 23);
             this.tbBuscar.TabIndex = 42;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(405, 88);
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnBuscar.Location = new System.Drawing.Point(379, 98);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
             this.btnBuscar.TabIndex = 43;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // tbNombre
             // 
+            this.tbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbNombre.Location = new System.Drawing.Point(220, 170);
             this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(259, 20);
+            this.tbNombre.Size = new System.Drawing.Size(259, 23);
             this.tbNombre.TabIndex = 44;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(224, 150);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(217, 150);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 45;
             this.label1.Text = "Nombre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(224, 218);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(217, 220);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 46;
             this.label2.Text = "Familia";
             // 
             // tbFamilia
             // 
+            this.tbFamilia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbFamilia.Location = new System.Drawing.Point(220, 240);
             this.tbFamilia.Name = "tbFamilia";
-            this.tbFamilia.Size = new System.Drawing.Size(259, 20);
+            this.tbFamilia.Size = new System.Drawing.Size(259, 23);
             this.tbFamilia.TabIndex = 47;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.Location = new System.Drawing.Point(500, 150);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(82, 17);
             this.label3.TabIndex = 48;
             this.label3.Text = "Descripción";
             // 
@@ -128,23 +135,25 @@
             this.tbDescripcion.MaxLength = 200;
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
-            this.tbDescripcion.Size = new System.Drawing.Size(300, 168);
+            this.tbDescripcion.Size = new System.Drawing.Size(316, 191);
             this.tbDescripcion.TabIndex = 49;
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAceptar.Location = new System.Drawing.Point(300, 290);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(112, 40);
+            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 50;
             this.btnAceptar.Text = "Aceptar cambios";
             this.btnAceptar.UseVisualStyleBackColor = true;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(851, 335);
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCerrar.Location = new System.Drawing.Point(832, 333);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(81, 27);
+            this.btnCerrar.Size = new System.Drawing.Size(100, 28);
             this.btnCerrar.TabIndex = 51;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -152,9 +161,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(227, 31);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(217, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
+            this.label4.Size = new System.Drawing.Size(109, 17);
             this.label4.TabIndex = 52;
             this.label4.Text = "Buscar alimento";
             // 

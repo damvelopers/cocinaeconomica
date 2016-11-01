@@ -74,26 +74,27 @@
             // 
             // cbAlmacenes
             // 
+            this.cbAlmacenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbAlmacenes.FormattingEnabled = true;
-            this.cbAlmacenes.Location = new System.Drawing.Point(291, 46);
+            this.cbAlmacenes.Location = new System.Drawing.Point(294, 46);
             this.cbAlmacenes.Name = "cbAlmacenes";
-            this.cbAlmacenes.Size = new System.Drawing.Size(221, 21);
+            this.cbAlmacenes.Size = new System.Drawing.Size(221, 24);
             this.cbAlmacenes.TabIndex = 41;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(291, 337);
+            this.btnAceptar.Location = new System.Drawing.Point(291, 349);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(112, 40);
+            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 51;
             this.btnAceptar.Text = "Aceptar cambios";
             this.btnAceptar.UseVisualStyleBackColor = true;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(486, 350);
+            this.btnCerrar.Location = new System.Drawing.Point(467, 349);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(81, 27);
+            this.btnCerrar.Size = new System.Drawing.Size(100, 28);
             this.btnCerrar.TabIndex = 52;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -101,9 +102,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.Location = new System.Drawing.Point(291, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 53;
             this.label2.Text = "Descripción";
             // 

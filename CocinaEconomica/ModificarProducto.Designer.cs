@@ -55,26 +55,27 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(222, 39);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(212, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 13);
+            this.label4.Size = new System.Drawing.Size(112, 17);
             this.label4.TabIndex = 65;
             this.label4.Text = "Buscar producto";
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(840, 364);
+            this.btnCerrar.Location = new System.Drawing.Point(649, 363);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(81, 27);
+            this.btnCerrar.Size = new System.Drawing.Size(100, 28);
             this.btnCerrar.TabIndex = 64;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(526, 306);
+            this.btnAceptar.Location = new System.Drawing.Point(526, 363);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(112, 40);
+            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 63;
             this.btnAceptar.Text = "Aceptar cambios";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -91,43 +92,47 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(219, 226);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(212, 231);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(100, 17);
             this.label2.TabIndex = 59;
             this.label2.Text = "Fecha entrada";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(219, 158);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(212, 121);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 58;
             this.label1.Text = "Alimento";
             // 
             // tbAlimento
             // 
-            this.tbAlimento.Location = new System.Drawing.Point(215, 178);
+            this.tbAlimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbAlimento.Location = new System.Drawing.Point(215, 141);
             this.tbAlimento.Name = "tbAlimento";
             this.tbAlimento.ReadOnly = true;
-            this.tbAlimento.Size = new System.Drawing.Size(259, 20);
+            this.tbAlimento.Size = new System.Drawing.Size(259, 23);
             this.tbAlimento.TabIndex = 57;
             // 
             // btnBuscarProducto
             // 
-            this.btnBuscarProducto.Location = new System.Drawing.Point(400, 96);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(375, 87);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarProducto.Size = new System.Drawing.Size(100, 28);
             this.btnBuscarProducto.TabIndex = 56;
             this.btnBuscarProducto.Text = "Buscar";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
             // 
             // tbBuscar
             // 
-            this.tbBuscar.Location = new System.Drawing.Point(215, 58);
+            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbBuscar.Location = new System.Drawing.Point(215, 51);
             this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(259, 20);
+            this.tbBuscar.Size = new System.Drawing.Size(259, 23);
             this.tbBuscar.TabIndex = 55;
             // 
             // dGVProductos
@@ -152,32 +157,35 @@
             // 
             // btnBuscarAlimento
             // 
-            this.btnBuscarAlimento.Location = new System.Drawing.Point(400, 204);
+            this.btnBuscarAlimento.Location = new System.Drawing.Point(374, 170);
             this.btnBuscarAlimento.Name = "btnBuscarAlimento";
-            this.btnBuscarAlimento.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarAlimento.Size = new System.Drawing.Size(100, 28);
             this.btnBuscarAlimento.TabIndex = 66;
             this.btnBuscarAlimento.Text = "Buscar";
             this.btnBuscarAlimento.UseVisualStyleBackColor = true;
             // 
             // fechEntrada
             // 
+            this.fechEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.fechEntrada.Location = new System.Drawing.Point(216, 251);
             this.fechEntrada.Name = "fechEntrada";
-            this.fechEntrada.Size = new System.Drawing.Size(259, 20);
+            this.fechEntrada.Size = new System.Drawing.Size(259, 23);
             this.fechEntrada.TabIndex = 67;
             // 
             // fechCaducidad
             // 
+            this.fechCaducidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.fechCaducidad.Location = new System.Drawing.Point(215, 306);
             this.fechCaducidad.Name = "fechCaducidad";
-            this.fechCaducidad.Size = new System.Drawing.Size(259, 20);
+            this.fechCaducidad.Size = new System.Drawing.Size(259, 23);
             this.fechCaducidad.TabIndex = 68;
             // 
             // fechConsPref
             // 
+            this.fechConsPref.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.fechConsPref.Location = new System.Drawing.Point(215, 361);
             this.fechConsPref.Name = "fechConsPref";
-            this.fechConsPref.Size = new System.Drawing.Size(259, 20);
+            this.fechConsPref.Size = new System.Drawing.Size(259, 23);
             this.fechConsPref.TabIndex = 70;
             // 
             // label5
@@ -192,34 +200,38 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(523, 158);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label6.Location = new System.Drawing.Point(523, 120);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.Size = new System.Drawing.Size(51, 17);
             this.label6.TabIndex = 71;
             this.label6.Text = "Origen";
             // 
             // cbOrigen
             // 
+            this.cbOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbOrigen.FormattingEnabled = true;
-            this.cbOrigen.Location = new System.Drawing.Point(526, 176);
+            this.cbOrigen.Location = new System.Drawing.Point(526, 140);
             this.cbOrigen.Name = "cbOrigen";
-            this.cbOrigen.Size = new System.Drawing.Size(221, 21);
+            this.cbOrigen.Size = new System.Drawing.Size(223, 24);
             this.cbOrigen.TabIndex = 72;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.Location = new System.Drawing.Point(523, 226);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.Size = new System.Drawing.Size(64, 17);
             this.label7.TabIndex = 73;
             this.label7.Text = "Cantidad";
             // 
             // tbCantidad
             // 
+            this.tbCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbCantidad.Location = new System.Drawing.Point(526, 250);
             this.tbCantidad.Name = "tbCantidad";
-            this.tbCantidad.Size = new System.Drawing.Size(107, 20);
+            this.tbCantidad.Size = new System.Drawing.Size(107, 23);
             this.tbCantidad.TabIndex = 74;
             // 
             // ModificarProducto
@@ -227,7 +239,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(933, 403);
+            this.ClientSize = new System.Drawing.Size(761, 403);
             this.Controls.Add(this.tbCantidad);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbOrigen);

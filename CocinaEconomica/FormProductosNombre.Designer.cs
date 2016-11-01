@@ -33,16 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bancoAlimentosDataSet = new CocinaEconomica.BancoAlimentosDataSet();
-            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productoTableAdapter = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.ProductoTableAdapter();
-            this.tableAdapterManager = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.TableAdapterManager();
-            this.fechaConsPrefDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.fechaCaducidadDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.fechaEntradaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.imagenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.imagenTableAdapter = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.ImagenTableAdapter();
-            this.imagenPictureBox = new System.Windows.Forms.PictureBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoBarrasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,9 +42,19 @@
             this.fechaConsPrefDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.familiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bancoAlimentosDataSet = new CocinaEconomica.BancoAlimentosDataSet();
+            this.productoTableAdapter = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.ProductoTableAdapter();
+            this.tableAdapterManager = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.TableAdapterManager();
+            this.imagenTableAdapter = new CocinaEconomica.BancoAlimentosDataSetTableAdapters.ImagenTableAdapter();
+            this.fechaConsPrefDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.fechaCaducidadDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.fechaEntradaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.imagenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.imagenPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bancoAlimentosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bancoAlimentosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -62,27 +62,30 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(149, 126);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(146, 113);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 13);
+            this.label4.Size = new System.Drawing.Size(124, 17);
             this.label4.TabIndex = 18;
             this.label4.Text = "Fecha de entrada:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(149, 81);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Location = new System.Drawing.Point(146, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 13);
+            this.label3.Size = new System.Drawing.Size(140, 17);
             this.label3.TabIndex = 16;
             this.label3.Text = "Fecha de caducidad:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(149, 38);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(146, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 13);
+            this.label2.Size = new System.Drawing.Size(239, 17);
             this.label2.TabIndex = 15;
             this.label2.Text = "Consumir preferentemente antes de:";
             // 
@@ -109,71 +112,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1245, 231);
             this.dataGridView1.TabIndex = 21;
-            // 
-            // bancoAlimentosDataSet
-            // 
-            this.bancoAlimentosDataSet.DataSetName = "BancoAlimentosDataSet";
-            this.bancoAlimentosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productoBindingSource
-            // 
-            this.productoBindingSource.DataMember = "Producto";
-            this.productoBindingSource.DataSource = this.bancoAlimentosDataSet;
-            // 
-            // productoTableAdapter
-            // 
-            this.productoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.FamiliaTableAdapter = null;
-            this.tableAdapterManager.ImagenTableAdapter = this.imagenTableAdapter;
-            this.tableAdapterManager.ProductoTableAdapter = this.productoTableAdapter;
-            this.tableAdapterManager.ProveedorTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = CocinaEconomica.BancoAlimentosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // fechaConsPrefDateTimePicker
-            // 
-            this.fechaConsPrefDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productoBindingSource, "FechaConsPref", true));
-            this.fechaConsPrefDateTimePicker.Location = new System.Drawing.Point(149, 54);
-            this.fechaConsPrefDateTimePicker.Name = "fechaConsPrefDateTimePicker";
-            this.fechaConsPrefDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaConsPrefDateTimePicker.TabIndex = 22;
-            // 
-            // fechaCaducidadDateTimePicker
-            // 
-            this.fechaCaducidadDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productoBindingSource, "FechaCaducidad", true));
-            this.fechaCaducidadDateTimePicker.Location = new System.Drawing.Point(149, 97);
-            this.fechaCaducidadDateTimePicker.Name = "fechaCaducidadDateTimePicker";
-            this.fechaCaducidadDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaCaducidadDateTimePicker.TabIndex = 23;
-            // 
-            // fechaEntradaDateTimePicker
-            // 
-            this.fechaEntradaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productoBindingSource, "FechaEntrada", true));
-            this.fechaEntradaDateTimePicker.Location = new System.Drawing.Point(149, 142);
-            this.fechaEntradaDateTimePicker.Name = "fechaEntradaDateTimePicker";
-            this.fechaEntradaDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaEntradaDateTimePicker.TabIndex = 24;
-            // 
-            // imagenBindingSource
-            // 
-            this.imagenBindingSource.DataMember = "Imagen";
-            this.imagenBindingSource.DataSource = this.bancoAlimentosDataSet;
-            // 
-            // imagenTableAdapter
-            // 
-            this.imagenTableAdapter.ClearBeforeFill = true;
-            // 
-            // imagenPictureBox
-            // 
-            this.imagenPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.imagenBindingSource, "Imagen", true));
-            this.imagenPictureBox.Location = new System.Drawing.Point(12, 12);
-            this.imagenPictureBox.Name = "imagenPictureBox";
-            this.imagenPictureBox.Size = new System.Drawing.Size(131, 150);
-            this.imagenPictureBox.TabIndex = 25;
-            this.imagenPictureBox.TabStop = false;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -235,6 +173,74 @@
             this.proveedorDataGridViewTextBoxColumn.HeaderText = "Proveedor";
             this.proveedorDataGridViewTextBoxColumn.Name = "proveedorDataGridViewTextBoxColumn";
             // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataMember = "Producto";
+            this.productoBindingSource.DataSource = this.bancoAlimentosDataSet;
+            // 
+            // bancoAlimentosDataSet
+            // 
+            this.bancoAlimentosDataSet.DataSetName = "BancoAlimentosDataSet";
+            this.bancoAlimentosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productoTableAdapter
+            // 
+            this.productoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.FamiliaTableAdapter = null;
+            this.tableAdapterManager.ImagenTableAdapter = this.imagenTableAdapter;
+            this.tableAdapterManager.ProductoTableAdapter = this.productoTableAdapter;
+            this.tableAdapterManager.ProveedorTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = CocinaEconomica.BancoAlimentosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // imagenTableAdapter
+            // 
+            this.imagenTableAdapter.ClearBeforeFill = true;
+            // 
+            // fechaConsPrefDateTimePicker
+            // 
+            this.fechaConsPrefDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productoBindingSource, "FechaConsPref", true));
+            this.fechaConsPrefDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.fechaConsPrefDateTimePicker.Location = new System.Drawing.Point(149, 41);
+            this.fechaConsPrefDateTimePicker.Name = "fechaConsPrefDateTimePicker";
+            this.fechaConsPrefDateTimePicker.Size = new System.Drawing.Size(268, 23);
+            this.fechaConsPrefDateTimePicker.TabIndex = 22;
+            // 
+            // fechaCaducidadDateTimePicker
+            // 
+            this.fechaCaducidadDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productoBindingSource, "FechaCaducidad", true));
+            this.fechaCaducidadDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.fechaCaducidadDateTimePicker.Location = new System.Drawing.Point(149, 87);
+            this.fechaCaducidadDateTimePicker.Name = "fechaCaducidadDateTimePicker";
+            this.fechaCaducidadDateTimePicker.Size = new System.Drawing.Size(268, 23);
+            this.fechaCaducidadDateTimePicker.TabIndex = 23;
+            // 
+            // fechaEntradaDateTimePicker
+            // 
+            this.fechaEntradaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productoBindingSource, "FechaEntrada", true));
+            this.fechaEntradaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.fechaEntradaDateTimePicker.Location = new System.Drawing.Point(149, 133);
+            this.fechaEntradaDateTimePicker.Name = "fechaEntradaDateTimePicker";
+            this.fechaEntradaDateTimePicker.Size = new System.Drawing.Size(268, 23);
+            this.fechaEntradaDateTimePicker.TabIndex = 24;
+            // 
+            // imagenBindingSource
+            // 
+            this.imagenBindingSource.DataMember = "Imagen";
+            this.imagenBindingSource.DataSource = this.bancoAlimentosDataSet;
+            // 
+            // imagenPictureBox
+            // 
+            this.imagenPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.imagenBindingSource, "Imagen", true));
+            this.imagenPictureBox.Location = new System.Drawing.Point(12, 12);
+            this.imagenPictureBox.Name = "imagenPictureBox";
+            this.imagenPictureBox.Size = new System.Drawing.Size(131, 150);
+            this.imagenPictureBox.TabIndex = 25;
+            this.imagenPictureBox.TabStop = false;
+            // 
             // FormProductosNombre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,8 +258,8 @@
             this.Text = "FormProductosNombre";
             this.Load += new System.EventHandler(this.FormProductosNombre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bancoAlimentosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bancoAlimentosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenPictureBox)).EndInit();
             this.ResumeLayout(false);

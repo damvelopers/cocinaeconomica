@@ -44,26 +44,27 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(225, 31);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(214, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.Size = new System.Drawing.Size(96, 17);
             this.label4.TabIndex = 85;
             this.label4.Text = "Buscar familia";
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(395, 240);
+            this.btnCerrar.Location = new System.Drawing.Point(376, 239);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(81, 27);
+            this.btnCerrar.Size = new System.Drawing.Size(100, 28);
             this.btnCerrar.TabIndex = 84;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(218, 240);
+            this.btnAceptar.Location = new System.Drawing.Point(218, 239);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(112, 31);
+            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 83;
             this.btnAceptar.Text = "Aceptar cambios";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -71,33 +72,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(222, 150);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(215, 150);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 80;
             this.label1.Text = "Nombre";
             // 
             // tbNombre
             // 
+            this.tbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbNombre.Location = new System.Drawing.Point(218, 170);
             this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(259, 20);
+            this.tbNombre.Size = new System.Drawing.Size(259, 23);
             this.tbNombre.TabIndex = 79;
             // 
             // btnBuscarFamilia
             // 
-            this.btnBuscarFamilia.Location = new System.Drawing.Point(403, 88);
+            this.btnBuscarFamilia.Location = new System.Drawing.Point(377, 92);
             this.btnBuscarFamilia.Name = "btnBuscarFamilia";
-            this.btnBuscarFamilia.Size = new System.Drawing.Size(75, 31);
+            this.btnBuscarFamilia.Size = new System.Drawing.Size(100, 28);
             this.btnBuscarFamilia.TabIndex = 78;
             this.btnBuscarFamilia.Text = "Buscar";
             this.btnBuscarFamilia.UseVisualStyleBackColor = true;
             // 
             // tbBuscar
             // 
-            this.tbBuscar.Location = new System.Drawing.Point(218, 50);
+            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbBuscar.Location = new System.Drawing.Point(218, 63);
             this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(259, 20);
+            this.tbBuscar.Size = new System.Drawing.Size(259, 23);
             this.tbBuscar.TabIndex = 77;
             // 
             // dGVFamilias

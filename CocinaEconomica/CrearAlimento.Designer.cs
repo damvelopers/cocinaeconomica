@@ -89,25 +89,26 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtNombre.Location = new System.Drawing.Point(234, 89);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(300, 20);
+            this.txtNombre.Size = new System.Drawing.Size(300, 23);
             this.txtNombre.TabIndex = 17;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(234, 172);
+            this.txtDescripcion.Location = new System.Drawing.Point(234, 185);
             this.txtDescripcion.MaxLength = 200;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(300, 168);
+            this.txtDescripcion.Size = new System.Drawing.Size(300, 155);
             this.txtDescripcion.TabIndex = 18;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(231, 152);
+            this.label2.Location = new System.Drawing.Point(231, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 19;
@@ -115,10 +116,11 @@
             // 
             // txt_familia
             // 
-            this.txt_familia.Location = new System.Drawing.Point(234, 129);
+            this.txt_familia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_familia.Location = new System.Drawing.Point(234, 132);
             this.txt_familia.Name = "txt_familia";
             this.txt_familia.ReadOnly = true;
-            this.txt_familia.Size = new System.Drawing.Size(186, 20);
+            this.txt_familia.Size = new System.Drawing.Size(186, 23);
             this.txt_familia.TabIndex = 21;
             // 
             // lblTitulo
@@ -136,7 +138,7 @@
             // btnAddFamilia
             // 
             this.btnAddFamilia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAddFamilia.Location = new System.Drawing.Point(433, 124);
+            this.btnAddFamilia.Location = new System.Drawing.Point(433, 129);
             this.btnAddFamilia.Name = "btnAddFamilia";
             this.btnAddFamilia.Size = new System.Drawing.Size(100, 28);
             this.btnAddFamilia.TabIndex = 20;

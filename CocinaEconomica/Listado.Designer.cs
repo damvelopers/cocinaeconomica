@@ -83,9 +83,10 @@
             // rBProxCaducidad
             // 
             this.rBProxCaducidad.AutoSize = true;
-            this.rBProxCaducidad.Location = new System.Drawing.Point(691, 30);
+            this.rBProxCaducidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rBProxCaducidad.Location = new System.Drawing.Point(667, 29);
             this.rBProxCaducidad.Name = "rBProxCaducidad";
-            this.rBProxCaducidad.Size = new System.Drawing.Size(115, 17);
+            this.rBProxCaducidad.Size = new System.Drawing.Size(145, 21);
             this.rBProxCaducidad.TabIndex = 43;
             this.rBProxCaducidad.TabStop = true;
             this.rBProxCaducidad.Text = "Proxima caducidad";
@@ -94,9 +95,10 @@
             // rBCaducados
             // 
             this.rBCaducados.AutoSize = true;
-            this.rBCaducados.Location = new System.Drawing.Point(813, 30);
+            this.rBCaducados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rBCaducados.Location = new System.Drawing.Point(818, 29);
             this.rBCaducados.Name = "rBCaducados";
-            this.rBCaducados.Size = new System.Drawing.Size(79, 17);
+            this.rBCaducados.Size = new System.Drawing.Size(97, 21);
             this.rBCaducados.TabIndex = 44;
             this.rBCaducados.TabStop = true;
             this.rBCaducados.Text = "Caducados";
@@ -104,9 +106,10 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(813, 456);
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCerrar.Location = new System.Drawing.Point(815, 452);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(102, 33);
+            this.btnCerrar.Size = new System.Drawing.Size(100, 28);
             this.btnCerrar.TabIndex = 45;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;

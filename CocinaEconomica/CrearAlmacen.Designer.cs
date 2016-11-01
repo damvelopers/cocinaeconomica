@@ -86,9 +86,10 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtNombre.Location = new System.Drawing.Point(137, 80);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(457, 20);
+            this.txtNombre.Size = new System.Drawing.Size(457, 23);
             this.txtNombre.TabIndex = 38;
             // 
             // textBox2
@@ -112,9 +113,10 @@
             // 
             // txtUbicacion
             // 
+            this.txtUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtUbicacion.Location = new System.Drawing.Point(137, 114);
             this.txtUbicacion.Name = "txtUbicacion";
-            this.txtUbicacion.Size = new System.Drawing.Size(457, 20);
+            this.txtUbicacion.Size = new System.Drawing.Size(457, 23);
             this.txtUbicacion.TabIndex = 42;
             // 
             // lblUbicacion

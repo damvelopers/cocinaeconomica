@@ -38,10 +38,11 @@
             // 
             // txtFamilia
             // 
+            this.txtFamilia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtFamilia.Location = new System.Drawing.Point(111, 85);
             this.txtFamilia.Margin = new System.Windows.Forms.Padding(4);
             this.txtFamilia.Name = "txtFamilia";
-            this.txtFamilia.Size = new System.Drawing.Size(354, 20);
+            this.txtFamilia.Size = new System.Drawing.Size(354, 23);
             this.txtFamilia.TabIndex = 38;
             // 
             // lblTitulo
@@ -71,7 +72,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(13, 85);
+            this.lblNombre.Location = new System.Drawing.Point(13, 88);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(62, 17);
