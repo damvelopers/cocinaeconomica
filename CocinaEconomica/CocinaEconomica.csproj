@@ -115,10 +115,34 @@
     <Compile Include="ModificarAlimento.Designer.cs">
       <DependentUpon>ModificarAlimento.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarFamilia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarFamilia.Designer.cs">
+      <DependentUpon>ModificarFamilia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarProducto.Designer.cs">
+      <DependentUpon>ModificarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarUbicacionProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarUbicacionProducto.Designer.cs">
+      <DependentUpon>ModificarUbicacionProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs" />
+    <Compile Include="Salidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Salidas.Designer.cs">
+      <DependentUpon>Salidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +176,15 @@
     <EmbeddedResource Include="ModificarAlimento.resx">
       <DependentUpon>ModificarAlimento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModificarFamilia.resx">
+      <DependentUpon>ModificarFamilia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarProducto.resx">
+      <DependentUpon>ModificarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarUbicacionProducto.resx">
+      <DependentUpon>ModificarUbicacionProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -162,6 +195,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Salidas.resx">
+      <DependentUpon>Salidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaInicio.resx">
       <DependentUpon>VentanaInicio.cs</DependentUpon>
     </EmbeddedResource>

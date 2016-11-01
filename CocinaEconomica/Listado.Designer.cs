@@ -124,6 +124,7 @@
             this.Controls.Add(this.dGVProductos);
             this.Controls.Add(this.dGVAlimentos);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Listado";
             this.Text = "Listado";

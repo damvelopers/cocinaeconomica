@@ -177,6 +177,7 @@
             this.Controls.Add(this.tbBuscar);
             this.Controls.Add(this.dGVAlimentos);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarAlimento";
             this.Text = "ModificarAlimento";

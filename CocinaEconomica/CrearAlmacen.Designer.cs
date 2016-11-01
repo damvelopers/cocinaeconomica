@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.lblUbicacion = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -164,5 +165,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUbicacion;
         private System.Windows.Forms.Label lblUbicacion;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
