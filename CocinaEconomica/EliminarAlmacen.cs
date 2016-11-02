@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace CocinaEconomica
 {
-    public partial class VentanaInicio : Form
+    public partial class EliminarAlmacen : Form
     {
-        public VentanaInicio()
+        public EliminarAlmacen()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void VentanaInicio_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

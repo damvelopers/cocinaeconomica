@@ -71,17 +71,7 @@ namespace CocinaEconomica
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                CargarAlimentos();
-            }
-            else
-            {
-                CargarAlimentos(textBox1.Text);
-            }
-        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -115,6 +105,100 @@ namespace CocinaEconomica
         {
             CrearFamilia crearAlimento = new CrearFamilia();
             crearAlimento.ShowDialog();
+        }
+
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            crearProducto crearProducto = new crearProducto();
+            crearProducto.ShowDialog();
+        }
+
+        private void alimentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrearAlimento crearAlimento = new CrearAlimento();
+            crearAlimento.ShowDialog();
+        }
+
+        private void familiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrearFamilia crearFamilia= new CrearFamilia();
+            crearFamilia.ShowDialog();
+        }
+
+        private void alimentoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ModificarAlimento modificarAlimento = new ModificarAlimento();
+            modificarAlimento.ShowDialog();
+        }
+
+        private void productoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ModificarProducto modificarProducto = new ModificarProducto();
+            modificarProducto.ShowDialog();
+        }
+
+        private void familiaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ModificarFamilia modificarFamilia = new ModificarFamilia();
+            modificarFamilia.ShowDialog();
+        }
+
+        private void ubToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarUbicacionProducto modificarUbicacionProducto = new ModificarUbicacionProducto();
+            modificarUbicacionProducto.ShowDialog();
+        }
+
+        private void crearAlmacenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrearAlmacen crearAlmacen = new CrearAlmacen();
+            crearAlmacen.ShowDialog();
+        }
+
+        private void modificarAlmacenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarAlmacen modificarAlmacen = new ModificarAlmacen();
+            modificarAlmacen.ShowDialog();
+        }
+
+        private void eliminarAlmacenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EliminarAlmacen eliminarAlmacen = new EliminarAlmacen();
+            eliminarAlmacen.ShowDialog();
+        }
+
+        private void conexionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormConexion conexion = new FormConexion();
+            conexion.ShowDialog();
+        }
+
+        private void salidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Salidas salidas = new Salidas();
+            salidas.ShowDialog();
+        }
+
+        private void listadoDeProductos2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProductosNombre productosNombre = new FormProductosNombre();
+            productosNombre.ShowDialog();
+        }
+
+        private void listadoDeProductosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Listado listado = new Listado();
+            listado.ShowDialog();
+        }
+
+        private void insertarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listadoDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

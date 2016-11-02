@@ -78,6 +78,12 @@
     <Compile Include="CrearProducto.Designer.cs">
       <DependentUpon>CrearProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="EliminarAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarAlmacen.Designer.cs">
+      <DependentUpon>EliminarAlmacen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Familia.cs" />
     <Compile Include="FormConexion.cs">
       <SubType>Form</SubType>
@@ -115,6 +121,12 @@
     <Compile Include="ModificarAlimento.Designer.cs">
       <DependentUpon>ModificarAlimento.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarAlmacen.Designer.cs">
+      <DependentUpon>ModificarAlmacen.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarFamilia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,12 +155,6 @@
     <Compile Include="Salidas.Designer.cs">
       <DependentUpon>Salidas.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaInicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VentanaInicio.Designer.cs">
-      <DependentUpon>VentanaInicio.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CrearAlmacen.resx">
       <DependentUpon>CrearAlmacen.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrearProducto.resx">
       <DependentUpon>CrearProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarAlmacen.resx">
+      <DependentUpon>EliminarAlmacen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConexion.resx">
       <DependentUpon>FormConexion.cs</DependentUpon>
@@ -175,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarAlimento.resx">
       <DependentUpon>ModificarAlimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarAlmacen.resx">
+      <DependentUpon>ModificarAlmacen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarFamilia.resx">
       <DependentUpon>ModificarFamilia.cs</DependentUpon>
@@ -197,9 +209,6 @@
     </Compile>
     <EmbeddedResource Include="Salidas.resx">
       <DependentUpon>Salidas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanaInicio.resx">
-      <DependentUpon>VentanaInicio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BancoAlimentosDataSet.xsc">
       <DependentUpon>BancoAlimentosDataSet.xsd</DependentUpon>
@@ -228,6 +237,7 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Resources\fondo.jpg" />
+    <None Include="Resources\cocina_economica.png" />
     <Content Include="Resources\Icono.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
