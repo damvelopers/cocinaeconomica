@@ -175,21 +175,21 @@
             // alimentoToolStripMenuItem
             // 
             this.alimentoToolStripMenuItem.Name = "alimentoToolStripMenuItem";
-            this.alimentoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.alimentoToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.alimentoToolStripMenuItem.Text = "Alimento";
             this.alimentoToolStripMenuItem.Click += new System.EventHandler(this.alimentoToolStripMenuItem_Click);
             // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.productoToolStripMenuItem.Text = "Producto";
             this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // familiaToolStripMenuItem
             // 
             this.familiaToolStripMenuItem.Name = "familiaToolStripMenuItem";
-            this.familiaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.familiaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.familiaToolStripMenuItem.Text = "Familia";
             this.familiaToolStripMenuItem.Click += new System.EventHandler(this.familiaToolStripMenuItem_Click);
             // 
@@ -280,7 +280,7 @@
             this.modificarAlmacenToolStripMenuItem,
             this.eliminarAlmacenToolStripMenuItem});
             this.almacenesToolStripMenuItem.Name = "almacenesToolStripMenuItem";
-            this.almacenesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.almacenesToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.almacenesToolStripMenuItem.Text = "Almacenes";
             // 
             // crearAlmacenToolStripMenuItem
@@ -307,7 +307,7 @@
             // conexionToolStripMenuItem
             // 
             this.conexionToolStripMenuItem.Name = "conexionToolStripMenuItem";
-            this.conexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.conexionToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.conexionToolStripMenuItem.Text = "Conexión";
             this.conexionToolStripMenuItem.Click += new System.EventHandler(this.conexionToolStripMenuItem_Click);
             // 

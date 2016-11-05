@@ -115,6 +115,12 @@
     <Compile Include="Listado.Designer.cs">
       <DependentUpon>Listado.cs</DependentUpon>
     </Compile>
+    <Compile Include="MDIAlimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIAlimentos.Designer.cs">
+      <DependentUpon>MDIAlimentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarAlimento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,12 @@
     <Compile Include="ModificarUbicacionProducto.Designer.cs">
       <DependentUpon>ModificarUbicacionProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -154,6 +166,12 @@
     </Compile>
     <Compile Include="Salidas.Designer.cs">
       <DependentUpon>Salidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaAlimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaAlimentos.Designer.cs">
+      <DependentUpon>VentanaAlimentos.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CrearAlmacen.resx">
       <DependentUpon>CrearAlmacen.cs</DependentUpon>
@@ -182,6 +200,9 @@
     <EmbeddedResource Include="Listado.resx">
       <DependentUpon>Listado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MDIAlimentos.resx">
+      <DependentUpon>MDIAlimentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarAlimento.resx">
       <DependentUpon>ModificarAlimento.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +218,9 @@
     <EmbeddedResource Include="ModificarUbicacionProducto.resx">
       <DependentUpon>ModificarUbicacionProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -209,6 +233,9 @@
     </Compile>
     <EmbeddedResource Include="Salidas.resx">
       <DependentUpon>Salidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAlimentos.resx">
+      <DependentUpon>VentanaAlimentos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BancoAlimentosDataSet.xsc">
       <DependentUpon>BancoAlimentosDataSet.xsd</DependentUpon>
