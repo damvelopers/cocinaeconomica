@@ -53,7 +53,7 @@ namespace CocinaEconomica
             a.Familia = Familia.GetFamilia(txt_familia.Text);
             if (a.Nombre != "")
             {
-                bool ok = Alimento.InsertarAlimento(a);
+                bool ok = Alimento.Insert(a);
                 // Feedback!
                 if (!ok)
                 {
