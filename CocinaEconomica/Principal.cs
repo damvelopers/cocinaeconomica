@@ -26,6 +26,7 @@ namespace CocinaEconomica
                 f.MdiParent = this;
                 f.WindowState = FormWindowState.Maximized;
                 f.Show();
+                
             }
         }
     }
