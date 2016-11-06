@@ -96,6 +96,7 @@ namespace CocinaEconomica
             ArrayList almacenes = new ArrayList();
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
+                conn.Open();
                 string selectString = "select * from Almacen";
                 using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
                 {

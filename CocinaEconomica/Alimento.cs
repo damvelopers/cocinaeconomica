@@ -126,6 +126,7 @@ namespace CocinaEconomica
             ArrayList alimentos = new ArrayList();
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
+                conn.Open();
                 string selectString = "select * from Alimento";
                 using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
                 {
