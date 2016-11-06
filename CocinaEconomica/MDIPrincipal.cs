@@ -17,6 +17,11 @@ namespace CocinaEconomica
         public MDIPrincipal()
         {
             InitializeComponent();
+            if (Properties.Settings.Default.ConnectionString == "")
+            {
+                FormConexion f = new FormConexion();
+                f.ShowDialog();
+            }
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -111,9 +116,9 @@ namespace CocinaEconomica
                 this.LayoutMdi(MdiLayout.TileHorizontal);
                 Form f = new MDIAlimentos();
                 f.MdiParent = this;
-                f.WindowState = FormWindowState.Maximized;
                 f.Show();
-
+                f.WindowState = FormWindowState.Minimized;
+                f.WindowState = FormWindowState.Maximized;
             }
         }
     }

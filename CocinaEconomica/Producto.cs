@@ -24,21 +24,25 @@ namespace CocinaEconomica
 
         public Producto()
         {
-            Alimento = null;
-            FechaEntrada = DateTime.Today;
-            FechaCaducidad = DateTime.Today;
-            FechaConsumirPreferente = DateTime.Today;
-            Ubicacion = "";
+            this.Alimento = null;
+            this.FechaEntrada = DateTime.Today;
+            this.FechaCaducidad = DateTime.Today;
+            this.FechaConsumirPreferente = DateTime.Today;
+            this.Proveedor = null;
+            this.Almacen = null;
+            this.Ubicacion = "";
         }
         
         public Producto(int Id, Alimento Alimento, DateTime FechaEntrada, 
-            DateTime FechaCaducidad, DateTime FechaConsumirPreferente, string Ubicacion)
+            DateTime FechaCaducidad, DateTime FechaConsumirPreferente, string Proveedor, Almacen Almacen, string Ubicacion)
         {
             this.Id = Id;
             this.Alimento = Alimento;
             this.FechaEntrada = FechaEntrada;
             this.FechaCaducidad = FechaCaducidad;
             this.FechaConsumirPreferente = FechaConsumirPreferente;
+            this.Proveedor = Proveedor;
+            this.Almacen = Almacen;
             this.Ubicacion = Ubicacion;
         }
 

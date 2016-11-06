@@ -151,7 +151,7 @@ namespace CocinaEconomica
         /// </summary>
         /// <param name="a">El almacén</param>
         /// <returns>Si se ha insertado correctamente o no</returns>
-        public static bool Insert(Almacen a)
+        public bool Insert()
         {
             bool inserted = false;
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
@@ -163,8 +163,8 @@ namespace CocinaEconomica
                 using (SqlCommand query = new SqlCommand(insert))
                 {
                     query.Connection = conexion;
-                    query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = a.Nombre;
-                    query.Parameters.Add("@descripcion", SqlDbType.VarChar, 200).Value = a.Descripcion;
+                    query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = this.Nombre;
+                    query.Parameters.Add("@descripcion", SqlDbType.VarChar, 200).Value = this.Descripcion;
                     query.ExecuteNonQuery();
                 }
                 conexion.Close();

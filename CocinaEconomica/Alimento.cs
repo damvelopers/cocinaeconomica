@@ -20,7 +20,6 @@ namespace CocinaEconomica
         public string Descripcion;
         public Image Imagen;
 
-
         public Alimento()
         {
             this.Nombre = "";
@@ -176,6 +175,11 @@ namespace CocinaEconomica
             return a;
         }
 
+        /// <summary>
+        /// Devuelve la imagen de un Alimento dado su id
+        /// </summary>
+        /// <param name="id">Id del alimento</param>
+        /// <returns>Imagen del Alimento</returns>
         public static Image GetImagen(int id)
         {
             Image result = null;
@@ -206,9 +210,9 @@ namespace CocinaEconomica
         /// </summary>
         /// <param name="a">Alimento que se va a insertar</param>
         /// <returns>Si se ha insertado o no correctamente</returns>
-        public static bool Insert(Alimento a)
+        public bool Insert()
         {
-            int idAlimento = InsertarImagen(a.Imagen);
+            int idAlimento = Alimento.InsertarImagen(this.Imagen);
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 conexion.Open();
@@ -223,9 +227,9 @@ namespace CocinaEconomica
                 using (SqlCommand query = new SqlCommand(insert))
                 {
                     query.Connection = conexion;
-                    query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = a.Nombre;
-                    query.Parameters.Add("@familia", SqlDbType.Int).Value = a.Familia.Id;
-                    query.Parameters.Add("@descripcion", SqlDbType.VarChar, 200).Value = a.Descripcion;
+                    query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = this.Nombre;
+                    query.Parameters.Add("@familia", SqlDbType.Int).Value = this.Familia.Id;
+                    query.Parameters.Add("@descripcion", SqlDbType.VarChar, 200).Value = this.Descripcion;
 
                     if (idAlimento > 0)
                         query.Parameters.Add("@imagen", SqlDbType.Int).Value = idAlimento;
