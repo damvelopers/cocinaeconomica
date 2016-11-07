@@ -29,20 +29,25 @@
         private void InitializeComponent()
         {
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.TablaContenido = new System.Windows.Forms.TableLayoutPanel();
+            this.panelBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gbPrincipal = new System.Windows.Forms.GroupBox();
+            this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
+            this.tablaDatos = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridAlimentos = new System.Windows.Forms.DataGridView();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.TablaContenido.SuspendLayout();
+            this.panelBotones.SuspendLayout();
+            this.gbPrincipal.SuspendLayout();
+            this.panelBuscar.SuspendLayout();
+            this.tablaDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlimentos)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -54,35 +59,35 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // tableLayoutPanel1
+            // TablaContenido
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1196, 498);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.TablaContenido.ColumnCount = 2;
+            this.TablaContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.TablaContenido.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TablaContenido.Controls.Add(this.panelBotones, 0, 0);
+            this.TablaContenido.Controls.Add(this.gbPrincipal, 1, 0);
+            this.TablaContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TablaContenido.Location = new System.Drawing.Point(0, 0);
+            this.TablaContenido.Name = "TablaContenido";
+            this.TablaContenido.RowCount = 1;
+            this.TablaContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TablaContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.TablaContenido.Size = new System.Drawing.Size(1196, 498);
+            this.TablaContenido.TabIndex = 2;
             // 
-            // flowLayoutPanel1
+            // panelBotones
             // 
-            this.flowLayoutPanel1.Controls.Add(this.btnNuevo);
-            this.flowLayoutPanel1.Controls.Add(this.btnModificar);
-            this.flowLayoutPanel1.Controls.Add(this.btnEliminar);
-            this.flowLayoutPanel1.Controls.Add(this.btnCerrar);
-            this.flowLayoutPanel1.Controls.Add(this.btnAyuda);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(119, 467);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.panelBotones.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
+            this.panelBotones.Controls.Add(this.btnNuevo);
+            this.panelBotones.Controls.Add(this.btnModificar);
+            this.panelBotones.Controls.Add(this.btnEliminar);
+            this.panelBotones.Controls.Add(this.btnCerrar);
+            this.panelBotones.Controls.Add(this.btnAyuda);
+            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBotones.Location = new System.Drawing.Point(3, 3);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(119, 492);
+            this.panelBotones.TabIndex = 0;
             // 
             // btnNuevo
             // 
@@ -140,37 +145,71 @@
             this.btnAyuda.Text = "Ayuda";
             this.btnAyuda.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // gbPrincipal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(128, 473);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1065, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Programa realizado por auténticos profesionales del software :P";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gbPrincipal.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
+            this.gbPrincipal.Controls.Add(this.tablaDatos);
+            this.gbPrincipal.Controls.Add(this.panelBuscar);
+            this.gbPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbPrincipal.Location = new System.Drawing.Point(128, 3);
+            this.gbPrincipal.Name = "gbPrincipal";
+            this.gbPrincipal.Size = new System.Drawing.Size(1065, 492);
+            this.gbPrincipal.TabIndex = 2;
+            this.gbPrincipal.TabStop = false;
+            this.gbPrincipal.Text = "Alimentos";
             // 
-            // groupBox1
+            // panelBuscar
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(128, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1065, 467);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Alimentos";
+            this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.panelBuscar.Controls.Add(this.txtBuscar);
+            this.panelBuscar.Controls.Add(this.btnBuscar);
+            this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBuscar.Location = new System.Drawing.Point(3, 22);
+            this.panelBuscar.Name = "panelBuscar";
+            this.panelBuscar.Size = new System.Drawing.Size(1059, 31);
+            this.panelBuscar.TabIndex = 0;
             // 
-            // dataGridView1
+            // tablaDatos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 26);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1059, 438);
-            this.dataGridView1.TabIndex = 0;
+            this.tablaDatos.ColumnCount = 1;
+            this.tablaDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tablaDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tablaDatos.Controls.Add(this.dataGridAlimentos, 0, 0);
+            this.tablaDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablaDatos.Location = new System.Drawing.Point(3, 53);
+            this.tablaDatos.Name = "tablaDatos";
+            this.tablaDatos.RowCount = 1;
+            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tablaDatos.Size = new System.Drawing.Size(1059, 436);
+            this.tablaDatos.TabIndex = 1;
+            // 
+            // dataGridAlimentos
+            // 
+            this.dataGridAlimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAlimentos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridAlimentos.Location = new System.Drawing.Point(3, 3);
+            this.dataGridAlimentos.Name = "dataGridAlimentos";
+            this.dataGridAlimentos.Size = new System.Drawing.Size(1053, 430);
+            this.dataGridAlimentos.TabIndex = 0;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(3, 3);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(683, 26);
+            this.txtBuscar.TabIndex = 0;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBuscar.Location = new System.Drawing.Point(692, 3);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 26);
+            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // MDIAlimentos
             // 
@@ -178,18 +217,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1196, 498);
             this.ControlBox = false;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.TablaContenido);
             this.Controls.Add(this.richTextBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MDIAlimentos";
             this.Text = "Alimentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.TablaContenido.ResumeLayout(false);
+            this.panelBotones.ResumeLayout(false);
+            this.gbPrincipal.ResumeLayout(false);
+            this.panelBuscar.ResumeLayout(false);
+            this.panelBuscar.PerformLayout();
+            this.tablaDatos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlimentos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,15 +238,18 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel TablaContenido;
+        private System.Windows.Forms.FlowLayoutPanel panelBotones;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnAyuda;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox gbPrincipal;
+        private System.Windows.Forms.FlowLayoutPanel panelBuscar;
+        private System.Windows.Forms.TableLayoutPanel tablaDatos;
+        private System.Windows.Forms.DataGridView dataGridAlimentos;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
