@@ -122,11 +122,35 @@
     <Compile Include="MDIAlimentos.Designer.cs">
       <DependentUpon>MDIAlimentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="MDIAlmacenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIAlmacenes.Designer.cs">
+      <DependentUpon>MDIAlmacenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIFamilias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIFamilias.Designer.cs">
+      <DependentUpon>MDIFamilias.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MDIPrincipal.Designer.cs">
       <DependentUpon>MDIPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIProductos.Designer.cs">
+      <DependentUpon>MDIProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDISalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDISalidas.Designer.cs">
+      <DependentUpon>MDISalidas.cs</DependentUpon>
     </Compile>
     <Compile Include="ModificarAlimento.cs">
       <SubType>Form</SubType>
@@ -210,8 +234,20 @@
     <EmbeddedResource Include="MDIAlimentos.resx">
       <DependentUpon>MDIAlimentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MDIAlmacenes.resx">
+      <DependentUpon>MDIAlmacenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIFamilias.resx">
+      <DependentUpon>MDIFamilias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDIPrincipal.resx">
       <DependentUpon>MDIPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIProductos.resx">
+      <DependentUpon>MDIProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDISalidas.resx">
+      <DependentUpon>MDISalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarAlimento.resx">
       <DependentUpon>ModificarAlimento.cs</DependentUpon>

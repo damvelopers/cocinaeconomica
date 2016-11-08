@@ -121,5 +121,57 @@ namespace CocinaEconomica
                 f.WindowState = FormWindowState.Maximized;
             }
         }
+
+        private void btnFamilias_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild == null)
+            {
+                this.LayoutMdi(MdiLayout.TileHorizontal);
+                Form f = new MDIFamilias();
+                f.MdiParent = this;
+                f.Show();
+                f.WindowState = FormWindowState.Minimized;
+                f.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild == null)
+            {
+                this.LayoutMdi(MdiLayout.TileHorizontal);
+                Form f = new MDIProductos();
+                f.MdiParent = this;
+                f.Show();
+                f.WindowState = FormWindowState.Minimized;
+                f.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void btnAlmacenes_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild == null)
+            {
+                this.LayoutMdi(MdiLayout.TileHorizontal);
+                Form f = new MDIAlmacenes();
+                f.MdiParent = this;
+                f.Show();
+                f.WindowState = FormWindowState.Minimized;
+                f.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void btnSalidas_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild == null)
+            {
+                this.LayoutMdi(MdiLayout.TileHorizontal);
+                Form f = new MDISalidas();
+                f.MdiParent = this;
+                f.Show();
+                f.WindowState = FormWindowState.Minimized;
+                f.WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }
