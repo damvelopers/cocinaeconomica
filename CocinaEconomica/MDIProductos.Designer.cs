@@ -1,6 +1,6 @@
 ﻿namespace CocinaEconomica
 {
-    partial class MDIAlimentos
+    partial class MDIProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.TablaContenido = new System.Windows.Forms.TableLayoutPanel();
             this.panelBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -37,27 +36,19 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.gbPrincipal = new System.Windows.Forms.GroupBox();
-            this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
             this.tablaDatos = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridAlimentos = new System.Windows.Forms.DataGridView();
+            this.dataGridProductos = new System.Windows.Forms.DataGridView();
+            this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.TablaContenido.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.gbPrincipal.SuspendLayout();
-            this.panelBuscar.SuspendLayout();
             this.tablaDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlimentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
+            this.panelBuscar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1196, 498);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // TablaContenido
             // 
@@ -71,9 +62,9 @@
             this.TablaContenido.Name = "TablaContenido";
             this.TablaContenido.RowCount = 1;
             this.TablaContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TablaContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.TablaContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 498F));
             this.TablaContenido.Size = new System.Drawing.Size(1196, 498);
-            this.TablaContenido.TabIndex = 2;
+            this.TablaContenido.TabIndex = 6;
             // 
             // panelBotones
             // 
@@ -99,7 +90,6 @@
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -132,7 +122,7 @@
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnAyuda
             // 
@@ -157,7 +147,31 @@
             this.gbPrincipal.Size = new System.Drawing.Size(1065, 492);
             this.gbPrincipal.TabIndex = 2;
             this.gbPrincipal.TabStop = false;
-            this.gbPrincipal.Text = "Alimentos";
+            this.gbPrincipal.Text = "Productos";
+            // 
+            // tablaDatos
+            // 
+            this.tablaDatos.ColumnCount = 1;
+            this.tablaDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tablaDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tablaDatos.Controls.Add(this.dataGridProductos, 0, 0);
+            this.tablaDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablaDatos.Location = new System.Drawing.Point(3, 53);
+            this.tablaDatos.Name = "tablaDatos";
+            this.tablaDatos.RowCount = 1;
+            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 436F));
+            this.tablaDatos.Size = new System.Drawing.Size(1059, 436);
+            this.tablaDatos.TabIndex = 1;
+            // 
+            // dataGridProductos
+            // 
+            this.dataGridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridProductos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridProductos.Location = new System.Drawing.Point(3, 3);
+            this.dataGridProductos.Name = "dataGridProductos";
+            this.dataGridProductos.Size = new System.Drawing.Size(1053, 430);
+            this.dataGridProductos.TabIndex = 0;
             // 
             // panelBuscar
             // 
@@ -169,30 +183,6 @@
             this.panelBuscar.Name = "panelBuscar";
             this.panelBuscar.Size = new System.Drawing.Size(1059, 31);
             this.panelBuscar.TabIndex = 0;
-            // 
-            // tablaDatos
-            // 
-            this.tablaDatos.ColumnCount = 1;
-            this.tablaDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tablaDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tablaDatos.Controls.Add(this.dataGridAlimentos, 0, 0);
-            this.tablaDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablaDatos.Location = new System.Drawing.Point(3, 53);
-            this.tablaDatos.Name = "tablaDatos";
-            this.tablaDatos.RowCount = 1;
-            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tablaDatos.Size = new System.Drawing.Size(1059, 436);
-            this.tablaDatos.TabIndex = 1;
-            // 
-            // dataGridAlimentos
-            // 
-            this.dataGridAlimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAlimentos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridAlimentos.Location = new System.Drawing.Point(3, 3);
-            this.dataGridAlimentos.Name = "dataGridAlimentos";
-            this.dataGridAlimentos.Size = new System.Drawing.Size(1053, 430);
-            this.dataGridAlimentos.TabIndex = 0;
             // 
             // txtBuscar
             // 
@@ -211,7 +201,16 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // MDIAlimentos
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(1196, 498);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "";
+            // 
+            // MDIProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,25 +218,22 @@
             this.ControlBox = false;
             this.Controls.Add(this.TablaContenido);
             this.Controls.Add(this.richTextBox1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "MDIAlimentos";
-            this.Text = "Alimentos";
+            this.Name = "MDIProductos";
+            this.Text = "MDIProductos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.TablaContenido.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
             this.gbPrincipal.ResumeLayout(false);
+            this.tablaDatos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).EndInit();
             this.panelBuscar.ResumeLayout(false);
             this.panelBuscar.PerformLayout();
-            this.tablaDatos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlimentos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TableLayoutPanel TablaContenido;
         private System.Windows.Forms.FlowLayoutPanel panelBotones;
         private System.Windows.Forms.Button btnNuevo;
@@ -246,10 +242,11 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnAyuda;
         private System.Windows.Forms.GroupBox gbPrincipal;
-        private System.Windows.Forms.FlowLayoutPanel panelBuscar;
         private System.Windows.Forms.TableLayoutPanel tablaDatos;
-        private System.Windows.Forms.DataGridView dataGridAlimentos;
+        private System.Windows.Forms.DataGridView dataGridProductos;
+        private System.Windows.Forms.FlowLayoutPanel panelBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

@@ -18,25 +18,31 @@ namespace CocinaEconomica
         public DateTime FechaEntrada;
         public DateTime FechaCaducidad;
         public DateTime FechaConsumirPreferente;
+        public string Proveedor;
+        public Almacen Almacen;
         public string Ubicacion;
 
         public Producto()
         {
-            Alimento = null;
-            FechaEntrada = DateTime.Today;
-            FechaCaducidad = DateTime.Today;
-            FechaConsumirPreferente = DateTime.Today;
-            Ubicacion = "";
+            this.Alimento = null;
+            this.FechaEntrada = DateTime.Today;
+            this.FechaCaducidad = DateTime.Today;
+            this.FechaConsumirPreferente = DateTime.Today;
+            this.Proveedor = null;
+            this.Almacen = null;
+            this.Ubicacion = "";
         }
         
         public Producto(int Id, Alimento Alimento, DateTime FechaEntrada, 
-            DateTime FechaCaducidad, DateTime FechaConsumirPreferente, string Ubicacion)
+            DateTime FechaCaducidad, DateTime FechaConsumirPreferente, string Proveedor, Almacen Almacen, string Ubicacion)
         {
             this.Id = Id;
             this.Alimento = Alimento;
             this.FechaEntrada = FechaEntrada;
             this.FechaCaducidad = FechaCaducidad;
             this.FechaConsumirPreferente = FechaConsumirPreferente;
+            this.Proveedor = Proveedor;
+            this.Almacen = Almacen;
             this.Ubicacion = Ubicacion;
         }
 
@@ -55,7 +61,7 @@ namespace CocinaEconomica
             {
                 Producto p = new Producto();
                 p.Id = reader.GetInt32(0);
-                p.Alimento = Alimento.GetAlimento(p.Id);
+                p.Alimento = Alimento.Select(p.Id);
                 p.FechaEntrada = reader.GetDateTime(2);
                 p.FechaCaducidad = reader.GetDateTime(3);
                 p.Ubicacion = reader.GetString(6);
@@ -80,12 +86,11 @@ namespace CocinaEconomica
                 using (SqlCommand query = new SqlCommand(insert))
                 {
                     query.Connection = conexion;
-                    query.Parameters.Add("@alimento", SqlDbType.VarChar, 50).Value = p.Alimento.Id;
+                    query.Parameters.Add("@alimento", SqlDbType.Int, 50).Value = p.Alimento.Id;
                     query.Parameters.Add("@fechacaducidad", SqlDbType.Date).Value = p.FechaCaducidad;
                     query.Parameters.Add("@fechaconspref", SqlDbType.Date).Value = p.FechaConsumirPreferente;
                     query.Parameters.Add("@ubicacion", SqlDbType.VarChar, 200).Value = p.Ubicacion;
                     query.Parameters.Add("@fechaentrada", SqlDbType.Date).Value = p.FechaEntrada;
-
                     query.ExecuteNonQuery();
                 }
                 conexion.Close();

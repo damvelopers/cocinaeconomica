@@ -20,7 +20,6 @@ namespace CocinaEconomica
         public string Descripcion;
         public Image Imagen;
 
-
         public Alimento()
         {
             this.Nombre = "";
@@ -39,53 +38,148 @@ namespace CocinaEconomica
             this.Descripcion = Descripcion;
         }
 
+        /// <summary>
+        /// Devuelve el Id de la imagen del alimento
+        /// </summary>
+        /// <returns>Id de la imagen del alimento</returns>
+        public int GetImagenId()
+        {
+            int id = -1;
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string selectString = "select Imagen from Alimento where Id = @id";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    selectCommand.Parameters.Add("@id", SqlDbType.Int).Value = Id;
+                    conn.Open();
+                    SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        id = reader.GetInt32(0);
+                    }
+                }
+            }
+            return id;
+        }
+
+        /// <summary>
+        /// Borra el Almacen de la base de datos
+        /// </summary>
+        /// <returns>
+        /// Si se ha borrado o no correctamente
+        /// </returns>
+        public bool Delete()
+        {
+            int rows = 0;
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conexion.Open();
+                string insert = "DELETE FROM dbo.Alimento WHERE Id = @id";
+
+                using (SqlCommand query = new SqlCommand(insert))
+                {
+                    query.Connection = conexion;
+                    query.Parameters.Add("@id", SqlDbType.Int).Value = this.Id;
+                    rows = query.ExecuteNonQuery();
+                }
+                conexion.Close();
+            }
+            return rows > 0;
+        }
+
+        /// <summary>
+        /// Actualiza el Almacen en la base de datos
+        /// </summary>
+        /// <returns>
+        /// Si se ha actualizado o no correctamente
+        /// </returns>
+        public bool Update()
+        {
+            int rows = 0;
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conexion.Open();
+                string insert = "UPDATE dbo.Alimento (Nombre, Descripcion)" +
+                    " VALUES (@nombre, @descripcion)";
+
+                using (SqlCommand query = new SqlCommand(insert))
+                {
+                    query.Connection = conexion;
+                    query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = this.Nombre;
+                    query.Parameters.Add("@descripcion", SqlDbType.VarChar, 200).Value = this.Descripcion;
+                    rows = query.ExecuteNonQuery();
+                }
+                conexion.Close();
+            }
+            return rows > 0;
+        }
+
         #region SELECTS
-        public static ArrayList GetAlimentos()
+
+        /// <summary>
+        /// Devuelve un ArrayList con todos los alimentos
+        /// </summary>
+        /// <returns>ArrayList de todos los alimentos</returns>
+        public static ArrayList SelectAll()
         {
             ArrayList alimentos = new ArrayList();
-            SqlDataReader reader;
-
-            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString);
-            string selectString = "select * from Alimento ";
-            SqlCommand selectCommand = new SqlCommand(selectString, conn);
-            conn.Open();
-            reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
-            while (reader.Read())
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                Alimento a = new Alimento();
-                a.Id = reader.GetInt32(0);
-                a.Nombre = reader.GetString(1);
-                a.Familia = Familia.GetFamilia(reader.GetInt32(2));
-                a.Imagen = Alimento.GetImagen(reader.GetInt32(3));
-                a.Descripcion = reader.GetString(4);
-                alimentos.Add(a);
+                conn.Open();
+                string selectString = "select * from Alimento";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    conn.Open();
+                    SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        Alimento a = new Alimento();
+                        a.Id = reader.GetInt32(0);
+                        a.Nombre = reader.GetString(1);
+                        a.Familia = Familia.GetFamilia(reader.GetInt32(2));
+                        a.Imagen = Alimento.GetImagen(reader.GetInt32(3));
+                        a.Descripcion = reader.GetString(4);
+                        alimentos.Add(a);
+                    }
+                }
             }
-            conn.Close();
             return alimentos;
         }
 
-        public static Alimento GetAlimento(int Id)
+        /// <summary>
+        /// Devuelve un alimento dado su id
+        /// </summary>
+        /// <param name="Id">Id del alimento</param>
+        /// <returns>El alimento</returns>
+        public static Alimento Select(int Id)
         {
-            SqlDataReader reader;
-            Alimento a = new Alimento();
-            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString);
-            string selectString = "select * from Alimento where Id = @id  ";
-            SqlCommand selectCommand = new SqlCommand(selectString, conn);
-            selectCommand.Parameters.Add("@id", SqlDbType.Int).Value = Id;
-            conn.Open();
-            reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
-            while (reader.Read())
+            Alimento a = null;
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                a.Id = reader.GetInt32(0);
-                a.Nombre = reader.GetString(1);
-                a.Familia = Familia.GetFamilia(reader.GetInt32(2));
-                a.Imagen = Alimento.GetImagen(reader.GetInt32(3));
-                a.Descripcion = reader.GetString(4);
+                string selectString = "select * from Alimento where Id = @id";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    conn.Open();
+                    selectCommand.Parameters.Add("@id", SqlDbType.Int).Value = Id;
+                    SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        a.Id = reader.GetInt32(0);
+                        a.Nombre = reader.GetString(1);
+                        a.Familia = Familia.GetFamilia(reader.GetInt32(2));
+                        a.Imagen = Alimento.GetImagen(reader.GetInt32(3));
+                        a.Descripcion = reader.GetString(4);
+                    }
+                }
             }
-            conn.Close();
             return a;
         }
 
+        /// <summary>
+        /// Devuelve la imagen de un Alimento dado su id
+        /// </summary>
+        /// <param name="id">Id del alimento</param>
+        /// <returns>Imagen del Alimento</returns>
         public static Image GetImagen(int id)
         {
             Image result = null;
@@ -110,10 +204,15 @@ namespace CocinaEconomica
         #endregion
 
         #region INSERT
-        
-        public static bool InsertarAlimento(Alimento a)
+
+        /// <summary>
+        /// Inserta un alimento en la base de datos
+        /// </summary>
+        /// <param name="a">Alimento que se va a insertar</param>
+        /// <returns>Si se ha insertado o no correctamente</returns>
+        public bool Insert()
         {
-            int idAlimento = InsertarImagen(a.Imagen);
+            int idAlimento = Alimento.InsertarImagen(this.Imagen);
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 conexion.Open();
@@ -128,9 +227,9 @@ namespace CocinaEconomica
                 using (SqlCommand query = new SqlCommand(insert))
                 {
                     query.Connection = conexion;
-                    query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = a.Nombre;
-                    query.Parameters.Add("@familia", SqlDbType.Int).Value = a.Familia.Id;
-                    query.Parameters.Add("@descripcion", SqlDbType.VarChar, 200).Value = a.Descripcion;
+                    query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = this.Nombre;
+                    query.Parameters.Add("@familia", SqlDbType.Int).Value = this.Familia.Id;
+                    query.Parameters.Add("@descripcion", SqlDbType.VarChar, 200).Value = this.Descripcion;
 
                     if (idAlimento > 0)
                         query.Parameters.Add("@imagen", SqlDbType.Int).Value = idAlimento;
@@ -141,9 +240,14 @@ namespace CocinaEconomica
             }
         }
 
+        /// <summary>
+        /// Inserta una imagen y devuelve el valor del id que se le ha asignado
+        /// </summary>
+        /// <param name="imagen">La imagen que se va a insertar</param>
+        /// <returns>Id de la imagen que se ha añadido</returns>
         public static int InsertarImagen(Image imagen)
         {
-            int idProducto = -1;
+            int id = -1;
             if (imagen != null)
             {
                 using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
@@ -160,17 +264,16 @@ namespace CocinaEconomica
                         query.Connection = conexion;
                         query.Parameters.Add("@imagen", SqlDbType.VarBinary).Value = arr;
                         query.CommandType = CommandType.Text;
-                        idProducto = (int)query.ExecuteScalar(); 
+                        id = (int)query.ExecuteScalar(); 
                     }
                     conexion.Close();
-                    return idProducto;
+                    return id;
                 }
             }
             else
-                return idProducto;
+                return id;
         }
 
         #endregion
-
     }
 }
