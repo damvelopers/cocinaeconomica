@@ -136,7 +136,7 @@ namespace CocinaEconomica
                         Alimento a = new Alimento();
                         a.Id = reader.GetInt32(0);
                         a.Nombre = reader.GetString(1);
-                        a.Familia = Familia.GetFamilia(reader.GetInt32(2));
+                        a.Familia = Familia.Select(reader.GetInt32(2));
                         a.Imagen = Alimento.GetImagen(reader.GetInt32(3));
                         a.Descripcion = reader.GetString(4);
                         alimentos.Add(a);
@@ -166,7 +166,7 @@ namespace CocinaEconomica
                     {
                         a.Id = reader.GetInt32(0);
                         a.Nombre = reader.GetString(1);
-                        a.Familia = Familia.GetFamilia(reader.GetInt32(2));
+                        a.Familia = Familia.Select(reader.GetInt32(2));
                         a.Imagen = Alimento.GetImagen(reader.GetInt32(3));
                         a.Descripcion = reader.GetString(4);
                     }

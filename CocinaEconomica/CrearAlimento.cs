@@ -26,7 +26,7 @@ namespace CocinaEconomica
 
         private void SetNombresFamilias()
         {
-            ArrayList familias = Familia.GetFamilias();
+            ArrayList familias = Familia.SelectAll();
             foreach (Familia familia in familias)
             {
                 txt_familia.Text = familia.Nombre;
@@ -50,7 +50,7 @@ namespace CocinaEconomica
             Alimento a = new Alimento();
             a.Nombre = txtNombre.Text;
             a.Imagen = imagenAlimento.Image;
-            a.Familia = Familia.GetFamilia(txt_familia.Text);
+            a.Familia = Familia.SelectWhereNombreIs(txt_familia.Text);
             if (a.Nombre != "")
             {
                 bool ok = a.Insert();

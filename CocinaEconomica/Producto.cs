@@ -46,6 +46,50 @@ namespace CocinaEconomica
             this.Ubicacion = Ubicacion;
         }
 
+        public void Save()
+        {
+            if (this.Id > 0)
+            {
+                this.Update();
+            }
+            else
+            {
+                this.Insert();
+            }
+        }
+
+        public void Insert()
+        {
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conexion.Open();
+                string insert = "INSERT into dbo.Producto(Alimento, FechaCaducidad, FechaConsPref, Ubicacion, Proveedor, FechaEntrada)" +
+                    " VALUES (@alimento, @fechacaducidad, @fechaconspref, @ubicacion, @fechaentrada)";
+
+                using (SqlCommand query = new SqlCommand(insert))
+                {
+                    query.Connection = conexion;
+                    query.Parameters.Add("@alimento", SqlDbType.Int, 50).Value = this.Alimento.Id;
+                    query.Parameters.Add("@fechacaducidad", SqlDbType.Date).Value = this.FechaCaducidad;
+                    query.Parameters.Add("@fechaconspref", SqlDbType.Date).Value = this.FechaConsumirPreferente;
+                    query.Parameters.Add("@ubicacion", SqlDbType.VarChar, 200).Value = this.Ubicacion;
+                    query.Parameters.Add("@fechaentrada", SqlDbType.Date).Value = this.FechaEntrada;
+                    query.ExecuteNonQuery();
+                }
+                conexion.Close();
+            }
+        }
+
+        public void Update()
+        {
+
+        }
+
+        public void Delete()
+        {
+
+        }
+
         #region SELECT
 
         public static ArrayList GetProductos()
@@ -75,27 +119,7 @@ namespace CocinaEconomica
 
         #region INSERT
 
-        public static void InsertarProducto(Producto p)
-        {
-            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
-            {
-                conexion.Open();
-                string insert = "INSERT into dbo.Producto(Alimento, FechaCaducidad, FechaConsPref, Ubicacion, Proveedor, FechaEntrada)" +
-                    " VALUES (@alimento, @fechacaducidad, @fechaconspref, @ubicacion, @fechaentrada)";
-
-                using (SqlCommand query = new SqlCommand(insert))
-                {
-                    query.Connection = conexion;
-                    query.Parameters.Add("@alimento", SqlDbType.Int, 50).Value = p.Alimento.Id;
-                    query.Parameters.Add("@fechacaducidad", SqlDbType.Date).Value = p.FechaCaducidad;
-                    query.Parameters.Add("@fechaconspref", SqlDbType.Date).Value = p.FechaConsumirPreferente;
-                    query.Parameters.Add("@ubicacion", SqlDbType.VarChar, 200).Value = p.Ubicacion;
-                    query.Parameters.Add("@fechaentrada", SqlDbType.Date).Value = p.FechaEntrada;
-                    query.ExecuteNonQuery();
-                }
-                conexion.Close();
-            }
-        }
+        
         #endregion
     }
 }
