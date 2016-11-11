@@ -210,24 +210,26 @@
             // rbNoCaducados
             // 
             this.rbNoCaducados.AutoSize = true;
+            this.rbNoCaducados.BackColor = System.Drawing.Color.Transparent;
             this.rbNoCaducados.Location = new System.Drawing.Point(417, 0);
             this.rbNoCaducados.Name = "rbNoCaducados";
             this.rbNoCaducados.Size = new System.Drawing.Size(240, 24);
             this.rbNoCaducados.TabIndex = 2;
             this.rbNoCaducados.TabStop = true;
             this.rbNoCaducados.Text = "Productos proximos a caducar";
-            this.rbNoCaducados.UseVisualStyleBackColor = true;
+            this.rbNoCaducados.UseVisualStyleBackColor = false;
             // 
             // rBCaducados
             // 
             this.rBCaducados.AutoSize = true;
+            this.rBCaducados.BackColor = System.Drawing.Color.Transparent;
             this.rBCaducados.Location = new System.Drawing.Point(221, 0);
             this.rBCaducados.Name = "rBCaducados";
             this.rBCaducados.Size = new System.Drawing.Size(181, 24);
             this.rBCaducados.TabIndex = 2;
             this.rBCaducados.TabStop = true;
             this.rBCaducados.Text = "Productos caducados";
-            this.rBCaducados.UseVisualStyleBackColor = true;
+            this.rBCaducados.UseVisualStyleBackColor = false;
             // 
             // richTextBox1
             // 

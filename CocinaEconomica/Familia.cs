@@ -104,7 +104,6 @@ namespace CocinaEconomica
                 string selectString = "select * from Familia";
                 using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
                 {
-                    conn.Open();
                     SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
                     {
