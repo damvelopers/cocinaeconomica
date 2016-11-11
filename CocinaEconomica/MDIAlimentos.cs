@@ -42,5 +42,11 @@ namespace CocinaEconomica
             CrearAlimento f = new CrearAlimento();
             f.ShowDialog();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ModificarAlimento f = new ModificarAlimento();
+            f.ShowDialog();
+        }
     }
 }

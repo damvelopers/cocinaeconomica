@@ -42,7 +42,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.txtAlimento = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnCrearAlimento = new System.Windows.Forms.Button();
             this.origen = new System.Windows.Forms.Label();
             this.comboBoxOrigen = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -125,6 +125,7 @@
             this.btnAnadir.TabIndex = 15;
             this.btnAnadir.Text = "Añadir";
             this.btnAnadir.UseVisualStyleBackColor = true;
+            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
             // cantidad
             // 
@@ -155,6 +156,7 @@
             this.btnCerrar.TabIndex = 19;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblTitulo
             // 
@@ -173,19 +175,19 @@
             this.txtAlimento.Location = new System.Drawing.Point(229, 105);
             this.txtAlimento.Margin = new System.Windows.Forms.Padding(4);
             this.txtAlimento.Name = "txtAlimento";
-            this.txtAlimento.ReadOnly = true;
             this.txtAlimento.Size = new System.Drawing.Size(354, 23);
             this.txtAlimento.TabIndex = 22;
             // 
-            // btnBuscar
+            // btnCrearAlimento
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(591, 102);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
-            this.btnBuscar.TabIndex = 23;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnCrearAlimento.Location = new System.Drawing.Point(591, 102);
+            this.btnCrearAlimento.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCrearAlimento.Name = "btnCrearAlimento";
+            this.btnCrearAlimento.Size = new System.Drawing.Size(100, 28);
+            this.btnCrearAlimento.TabIndex = 23;
+            this.btnCrearAlimento.Text = "Crear";
+            this.btnCrearAlimento.UseVisualStyleBackColor = true;
+            this.btnCrearAlimento.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // origen
             // 
@@ -220,7 +222,7 @@
             this.ClientSize = new System.Drawing.Size(704, 413);
             this.Controls.Add(this.comboBoxOrigen);
             this.Controls.Add(this.origen);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnCrearAlimento);
             this.Controls.Add(this.txtAlimento);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnCerrar);
@@ -262,7 +264,7 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.TextBox txtAlimento;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnCrearAlimento;
         private System.Windows.Forms.Label origen;
         private System.Windows.Forms.ComboBox comboBoxOrigen;
     }

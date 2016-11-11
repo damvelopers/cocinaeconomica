@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbAlimento = new System.Windows.Forms.TextBox();
+            this.txtAlimento = new System.Windows.Forms.TextBox();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.tbBuscar = new System.Windows.Forms.TextBox();
             this.dGVProductos = new System.Windows.Forms.DataGridView();
@@ -70,6 +70,7 @@
             this.btnCerrar.TabIndex = 64;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnAceptar
             // 
@@ -79,6 +80,7 @@
             this.btnAceptar.TabIndex = 63;
             this.btnAceptar.Text = "Aceptar cambios";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label3
             // 
@@ -109,14 +111,14 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Alimento";
             // 
-            // tbAlimento
+            // txtAlimento
             // 
-            this.tbAlimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbAlimento.Location = new System.Drawing.Point(215, 141);
-            this.tbAlimento.Name = "tbAlimento";
-            this.tbAlimento.ReadOnly = true;
-            this.tbAlimento.Size = new System.Drawing.Size(259, 23);
-            this.tbAlimento.TabIndex = 57;
+            this.txtAlimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtAlimento.Location = new System.Drawing.Point(215, 141);
+            this.txtAlimento.Name = "txtAlimento";
+            this.txtAlimento.ReadOnly = true;
+            this.txtAlimento.Size = new System.Drawing.Size(259, 23);
+            this.txtAlimento.TabIndex = 57;
             // 
             // btnBuscarProducto
             // 
@@ -255,7 +257,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbAlimento);
+            this.Controls.Add(this.txtAlimento);
             this.Controls.Add(this.btnBuscarProducto);
             this.Controls.Add(this.tbBuscar);
             this.Controls.Add(this.dGVProductos);
@@ -279,7 +281,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbAlimento;
+        private System.Windows.Forms.TextBox txtAlimento;
         private System.Windows.Forms.Button btnBuscarProducto;
         private System.Windows.Forms.TextBox tbBuscar;
         private System.Windows.Forms.DataGridView dGVProductos;

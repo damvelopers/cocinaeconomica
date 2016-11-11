@@ -50,6 +50,7 @@ namespace CocinaEconomica
             Alimento a = new Alimento();
             a.Nombre = txtNombre.Text;
             a.Imagen = imagenAlimento.Image;
+            a.Descripcion = txtDescripcion.Text;
             a.Familia = Familia.SelectWhereNombreIs(txt_familia.Text);
             if (a.Nombre != "")
             {
@@ -78,7 +79,13 @@ namespace CocinaEconomica
 
         private void btnAddFamilia_Click(object sender, EventArgs e)
         {
-            /// TODO
+            CrearFamilia f = new CrearFamilia();
+            f.ShowDialog();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

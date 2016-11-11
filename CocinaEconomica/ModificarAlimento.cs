@@ -16,5 +16,43 @@ namespace CocinaEconomica
         {
             InitializeComponent();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show(this, "El campo NOMBRE es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            if (txtFamilia.Text == "")
+            {
+                MessageBox.Show(this, "El campo FAMILIA es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            Alimento a = new Alimento();
+            a.Nombre = txtNombre.Text;
+            a.Descripcion = txtDescripcion.Text;
+            a.Familia = Familia.SelectWhereNombreIs(txtFamilia.Text);
+            if (a.Nombre != "")
+            {
+                bool ok = a.Update();
+                // Feedback!
+                if (!ok)
+                {
+                    MessageBox.Show(this, "Se ha producido un error modificando el alimento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(this, "Se ha modificado un alimento correctamente.", "Alimento modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }

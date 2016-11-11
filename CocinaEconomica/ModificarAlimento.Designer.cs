@@ -33,12 +33,12 @@
             this.dGVAlimentos = new System.Windows.Forms.DataGridView();
             this.tbBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.tbNombre = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbFamilia = new System.Windows.Forms.TextBox();
+            this.txtFamilia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbDescripcion = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -83,13 +83,13 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // tbNombre
+            // txtNombre
             // 
-            this.tbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbNombre.Location = new System.Drawing.Point(220, 170);
-            this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(259, 23);
-            this.tbNombre.TabIndex = 44;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtNombre.Location = new System.Drawing.Point(220, 170);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(259, 23);
+            this.txtNombre.TabIndex = 44;
             // 
             // label1
             // 
@@ -111,13 +111,13 @@
             this.label2.TabIndex = 46;
             this.label2.Text = "Familia";
             // 
-            // tbFamilia
+            // txtFamilia
             // 
-            this.tbFamilia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbFamilia.Location = new System.Drawing.Point(220, 240);
-            this.tbFamilia.Name = "tbFamilia";
-            this.tbFamilia.Size = new System.Drawing.Size(259, 23);
-            this.tbFamilia.TabIndex = 47;
+            this.txtFamilia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtFamilia.Location = new System.Drawing.Point(220, 240);
+            this.txtFamilia.Name = "txtFamilia";
+            this.txtFamilia.Size = new System.Drawing.Size(259, 23);
+            this.txtFamilia.TabIndex = 47;
             // 
             // label3
             // 
@@ -129,14 +129,14 @@
             this.label3.TabIndex = 48;
             this.label3.Text = "Descripción";
             // 
-            // tbDescripcion
+            // txtDescripcion
             // 
-            this.tbDescripcion.Location = new System.Drawing.Point(500, 170);
-            this.tbDescripcion.MaxLength = 200;
-            this.tbDescripcion.Multiline = true;
-            this.tbDescripcion.Name = "tbDescripcion";
-            this.tbDescripcion.Size = new System.Drawing.Size(316, 191);
-            this.tbDescripcion.TabIndex = 49;
+            this.txtDescripcion.Location = new System.Drawing.Point(500, 170);
+            this.txtDescripcion.MaxLength = 200;
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(316, 191);
+            this.txtDescripcion.TabIndex = 49;
             // 
             // btnAceptar
             // 
@@ -147,6 +147,7 @@
             this.btnAceptar.TabIndex = 50;
             this.btnAceptar.Text = "Aceptar cambios";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCerrar
             // 
@@ -157,6 +158,7 @@
             this.btnCerrar.TabIndex = 51;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // label4
             // 
@@ -177,12 +179,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.tbDescripcion);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbFamilia);
+            this.Controls.Add(this.txtFamilia);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbNombre);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.tbBuscar);
             this.Controls.Add(this.dGVAlimentos);
@@ -203,12 +205,12 @@
         private System.Windows.Forms.DataGridView dGVAlimentos;
         private System.Windows.Forms.TextBox tbBuscar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox tbNombre;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbFamilia;
+        private System.Windows.Forms.TextBox txtFamilia;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbDescripcion;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label4;

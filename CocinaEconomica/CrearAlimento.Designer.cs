@@ -119,7 +119,6 @@
             this.txt_familia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txt_familia.Location = new System.Drawing.Point(234, 132);
             this.txt_familia.Name = "txt_familia";
-            this.txt_familia.ReadOnly = true;
             this.txt_familia.Size = new System.Drawing.Size(186, 23);
             this.txt_familia.TabIndex = 21;
             // 
@@ -156,6 +155,7 @@
             this.btnCerrar.TabIndex = 39;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // CrearAlimento
             // 

@@ -26,8 +26,9 @@ namespace CocinaEconomica
             this.Nombre = Nombre;
         }
 
-        public void Insert()
+        public bool Insert()
         {
+            bool inserted = false;
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 conexion.Open();
@@ -39,7 +40,9 @@ namespace CocinaEconomica
                     query.ExecuteNonQuery();
                 }
                 conexion.Close();
+                inserted = true;
             }
+            return inserted;
         }
 
         /// <summary>

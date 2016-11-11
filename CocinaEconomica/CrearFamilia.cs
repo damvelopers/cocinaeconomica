@@ -27,5 +27,35 @@ namespace CocinaEconomica
 
             openFileDialog1.ShowDialog();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAnadir_Click(object sender, EventArgs e)
+        {
+            if (txtFamilia.Text == "")
+            {
+                MessageBox.Show(this, "El campo Nombre es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            Familia f = new Familia();
+            f.Nombre = txtFamilia.Text;
+            if (f.Nombre != "")
+            {
+                bool ok = f.Insert();
+                // Feedback!
+                if (!ok)
+                {
+                    MessageBox.Show(this, "Se ha producido un error insertando la familia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(this, "Se añadido una nueva familia correctamente.", "Familia añadida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }

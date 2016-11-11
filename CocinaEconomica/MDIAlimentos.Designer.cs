@@ -37,17 +37,17 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.gbPrincipal = new System.Windows.Forms.GroupBox();
-            this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
             this.tablaDatos = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridAlimentos = new System.Windows.Forms.DataGridView();
+            this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.TablaContenido.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.gbPrincipal.SuspendLayout();
-            this.panelBuscar.SuspendLayout();
             this.tablaDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlimentos)).BeginInit();
+            this.panelBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -111,6 +111,7 @@
             this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -159,17 +160,6 @@
             this.gbPrincipal.TabStop = false;
             this.gbPrincipal.Text = "Alimentos";
             // 
-            // panelBuscar
-            // 
-            this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.panelBuscar.Controls.Add(this.txtBuscar);
-            this.panelBuscar.Controls.Add(this.btnBuscar);
-            this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBuscar.Location = new System.Drawing.Point(3, 22);
-            this.panelBuscar.Name = "panelBuscar";
-            this.panelBuscar.Size = new System.Drawing.Size(1059, 31);
-            this.panelBuscar.TabIndex = 0;
-            // 
             // tablaDatos
             // 
             this.tablaDatos.ColumnCount = 1;
@@ -181,7 +171,7 @@
             this.tablaDatos.Name = "tablaDatos";
             this.tablaDatos.RowCount = 1;
             this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 436F));
             this.tablaDatos.Size = new System.Drawing.Size(1059, 436);
             this.tablaDatos.TabIndex = 1;
             // 
@@ -193,6 +183,17 @@
             this.dataGridAlimentos.Name = "dataGridAlimentos";
             this.dataGridAlimentos.Size = new System.Drawing.Size(1053, 430);
             this.dataGridAlimentos.TabIndex = 0;
+            // 
+            // panelBuscar
+            // 
+            this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.panelBuscar.Controls.Add(this.txtBuscar);
+            this.panelBuscar.Controls.Add(this.btnBuscar);
+            this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBuscar.Location = new System.Drawing.Point(3, 22);
+            this.panelBuscar.Name = "panelBuscar";
+            this.panelBuscar.Size = new System.Drawing.Size(1059, 31);
+            this.panelBuscar.TabIndex = 0;
             // 
             // txtBuscar
             // 
@@ -227,10 +228,10 @@
             this.TablaContenido.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
             this.gbPrincipal.ResumeLayout(false);
-            this.panelBuscar.ResumeLayout(false);
-            this.panelBuscar.PerformLayout();
             this.tablaDatos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlimentos)).EndInit();
+            this.panelBuscar.ResumeLayout(false);
+            this.panelBuscar.PerformLayout();
             this.ResumeLayout(false);
 
         }

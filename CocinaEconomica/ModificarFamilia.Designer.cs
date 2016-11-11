@@ -33,7 +33,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbNombre = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnBuscarFamilia = new System.Windows.Forms.Button();
             this.tbBuscar = new System.Windows.Forms.TextBox();
             this.dGVFamilias = new System.Windows.Forms.DataGridView();
@@ -59,6 +59,7 @@
             this.btnCerrar.TabIndex = 84;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnAceptar
             // 
@@ -68,6 +69,7 @@
             this.btnAceptar.TabIndex = 83;
             this.btnAceptar.Text = "Aceptar cambios";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label1
             // 
@@ -79,13 +81,13 @@
             this.label1.TabIndex = 80;
             this.label1.Text = "Nombre";
             // 
-            // tbNombre
+            // txtNombre
             // 
-            this.tbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbNombre.Location = new System.Drawing.Point(218, 170);
-            this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(259, 23);
-            this.tbNombre.TabIndex = 79;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtNombre.Location = new System.Drawing.Point(218, 170);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(259, 23);
+            this.txtNombre.TabIndex = 79;
             // 
             // btnBuscarFamilia
             // 
@@ -134,7 +136,7 @@
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbNombre);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnBuscarFamilia);
             this.Controls.Add(this.tbBuscar);
             this.Controls.Add(this.dGVFamilias);
@@ -154,7 +156,7 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbNombre;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnBuscarFamilia;
         private System.Windows.Forms.TextBox tbBuscar;
         private System.Windows.Forms.DataGridView dGVFamilias;

@@ -41,6 +41,8 @@
             this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.rbNoCaducados = new System.Windows.Forms.RadioButton();
+            this.rBCaducados = new System.Windows.Forms.RadioButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.TablaContenido.SuspendLayout();
             this.panelBotones.SuspendLayout();
@@ -90,6 +92,7 @@
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -101,6 +104,7 @@
             this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -140,6 +144,8 @@
             this.gbPrincipal.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.gbPrincipal.Controls.Add(this.tablaDatos);
             this.gbPrincipal.Controls.Add(this.panelBuscar);
+            this.gbPrincipal.Controls.Add(this.rbNoCaducados);
+            this.gbPrincipal.Controls.Add(this.rBCaducados);
             this.gbPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPrincipal.Location = new System.Drawing.Point(128, 3);
@@ -201,6 +207,28 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
+            // rbNoCaducados
+            // 
+            this.rbNoCaducados.AutoSize = true;
+            this.rbNoCaducados.Location = new System.Drawing.Point(417, 0);
+            this.rbNoCaducados.Name = "rbNoCaducados";
+            this.rbNoCaducados.Size = new System.Drawing.Size(240, 24);
+            this.rbNoCaducados.TabIndex = 2;
+            this.rbNoCaducados.TabStop = true;
+            this.rbNoCaducados.Text = "Productos proximos a caducar";
+            this.rbNoCaducados.UseVisualStyleBackColor = true;
+            // 
+            // rBCaducados
+            // 
+            this.rBCaducados.AutoSize = true;
+            this.rBCaducados.Location = new System.Drawing.Point(221, 0);
+            this.rBCaducados.Name = "rBCaducados";
+            this.rBCaducados.Size = new System.Drawing.Size(181, 24);
+            this.rBCaducados.TabIndex = 2;
+            this.rBCaducados.TabStop = true;
+            this.rBCaducados.Text = "Productos caducados";
+            this.rBCaducados.UseVisualStyleBackColor = true;
+            // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -224,6 +252,7 @@
             this.TablaContenido.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
             this.gbPrincipal.ResumeLayout(false);
+            this.gbPrincipal.PerformLayout();
             this.tablaDatos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).EndInit();
             this.panelBuscar.ResumeLayout(false);
@@ -248,5 +277,7 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RadioButton rbNoCaducados;
+        private System.Windows.Forms.RadioButton rBCaducados;
     }
 }

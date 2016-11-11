@@ -58,8 +58,9 @@ namespace CocinaEconomica
             }
         }
 
-        public void Insert()
+        public bool Insert()
         {
+            bool inserted;
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 conexion.Open();
@@ -77,12 +78,35 @@ namespace CocinaEconomica
                     query.ExecuteNonQuery();
                 }
                 conexion.Close();
+                inserted = true;
             }
+            return inserted;
         }
 
-        public void Update()
+        public bool Update()
         {
+            int rows = 0;
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conexion.Open();
+                string insert = "UPDATE dbo.Producto (Alimeto,FechaEntrada,FechaCaducidad,FechaConsPref,Proveedor,Ubicacion,Almacen)" +
+                    " VALUES (@Alimento, @FechaEntrada,@FechaCaducidad,@FechaConsPref,@Proveedor,@Ubicacion,@Almacen)";
 
+                using (SqlCommand query = new SqlCommand(insert))
+                {
+                    query.Connection = conexion;
+                    query.Parameters.Add("@Alimento", SqlDbType.VarChar, 50).Value = this.Alimento;
+                    query.Parameters.Add("@FechaEntrada", SqlDbType.Date, 200).Value = this.FechaEntrada;
+                    query.Parameters.Add("@FechaCaducidad", SqlDbType.Date, 200).Value = this.FechaCaducidad;
+                    query.Parameters.Add("@FechaConsPref", SqlDbType.Date, 200).Value = this.FechaConsumirPreferente;
+                    query.Parameters.Add("@Proveedor", SqlDbType.VarChar, 50).Value = this.Proveedor;
+                    query.Parameters.Add("@Ubicacion", SqlDbType.VarChar, 50).Value = this.Ubicacion;
+                    query.Parameters.Add("@Almacen", SqlDbType.Binary, 50).Value = this.Almacen;
+                    rows = query.ExecuteNonQuery();
+                }
+                conexion.Close();
+            }
+            return rows > 0;
         }
 
         public void Delete()

@@ -30,13 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarAlmacen));
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -54,67 +52,50 @@
             this.lblTitulo.TabIndex = 38;
             this.lblTitulo.Text = "MODIFICAR ALMACEN";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Almacén";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 86);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(262, 21);
-            this.comboBox1.TabIndex = 40;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 202);
+            this.label4.Location = new System.Drawing.Point(21, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 13);
             this.label4.TabIndex = 41;
             this.label4.Text = "Nueva Descripción";
             // 
-            // textBox1
+            // txtDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(24, 234);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(356, 151);
-            this.textBox1.TabIndex = 42;
+            this.txtDescripcion.Location = new System.Drawing.Point(24, 174);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(356, 151);
+            this.txtDescripcion.TabIndex = 42;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 130);
+            this.label5.Location = new System.Drawing.Point(21, 70);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 43;
             this.label5.Text = "Nuevo nombre:";
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(262, 20);
-            this.textBox2.TabIndex = 44;
+            this.txtNombre.Location = new System.Drawing.Point(118, 67);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(262, 20);
+            this.txtNombre.TabIndex = 44;
             // 
-            // textBox3
+            // txtUbicacion
             // 
-            this.textBox3.Location = new System.Drawing.Point(118, 164);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(262, 20);
-            this.textBox3.TabIndex = 46;
+            this.txtUbicacion.Location = new System.Drawing.Point(118, 104);
+            this.txtUbicacion.Name = "txtUbicacion";
+            this.txtUbicacion.Size = new System.Drawing.Size(262, 20);
+            this.txtUbicacion.TabIndex = 46;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 167);
+            this.label6.Location = new System.Drawing.Point(21, 107);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 13);
             this.label6.TabIndex = 45;
@@ -122,36 +103,36 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 423);
+            this.button1.Location = new System.Drawing.Point(24, 363);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 30);
             this.button1.TabIndex = 47;
             this.button1.Text = "Aceptar cambios";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(285, 423);
+            this.button3.Location = new System.Drawing.Point(285, 363);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 30);
             this.button3.TabIndex = 49;
             this.button3.Text = "Cerrar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ModificarAlmacen
             // 
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(417, 488);
+            this.ClientSize = new System.Drawing.Size(417, 397);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtUbicacion);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarAlmacen";
@@ -169,13 +150,11 @@
         private System.Windows.Forms.ComboBox cbAlmacenes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtUbicacion;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;

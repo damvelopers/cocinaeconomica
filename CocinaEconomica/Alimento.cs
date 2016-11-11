@@ -201,6 +201,28 @@ namespace CocinaEconomica
             return result;
         }
 
+        public static Alimento SelectWhereNombreIs(string Nombre)
+        {
+            Alimento a = new Alimento();
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conn.Open();
+                string selectString = "select * from Alimento where Nombre like @nombre";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    conn.Open();
+                    selectCommand.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = Nombre;
+                    SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        a.Id = reader.GetInt32(0);
+                        a.Nombre = reader.GetString(1);
+                    }
+                }
+            }
+            return a;
+        }
+
         #endregion
 
         #region INSERT

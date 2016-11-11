@@ -34,7 +34,7 @@
             this.btnAnadir = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.lblUbicacion = new System.Windows.Forms.Label();
@@ -62,6 +62,7 @@
             this.btnCerrar.TabIndex = 36;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnAnadir
             // 
@@ -72,6 +73,7 @@
             this.btnAnadir.TabIndex = 33;
             this.btnAnadir.Text = "Añadir";
             this.btnAnadir.UseVisualStyleBackColor = true;
+            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
             // lblNombre
             // 
@@ -92,13 +94,13 @@
             this.txtNombre.Size = new System.Drawing.Size(457, 23);
             this.txtNombre.TabIndex = 38;
             // 
-            // textBox2
+            // txtDescripcion
             // 
-            this.textBox2.Location = new System.Drawing.Point(137, 151);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(457, 132);
-            this.textBox2.TabIndex = 40;
+            this.txtDescripcion.Location = new System.Drawing.Point(137, 151);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(457, 132);
+            this.txtDescripcion.TabIndex = 40;
             // 
             // label1
             // 
@@ -138,7 +140,7 @@
             this.ClientSize = new System.Drawing.Size(606, 347);
             this.Controls.Add(this.txtUbicacion);
             this.Controls.Add(this.lblUbicacion);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblTitulo);
@@ -163,7 +165,7 @@
         private System.Windows.Forms.Button btnAnadir;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUbicacion;
         private System.Windows.Forms.Label lblUbicacion;

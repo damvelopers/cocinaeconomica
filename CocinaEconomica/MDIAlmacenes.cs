@@ -21,5 +21,17 @@ namespace CocinaEconomica
         {
             this.Close();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            CrearAlmacen f = new CrearAlmacen();
+            f.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ModificarAlmacen f = new ModificarAlmacen();
+            f.ShowDialog();
+        }
     }
 }

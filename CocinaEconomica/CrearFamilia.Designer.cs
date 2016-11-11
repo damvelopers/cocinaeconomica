@@ -67,6 +67,7 @@
             this.btnCerrar.TabIndex = 36;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblNombre
             // 
@@ -89,6 +90,7 @@
             this.btnAnadir.TabIndex = 33;
             this.btnAnadir.Text = "Añadir";
             this.btnAnadir.UseVisualStyleBackColor = true;
+            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
             // CrearFamilia
             // 
