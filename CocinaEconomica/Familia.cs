@@ -19,6 +19,7 @@ namespace CocinaEconomica
         public Familia()
         {
             this.Nombre = "";
+            
         }
 
         public Familia(string Nombre)
@@ -114,6 +115,7 @@ namespace CocinaEconomica
                     }
                 }
             }
+            
             return familias;
         }
         

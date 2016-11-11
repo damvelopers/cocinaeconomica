@@ -106,8 +106,12 @@ namespace CocinaEconomica
 
         private void btnAlimentos_Click(object sender, EventArgs e)
         {
-            if (ActiveMdiChild == null)
+            //comprueba si ya esta abierto el formulario de alimentos
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "MDIAlimentos").SingleOrDefault<Form>();
+            if (existe == null)
             {
+                if (ActiveMdiChild != null) { ActiveMdiChild.Close(); }
+
                 this.LayoutMdi(MdiLayout.TileHorizontal);
                 Form f = new MDIAlimentos();
                 f.MdiParent = this;
@@ -119,8 +123,15 @@ namespace CocinaEconomica
 
         private void btnFamilias_Click(object sender, EventArgs e)
         {
-            if (ActiveMdiChild == null)
+            //comprueba si ya esta abierto el formulario de familias
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "MDIFamilias").SingleOrDefault<Form>();
+            if (existe == null)
             {
+                if (ActiveMdiChild != null)
+                {
+                        ActiveMdiChild.Close();
+                }
+
                 this.LayoutMdi(MdiLayout.TileHorizontal);
                 Form f = new MDIFamilias();
                 f.MdiParent = this;
@@ -130,10 +141,16 @@ namespace CocinaEconomica
             }
         }
 
+
+
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            if (ActiveMdiChild == null)
+            //comprueba si ya esta abierto el formulario de productos
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "MDIProductos").SingleOrDefault<Form>();
+            if (existe == null)
             {
+                if (ActiveMdiChild != null) { ActiveMdiChild.Close(); }
+
                 this.LayoutMdi(MdiLayout.TileHorizontal);
                 Form f = new MDIProductos();
                 f.MdiParent = this;
@@ -145,8 +162,12 @@ namespace CocinaEconomica
 
         private void btnAlmacenes_Click(object sender, EventArgs e)
         {
-            if (ActiveMdiChild == null)
+            //comprueba si ya esta abierto el formulario de almacenes
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "MDIAlmacenes").SingleOrDefault<Form>();
+            if (existe == null)
             {
+                if (ActiveMdiChild != null) { ActiveMdiChild.Close(); }
+
                 this.LayoutMdi(MdiLayout.TileHorizontal);
                 Form f = new MDIAlmacenes();
                 f.MdiParent = this;
@@ -158,8 +179,12 @@ namespace CocinaEconomica
 
         private void btnSalidas_Click(object sender, EventArgs e)
         {
-            if (ActiveMdiChild == null)
+            //comprueba si ya esta abierto el formulario de salidas
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "MDISalidas").SingleOrDefault<Form>();
+            if (existe == null)
             {
+                if (ActiveMdiChild != null) { ActiveMdiChild.Close(); }
+
                 this.LayoutMdi(MdiLayout.TileHorizontal);
                 Form f = new MDISalidas();
                 f.MdiParent = this;
@@ -167,6 +192,17 @@ namespace CocinaEconomica
                 f.WindowState = FormWindowState.Minimized;
                 f.WindowState = FormWindowState.Maximized;
             }
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormConexion conexion = new FormConexion();
+            conexion.ShowDialog();
+        }
+
+        private void configurarVistaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

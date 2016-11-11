@@ -225,6 +225,7 @@
             this.Name = "MDIAlimentos";
             this.Text = "Alimentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MDIAlimentos_Load);
             this.TablaContenido.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
             this.gbPrincipal.ResumeLayout(false);

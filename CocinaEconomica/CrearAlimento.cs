@@ -15,6 +15,7 @@ namespace CocinaEconomica
     {
         public CrearAlimento()
         {
+            
             InitializeComponent();
             SetNombresFamilias();
         }

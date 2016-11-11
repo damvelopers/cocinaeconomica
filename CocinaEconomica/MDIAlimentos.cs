@@ -48,5 +48,10 @@ namespace CocinaEconomica
             ModificarAlimento f = new ModificarAlimento();
             f.ShowDialog();
         }
+
+        private void MDIAlimentos_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
