@@ -302,6 +302,65 @@ namespace CocinaEconomica
             return inserted;
         }
 
+        /// <summary>
+        /// Inserta el producto un determinado número de veces en la base de datos
+        /// </summary>
+        /// <returns>Si se ha insertado correctamente o no</returns>
+        public bool Insert(int numero)
+        {
+            // Este método sirve para optimizar el insert de muchos productos a la vez.
+            // En vez de conectarnos N veces a la BD y ejecutar una consulta cada vez, 
+            // nos conectamos una vez y ejecutamos todas las consultas bajo la misma conexión
+            // y con una transacción que nos asegure que si falla algún insert se reviertan los cambios
+
+            // El alimento no puede ser nulo de ninguna forma
+            if (this.Alimento == null)
+                return false;
+
+            bool inserted = false;
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conexion.Open();
+                // Hay que realizar una transacción para asegurarnos de que entran todos bien
+                using (SqlTransaction tx = conexion.BeginTransaction())
+                {
+                    try
+                    {
+                        for (int i = 0; i < numero; i++)
+                        {
+                            string insert = "INSERT into dbo.Producto(Alimento, FechaCaducidad, FechaConsPref, Ubicacion, Proveedor, FechaEntrada, Almacen)" +
+                                            " VALUES (@alimento, @fechacaducidad, @fechaconspref, @ubicacion, @proveedor, @fechaentrada, @almacen)";
+
+                            using (SqlCommand query = new SqlCommand(insert))
+                            {
+                                query.Connection = conexion;
+                                query.Parameters.Add("@alimento", SqlDbType.Int, 50).Value = this.Alimento.Id;
+                                query.Parameters.Add("@fechacaducidad", SqlDbType.Date).Value = this.FechaCaducidad;
+                                query.Parameters.Add("@fechaconspref", SqlDbType.Date).Value = this.FechaConsumirPreferente;
+                                query.Parameters.Add("@ubicacion", SqlDbType.VarChar, 200).Value = this.Ubicacion;
+                                query.Parameters.Add("@proveedor", SqlDbType.VarChar, 200).Value = this.Proveedor;
+                                query.Parameters.Add("@fechaentrada", SqlDbType.Date).Value = this.FechaEntrada;
+                                if (this.Almacen != null)
+                                    query.Parameters.Add("@almacen", SqlDbType.Int, 50).Value = this.Almacen.Id;
+                                else
+                                    query.Parameters.Add("@almacen", SqlDbType.Int, 50).Value = DBNull.Value;
+                                query.ExecuteNonQuery();
+                            }
+                        }
+                        tx.Commit();    // Si todo ha ido bien, confirma las entradas
+                        inserted = true;
+                    }
+                    catch
+                    {
+                        tx.Rollback();  // Si no, revierte los cambios
+                        inserted = false;
+                    }
+                }
+                conexion.Close();
+            }
+            return inserted;
+        }
+
         #endregion
     }
 }
