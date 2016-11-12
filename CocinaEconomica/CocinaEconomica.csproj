@@ -186,6 +186,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs" />
+    <Compile Include="Salida.cs" />
     <Compile Include="Salidas.cs">
       <SubType>Form</SubType>
     </Compile>

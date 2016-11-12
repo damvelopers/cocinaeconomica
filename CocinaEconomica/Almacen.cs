@@ -31,6 +31,23 @@ namespace CocinaEconomica
             this.Descripcion = Descripcion;
         }
 
+        #region MODIFICACIONES
+
+        /// <summary>
+        /// Modifica o inserta el Almacén en la base de datos dependiendo de si está creado o no
+        /// </summary>
+        public void Save()
+        {
+            if (this.Id > 0)
+            {
+                this.Update();
+            }
+            else
+            {
+                this.Insert();
+            }
+        }
+
         /// <summary>
         /// Borra el Almacen de la base de datos
         /// </summary>
@@ -83,6 +100,8 @@ namespace CocinaEconomica
             return rows > 0;
         }
 
+        #endregion
+        
         #region SELECTS
 
         /// <summary>
@@ -149,7 +168,6 @@ namespace CocinaEconomica
         /// <summary>
         /// Inserta un almacén en la base de datos
         /// </summary>
-        /// <param name="a">El almacén</param>
         /// <returns>Si se ha insertado correctamente o no</returns>
         public bool Insert()
         {

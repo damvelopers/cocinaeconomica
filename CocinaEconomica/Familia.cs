@@ -18,32 +18,31 @@ namespace CocinaEconomica
 
         public Familia()
         {
+            this.Id = -1;
             this.Nombre = "";
-            
         }
 
         public Familia(string Nombre)
         {
+            this.Id = -1;
             this.Nombre = Nombre;
         }
+        
+        #region MODIFICACIONES
 
-        public bool Insert()
+        /// <summary>
+        /// Modifica o inserta la Familia en la base de datos dependiendo de si está creado o no
+        /// </summary>
+        public void Save()
         {
-            bool inserted = false;
-            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            if (this.Id > 0)
             {
-                conexion.Open();
-                string insert = "INSERT into dbo.Familia(Nombre) VALUES (@nombre)";
-                using (SqlCommand query = new SqlCommand(insert))
-                {
-                    query.Connection = conexion;
-                    query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = this.Nombre;
-                    query.ExecuteNonQuery();
-                }
-                conexion.Close();
-                inserted = true;
+                this.Update();
             }
-            return inserted;
+            else
+            {
+                this.Insert();
+            }
         }
 
         /// <summary>
@@ -96,6 +95,14 @@ namespace CocinaEconomica
             return rows > 0;
         }
 
+        #endregion
+
+        #region SELECTS
+
+        /// <summary>
+        /// Devuelve un ArrayList de todas las familias
+        /// </summary>
+        /// <returns></returns>
         public static ArrayList SelectAll()
         {
             ArrayList familias = new ArrayList();
@@ -115,10 +122,14 @@ namespace CocinaEconomica
                     }
                 }
             }
-            
             return familias;
         }
-        
+
+        /// <summary>
+        /// Devuelve una Familia dado su Id
+        /// </summary>
+        /// <param name="Id">Id de la familia</param>
+        /// <returns>La familia</returns>
         public static Familia Select(int Id)
         {
             Familia f = new Familia();
@@ -128,7 +139,6 @@ namespace CocinaEconomica
                 string selectString = "select * from Familia where Id = @id";
                 using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
                 {
-                    conn.Open();
                     selectCommand.Parameters.Add("@id", SqlDbType.Int).Value = Id;
                     SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
@@ -140,7 +150,12 @@ namespace CocinaEconomica
             }
             return f;
         }
-        
+
+        /// <summary>
+        /// Devuelve una Familia dado su Nombre
+        /// </summary>
+        /// <param name="Nombre">Nombre de la familia</param>
+        /// <returns>La familia</returns>
         public static Familia SelectWhereNombreIs(string Nombre)
         {
             Familia f = new Familia();
@@ -150,7 +165,6 @@ namespace CocinaEconomica
                 string selectString = "select * from Familia where Nombre like @nombre";
                 using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
                 {
-                    conn.Open();
                     selectCommand.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = Nombre;
                     SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
@@ -162,5 +176,34 @@ namespace CocinaEconomica
             }
             return f;
         }
+
+        #endregion
+
+        #region INSERTS
+
+        /// <summary>
+        /// Inserta una nueva familia
+        /// </summary>
+        /// <returns>Si se ha insertado correctamente</returns>
+        public bool Insert()
+        {
+            bool inserted = false;
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conexion.Open();
+                string insert = "INSERT into dbo.Familia(Nombre) VALUES (@nombre)";
+                using (SqlCommand query = new SqlCommand(insert))
+                {
+                    query.Connection = conexion;
+                    query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = this.Nombre;
+                    query.ExecuteNonQuery();
+                }
+                conexion.Close();
+                inserted = true;
+            }
+            return inserted;
+        }
+
+        #endregion
     }
 }

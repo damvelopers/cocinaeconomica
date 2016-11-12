@@ -46,6 +46,11 @@ namespace CocinaEconomica
             this.Ubicacion = Ubicacion;
         }
 
+        #region MODIFICACIONES
+
+        /// <summary>
+        /// Modifica o inserta el producto en la base de datos dependiendo de si está creado o no
+        /// </summary>
         public void Save()
         {
             if (this.Id > 0)
@@ -58,31 +63,10 @@ namespace CocinaEconomica
             }
         }
 
-        public bool Insert()
-        {
-            bool inserted;
-            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
-            {
-                conexion.Open();
-                string insert = "INSERT into dbo.Producto(Alimento, FechaCaducidad, FechaConsPref, Ubicacion, Proveedor, FechaEntrada)" +
-                    " VALUES (@alimento, @fechacaducidad, @fechaconspref, @ubicacion, @fechaentrada)";
-
-                using (SqlCommand query = new SqlCommand(insert))
-                {
-                    query.Connection = conexion;
-                    query.Parameters.Add("@alimento", SqlDbType.Int, 50).Value = this.Alimento.Id;
-                    query.Parameters.Add("@fechacaducidad", SqlDbType.Date).Value = this.FechaCaducidad;
-                    query.Parameters.Add("@fechaconspref", SqlDbType.Date).Value = this.FechaConsumirPreferente;
-                    query.Parameters.Add("@ubicacion", SqlDbType.VarChar, 200).Value = this.Ubicacion;
-                    query.Parameters.Add("@fechaentrada", SqlDbType.Date).Value = this.FechaEntrada;
-                    query.ExecuteNonQuery();
-                }
-                conexion.Close();
-                inserted = true;
-            }
-            return inserted;
-        }
-
+        /// <summary>
+        /// Actualiza el Producto en la base de datos
+        /// </summary>
+        /// <returns>Si se ha actualizado correctamente o no</returns>
         public bool Update()
         {
             int rows = 0;
@@ -95,13 +79,16 @@ namespace CocinaEconomica
                 using (SqlCommand query = new SqlCommand(insert))
                 {
                     query.Connection = conexion;
-                    query.Parameters.Add("@Alimento", SqlDbType.VarChar, 50).Value = this.Alimento;
+                    query.Parameters.Add("@Alimento", SqlDbType.Int).Value = this.Alimento.Id;
                     query.Parameters.Add("@FechaEntrada", SqlDbType.Date, 200).Value = this.FechaEntrada;
                     query.Parameters.Add("@FechaCaducidad", SqlDbType.Date, 200).Value = this.FechaCaducidad;
                     query.Parameters.Add("@FechaConsPref", SqlDbType.Date, 200).Value = this.FechaConsumirPreferente;
                     query.Parameters.Add("@Proveedor", SqlDbType.VarChar, 50).Value = this.Proveedor;
                     query.Parameters.Add("@Ubicacion", SqlDbType.VarChar, 50).Value = this.Ubicacion;
-                    query.Parameters.Add("@Almacen", SqlDbType.Binary, 50).Value = this.Almacen;
+                    if (this.Almacen != null)
+                        query.Parameters.Add("@Almacen", SqlDbType.Int).Value = this.Almacen.Id;
+                    else
+                        query.Parameters.Add("@Almacen", SqlDbType.Int).Value = DBNull.Value;
                     rows = query.ExecuteNonQuery();
                 }
                 conexion.Close();
@@ -109,41 +96,211 @@ namespace CocinaEconomica
             return rows > 0;
         }
 
-        public void Delete()
+        /// <summary>
+        /// Borra el Producto de la base de datos
+        /// </summary>
+        /// <returns>Si se ha borrado correctamente</returns>
+        public bool Delete()
         {
+            int rows = 0;
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conexion.Open();
+                string insert = "DELETE FROM dbo.Producto WHERE Id = @id";
 
+                using (SqlCommand query = new SqlCommand(insert))
+                {
+                    query.Connection = conexion;
+                    query.Parameters.Add("@id", SqlDbType.Int).Value = this.Id;
+                    rows = query.ExecuteNonQuery();
+                }
+                conexion.Close();
+            }
+            return rows > 0;
         }
 
+        #endregion
+        
         #region SELECT
 
-        public static ArrayList GetProductos()
+        /// <summary>
+        /// Devuelve un ArrayList con todos los productos
+        /// </summary>
+        /// <returns>Todos los productos</returns>
+        public static ArrayList SelectAll()
         {
             ArrayList productos = new ArrayList();
-            SqlDataReader reader;
-            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString);
-            string selectString = "select * from Producto ";
-            SqlCommand selectCommand = new SqlCommand(selectString, conn);
-            conn.Open();
-            reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
-            while (reader.Read())
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                Producto p = new Producto();
-                p.Id = reader.GetInt32(0);
-                p.Alimento = Alimento.Select(p.Id);
-                p.FechaEntrada = reader.GetDateTime(2);
-                p.FechaCaducidad = reader.GetDateTime(3);
-                p.Ubicacion = reader.GetString(6);
-                productos.Add(p);
+                conn.Open();
+                string selectString = "select * from Producto";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        Producto p = new Producto();
+                        p.Id = reader.GetInt32(0);
+                        p.Alimento = Alimento.Select(reader.GetInt32(1));
+                        p.FechaEntrada = reader.GetDateTime(2);
+                        p.FechaCaducidad = reader.GetDateTime(3);
+                        p.FechaConsumirPreferente = reader.GetDateTime(4);
+                        p.Proveedor = reader.GetString(5);
+                        p.Ubicacion = reader.GetString(6);
+                        p.Almacen = Almacen.Select(reader.GetInt32(7));
+                        productos.Add(p);
+                    }
+                    conn.Close();
+                }
             }
-            conn.Close();
+            return productos;
+        }
+
+        /// <summary>
+        /// Devuelve un Producto dado su Id
+        /// </summary>
+        /// <param name="Id">Id del producto</param>
+        /// <returns>El producto</returns>
+        public static Producto Select(int Id)
+        {
+            Producto p = null;
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conn.Open();
+                string selectString = "select * from Producto where Id = @id";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    selectCommand.Parameters.Add("@id", SqlDbType.Int).Value = Id;
+                    SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        p = new Producto();
+                        p.Id = reader.GetInt32(0);
+                        p.Alimento = Alimento.Select(reader.GetInt32(1));
+                        p.FechaEntrada = reader.GetDateTime(2);
+                        p.FechaCaducidad = reader.GetDateTime(3);
+                        p.FechaConsumirPreferente = reader.GetDateTime(4);
+                        p.Proveedor = reader.GetString(5);
+                        p.Ubicacion = reader.GetString(6);
+                        p.Almacen = Almacen.Select(reader.GetInt32(7));
+                    }
+                    conn.Close();
+                }
+            }
+            return p;
+        }
+
+        /// <summary>
+        /// Devuelve un ArrayList de los productos que son de un determinado alimento
+        /// </summary>
+        /// <param name="a">El alimento</param>
+        /// <returns>La lista de Productos</returns>
+        public static ArrayList SelectWhereAlimentoIs(Alimento a)
+        {
+            ArrayList productos = new ArrayList();
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conn.Open();
+                string selectString = "select * from Producto where Alimento = @alimento";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    selectCommand.Parameters.Add("@alimento", SqlDbType.Int).Value = a.Id;
+                    SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        Producto p = new Producto();
+                        p.Id = reader.GetInt32(0);
+                        p.Alimento = Alimento.Select(reader.GetInt32(1));
+                        p.FechaEntrada = reader.GetDateTime(2);
+                        p.FechaCaducidad = reader.GetDateTime(3);
+                        p.FechaConsumirPreferente = reader.GetDateTime(4);
+                        p.Proveedor = reader.GetString(5);
+                        p.Ubicacion = reader.GetString(6);
+                        p.Almacen = Almacen.Select(reader.GetInt32(7));
+                        productos.Add(p);
+                    }
+                    conn.Close();
+                }
+            }
+            return productos;
+        }
+
+        /// <summary>
+        /// Devuelve un ArrayList de los productos que son de un determinado alimento
+        /// </summary>
+        /// <param name="a">El alimento</param>
+        /// <returns>La lista de Productos</returns>
+        public static ArrayList SelectWhereFechaCaducidadMaximaIs(DateTime fechaCaducidad)
+        {
+            ArrayList productos = new ArrayList();
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conn.Open();
+                string selectString = "select * from Producto where FechaCaducidad < @fechacaducidad";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    selectCommand.Parameters.Add("@fechacaducidad", SqlDbType.DateTime).Value = fechaCaducidad;
+                    SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        Producto p = new Producto();
+                        p.Id = reader.GetInt32(0);
+                        p.Alimento = Alimento.Select(reader.GetInt32(1));
+                        p.FechaEntrada = reader.GetDateTime(2);
+                        p.FechaCaducidad = reader.GetDateTime(3);
+                        p.FechaConsumirPreferente = reader.GetDateTime(4);
+                        p.Proveedor = reader.GetString(5);
+                        p.Ubicacion = reader.GetString(6);
+                        p.Almacen = Almacen.Select(reader.GetInt32(7));
+                        productos.Add(p);
+                    }
+                    conn.Close();
+                }
+            }
             return productos;
         }
 
         #endregion
 
-        #region INSERT
+        #region INSERTS
 
-        
+        /// <summary>
+        /// Inserta el producto en la base de datos
+        /// </summary>
+        /// <returns>Si se ha insertado correctamente o no</returns>
+        public bool Insert()
+        {
+            // El alimento no puede ser nulo de ninguna forma
+            if (this.Alimento == null)
+                return false;
+
+            bool inserted;
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conexion.Open();
+                string insert = "INSERT into dbo.Producto(Alimento, FechaCaducidad, FechaConsPref, Ubicacion, Proveedor, FechaEntrada, Almacen)" +
+                    " VALUES (@alimento, @fechacaducidad, @fechaconspref, @ubicacion, @proveedor, @fechaentrada, @almacen)";
+
+                using (SqlCommand query = new SqlCommand(insert))
+                {
+                    query.Connection = conexion;
+                    query.Parameters.Add("@alimento", SqlDbType.Int, 50).Value = this.Alimento.Id;
+                    query.Parameters.Add("@fechacaducidad", SqlDbType.Date).Value = this.FechaCaducidad;
+                    query.Parameters.Add("@fechaconspref", SqlDbType.Date).Value = this.FechaConsumirPreferente;
+                    query.Parameters.Add("@ubicacion", SqlDbType.VarChar, 200).Value = this.Ubicacion;
+                    query.Parameters.Add("@proveedor", SqlDbType.VarChar, 200).Value = this.Proveedor;
+                    query.Parameters.Add("@fechaentrada", SqlDbType.Date).Value = this.FechaEntrada;
+                    if (this.Almacen != null)
+                        query.Parameters.Add("@almacen", SqlDbType.Int, 50).Value = this.Almacen.Id;
+                    else
+                        query.Parameters.Add("@almacen", SqlDbType.Int, 50).Value = DBNull.Value;
+                    inserted = query.ExecuteNonQuery() > 0;
+                }
+                conexion.Close();
+            }
+            return inserted;
+        }
+
         #endregion
     }
 }

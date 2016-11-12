@@ -7,9 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Linq;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace CocinaEconomica
 {
