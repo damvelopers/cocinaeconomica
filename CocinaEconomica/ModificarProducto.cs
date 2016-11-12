@@ -12,8 +12,11 @@ namespace CocinaEconomica
 {
     public partial class ModificarProducto : Form
     {
-        public ModificarProducto()
+        private Producto producto;
+
+        public ModificarProducto(Producto producto)
         {
+            this.producto = producto;
             InitializeComponent();
         }
 
@@ -29,22 +32,21 @@ namespace CocinaEconomica
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
             if (txtAlimento.Text == "")
             {
                 MessageBox.Show(this, "El campo Alimento es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
+            
+            this.producto.Alimento = Alimento.SelectWhereNombreIs(txtAlimento.Text);
+            this.producto.FechaEntrada = fechEntrada.Value;
+            this.producto.FechaCaducidad = fechCaducidad.Value;
+            this.producto.FechaConsumirPreferente = fechConsPref.Value;
+            this.producto.Proveedor = cbOrigen.SelectedItem.ToString();
 
-            Producto p = new Producto();
-            p.Alimento = Alimento.SelectWhereNombreIs(txtAlimento.Text);
-            p.FechaEntrada = fechEntrada.Value;
-            p.FechaCaducidad = fechCaducidad.Value;
-            p.FechaConsumirPreferente = fechConsPref.Value;
-            //p.Proveedor = cbOrigen.SelectedItem.ToString;
-            if (p.Alimento != null)
+            if (producto.Alimento != null)
             {
-                bool ok = p.Update();
+                bool ok = producto.Update();
                 // Feedback!
                 if (!ok)
                 {

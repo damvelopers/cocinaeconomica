@@ -136,6 +136,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarAlmacen";
+            this.Load += new System.EventHandler(this.ModificarAlmacen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

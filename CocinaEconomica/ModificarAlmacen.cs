@@ -12,8 +12,10 @@ namespace CocinaEconomica
 {
     public partial class ModificarAlmacen : Form
     {
-        public ModificarAlmacen()
+        private Almacen almacen;
+        public ModificarAlmacen(Almacen almacen)
         {
+            this.almacen = almacen;
             InitializeComponent();
         }
 
@@ -30,12 +32,11 @@ namespace CocinaEconomica
                 return;
             }
 
-            Almacen a = new Almacen();
-            a.Nombre = txtNombre.Text;
-            a.Descripcion = txtDescripcion.Text;
-            if (a.Nombre != "")
+            this.almacen.Nombre = txtNombre.Text;
+            this.almacen.Descripcion = txtDescripcion.Text;
+            if (this.almacen.Nombre != "")
             {
-                bool ok = a.Update();
+                bool ok = this.almacen.Update();
                 // Feedback!
                 if (!ok)
                 {
@@ -46,6 +47,12 @@ namespace CocinaEconomica
                     MessageBox.Show(this, "Se ha modificado un almacén correctamente.", "Almacén modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void ModificarAlmacen_Load(object sender, EventArgs e)
+        {
+            txtNombre.Text = this.almacen.Nombre;
+            txtDescripcion.Text = this.almacen.Descripcion;
         }
     }
 }

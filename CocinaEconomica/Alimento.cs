@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CocinaEconomica
 {
-    class Alimento
+    public class Alimento
     {
         public int Id;
         public string Nombre;

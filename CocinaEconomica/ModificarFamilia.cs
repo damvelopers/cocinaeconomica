@@ -12,8 +12,11 @@ namespace CocinaEconomica
 {
     public partial class ModificarFamilia : Form
     {
-        public ModificarFamilia()
+        private Familia familia;
+
+        public ModificarFamilia(Familia familia)
         {
+            this.familia = familia;
             InitializeComponent();
         }
 
@@ -29,12 +32,11 @@ namespace CocinaEconomica
                 MessageBox.Show(this, "El campo Nombre es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
-
-            Familia f = new Familia();
-            f.Nombre = txtNombre.Text;
-            if (f.Nombre != "")
+            
+            this.familia.Nombre = txtNombre.Text;
+            if (this.familia.Nombre != "")
             {
-                bool ok = f.Update();
+                bool ok = this.familia.Update();
                 // Feedback!
                 if (!ok)
                 {

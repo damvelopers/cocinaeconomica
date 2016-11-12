@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CocinaEconomica
 {
-    class Familia
+    public class Familia
     {
         public int Id;
         public string Nombre;

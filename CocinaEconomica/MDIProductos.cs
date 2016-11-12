@@ -30,7 +30,9 @@ namespace CocinaEconomica
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ModificarProducto f = new ModificarProducto();
+            // Provisional, tiene que haber un producto o más seleccionados y generar el objeto
+            Producto p = new Producto();
+            ModificarProducto f = new ModificarProducto(p);
             f.ShowDialog();
         }
     }

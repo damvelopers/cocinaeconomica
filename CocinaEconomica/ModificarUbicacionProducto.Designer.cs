@@ -135,6 +135,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarUbicacionProducto";
             this.Text = "ModificarUbicacionProducto";
+            this.Load += new System.EventHandler(this.ModificarUbicacionProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CocinaEconomica
 {
-    class Producto
+    public class Producto
     {
         public int Id;
         public Alimento Alimento;
@@ -34,7 +34,8 @@ namespace CocinaEconomica
         }
         
         public Producto(int Id, Alimento Alimento, DateTime FechaEntrada, 
-            DateTime FechaCaducidad, DateTime FechaConsumirPreferente, string Proveedor, Almacen Almacen, string Ubicacion)
+            DateTime FechaCaducidad, DateTime FechaConsumirPreferente, 
+            string Proveedor, Almacen Almacen, string Ubicacion)
         {
             this.Id = Id;
             this.Alimento = Alimento;

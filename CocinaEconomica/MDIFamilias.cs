@@ -30,7 +30,9 @@ namespace CocinaEconomica
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ModificarFamilia f = new ModificarFamilia();
+            // Lo mismo xD
+            Familia fa = new Familia();
+            ModificarFamilia f = new ModificarFamilia(fa);
             f.ShowDialog();
         }
     }

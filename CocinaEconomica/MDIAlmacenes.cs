@@ -30,7 +30,9 @@ namespace CocinaEconomica
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ModificarAlmacen f = new ModificarAlmacen();
+            // Lo mismo xD
+            Almacen a = new Almacen();
+            ModificarAlmacen f = new ModificarAlmacen(a);
             f.ShowDialog();
         }
     }

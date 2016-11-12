@@ -16,5 +16,10 @@ namespace CocinaEconomica
         {
             InitializeComponent();
         }
+
+        private void ModificarUbicacionProducto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
