@@ -225,6 +225,7 @@
             this.Name = "MDIFamilias";
             this.Text = "MDIFamilias";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MDIFamilias_Load);
             this.TablaContenido.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
             this.gbPrincipal.ResumeLayout(false);

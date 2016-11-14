@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace CocinaEconomica
 {
@@ -15,6 +16,25 @@ namespace CocinaEconomica
         public MDIFamilias()
         {
             InitializeComponent();
+            cargarDataGridView();
+        }
+
+        private void cargarDataGridView()
+        {
+            DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+            col.HeaderText = "Nombre";
+            col.Width = 500;
+            col.ReadOnly = true;
+
+            dataGridFamilias.Columns.Add(col);
+
+            ArrayList familias = Familia.SelectAll();
+
+            for(int i = 0; i < familias.Count; i++)
+            {
+                Familia f = (Familia)familias[i];
+                dataGridFamilias.Rows.Add(f.Nombre);
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -34,6 +54,11 @@ namespace CocinaEconomica
             Familia fa = new Familia();
             ModificarFamilia f = new ModificarFamilia(fa);
             f.ShowDialog();
+        }
+
+        private void MDIFamilias_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -62,6 +62,8 @@ namespace CocinaEconomica
                     MessageBox.Show(this, "Se ha producido un error insertando el alimento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 } else {
                     MessageBox.Show(this, "Se añadido un nuevo alimento correctamente.", "Alimento añadido",  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtNombre.Text = "";
+                    txtDescripcion.Text = "";
                 }
             }
         }

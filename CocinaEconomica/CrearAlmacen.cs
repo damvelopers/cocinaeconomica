@@ -49,6 +49,9 @@ namespace CocinaEconomica
                 else
                 {
                     MessageBox.Show(this, "Se añadido un nuevo almacén correctamente.", "Almacén añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtNombre.Text = "";
+                    txtUbicacion.Text = "";
+                    txtDescripcion.Text = "";
                 }
             }
         }

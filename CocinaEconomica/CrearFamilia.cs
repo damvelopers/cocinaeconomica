@@ -54,6 +54,7 @@ namespace CocinaEconomica
                 else
                 {
                     MessageBox.Show(this, "Se añadido una nueva familia correctamente.", "Familia añadida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtFamilia.Text = "";
                 }
             }
         }

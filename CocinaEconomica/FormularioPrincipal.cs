@@ -127,20 +127,20 @@ namespace CocinaEconomica
 
         private void alimentoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ModificarAlimento modificarAlimento = new ModificarAlimento();
-            modificarAlimento.ShowDialog();
+            //ModificarAlimento modificarAlimento = new ModificarAlimento();
+            //modificarAlimento.ShowDialog();
         }
 
         private void productoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ModificarProducto modificarProducto = new ModificarProducto();
-            modificarProducto.ShowDialog();
+            //ModificarProducto modificarProducto = new ModificarProducto();
+            //modificarProducto.ShowDialog();
         }
 
         private void familiaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ModificarFamilia modificarFamilia = new ModificarFamilia();
-            modificarFamilia.ShowDialog();
+            //ModificarFamilia modificarFamilia = new ModificarFamilia();
+            //modificarFamilia.ShowDialog();
         }
 
         private void ubToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,8 +157,8 @@ namespace CocinaEconomica
 
         private void modificarAlmacenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModificarAlmacen modificarAlmacen = new ModificarAlmacen();
-            modificarAlmacen.ShowDialog();
+            //ModificarAlmacen modificarAlmacen = new ModificarAlmacen();
+            //modificarAlmacen.ShowDialog();
         }
 
         private void eliminarAlmacenToolStripMenuItem_Click(object sender, EventArgs e)
