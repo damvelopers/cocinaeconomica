@@ -172,6 +172,7 @@
             // 
             // dataGridProductos
             // 
+            this.dataGridProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridProductos.Location = new System.Drawing.Point(3, 3);
@@ -196,6 +197,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(683, 26);
             this.txtBuscar.TabIndex = 0;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnBuscar
             // 
@@ -251,6 +253,7 @@
             this.Name = "MDIProductos";
             this.Text = "MDIProductos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MDIProductos_Load);
             this.TablaContenido.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
             this.gbPrincipal.ResumeLayout(false);

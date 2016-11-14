@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using System.Data.SqlClient;
 
 namespace CocinaEconomica
 {
@@ -16,7 +17,7 @@ namespace CocinaEconomica
         public MDIAlimentos()
         {
             InitializeComponent();
-            cargarDataGridView();
+            cargarDataGridView1();
         }
 
         private void cargarDataGridView()
@@ -87,6 +88,24 @@ namespace CocinaEconomica
         private void MDIAlimentos_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void cargarDataGridView1()
+        {
+            DataTable result = new DataTable();
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string select = "SELECT * from Alimento";
+                using (SqlCommand cmd = new SqlCommand(select, conexion))
+                {
+                    conexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        result.Load(reader);
+                    }
+                }
+                dataGridAlimentos.DataSource = result;
+            }
         }
     }
 }

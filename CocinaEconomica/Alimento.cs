@@ -183,7 +183,6 @@ namespace CocinaEconomica
                 string selectString = "select * from Alimento where Nombre like @nombre";
                 using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
                 {
-                    conn.Open();
                     selectCommand.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = Nombre;
                     SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())

@@ -57,9 +57,9 @@ namespace CocinaEconomica
             p.FechaEntrada = dateTimeFechaEn.Value;
             p.FechaCaducidad = dateTimeFechaCad.Value;
             p.FechaConsumirPreferente = dateTimeFechaPref.Value;
-            //p.Proveedor = comboBoxOrigen.SelectedItem.ToString;
+            p.Proveedor = comboBoxOrigen.SelectedItem.ToString();
             int cant = Int32.Parse(txtCantidad.Text);
-            bool error = false;
+            /*
             for (int i = 0; i < cant; i++)
             {
                 if (p.Alimento != null)
@@ -82,6 +82,23 @@ namespace CocinaEconomica
 
                     }
                 }
+            }
+            */
+            bool ok = false;
+            if (txtCantidad.Text != "")
+                ok = p.Insert(cant);
+            else
+                ok = p.Insert();
+            // Feedback!
+            if (!ok)
+            {
+                MessageBox.Show(this, "Se ha producido un error insertando el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //MessageBox.Show(this, "Se añadido un nuevo producto correctamente.", "Producto añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAlimento.Text = "";
+                txtCantidad.Text = "";
             }
         }
     }

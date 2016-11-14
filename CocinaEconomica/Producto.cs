@@ -313,8 +313,8 @@ namespace CocinaEconomica
             // nos conectamos una vez y ejecutamos todas las consultas bajo la misma conexión
             // y con una transacción que nos asegure que si falla algún insert se reviertan los cambios
 
-            // El alimento no puede ser nulo de ninguna forma
-            if (this.Alimento == null)
+            // El alimento no puede ser nulo de ninguna forma y tiene que tener un Id válido
+            if (this.Alimento == null || this.Alimento.Id < 0)
                 return false;
 
             bool inserted = false;
@@ -333,6 +333,7 @@ namespace CocinaEconomica
 
                             using (SqlCommand query = new SqlCommand(insert))
                             {
+                                query.Transaction = tx;
                                 query.Connection = conexion;
                                 query.Parameters.Add("@alimento", SqlDbType.Int, 50).Value = this.Alimento.Id;
                                 query.Parameters.Add("@fechacaducidad", SqlDbType.Date).Value = this.FechaCaducidad;
