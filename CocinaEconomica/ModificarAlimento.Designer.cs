@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarAlimento));
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.dGVAlimentos = new System.Windows.Forms.DataGridView();
-            this.tbBuscar = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,12 +41,14 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVAlimentos)).BeginInit();
+            this.dataGridAlimentos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlimentos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(42)))), ((int)(((byte)(126)))));
             this.lblTitulo.Location = new System.Drawing.Point(10, 10);
@@ -57,21 +58,14 @@
             this.lblTitulo.TabIndex = 40;
             this.lblTitulo.Text = "ALIMENTOS";
             // 
-            // dGVAlimentos
+            // txtBuscar
             // 
-            this.dGVAlimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVAlimentos.Location = new System.Drawing.Point(14, 43);
-            this.dGVAlimentos.Name = "dGVAlimentos";
-            this.dGVAlimentos.Size = new System.Drawing.Size(188, 319);
-            this.dGVAlimentos.TabIndex = 41;
-            // 
-            // tbBuscar
-            // 
-            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbBuscar.Location = new System.Drawing.Point(220, 69);
-            this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(259, 23);
-            this.tbBuscar.TabIndex = 42;
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBuscar.Location = new System.Drawing.Point(220, 69);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(259, 23);
+            this.txtBuscar.TabIndex = 42;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnBuscar
             // 
@@ -82,6 +76,7 @@
             this.btnBuscar.TabIndex = 43;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtNombre
             // 
@@ -94,6 +89,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(217, 150);
             this.label1.Name = "label1";
@@ -104,6 +100,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.Location = new System.Drawing.Point(217, 220);
             this.label2.Name = "label2";
@@ -122,6 +119,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.Location = new System.Drawing.Point(500, 150);
             this.label3.Name = "label3";
@@ -163,12 +161,22 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.Location = new System.Drawing.Point(217, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 17);
             this.label4.TabIndex = 52;
             this.label4.Text = "Buscar alimento";
+            // 
+            // dataGridAlimentos
+            // 
+            this.dataGridAlimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAlimentos.Location = new System.Drawing.Point(14, 43);
+            this.dataGridAlimentos.Name = "dataGridAlimentos";
+            this.dataGridAlimentos.Size = new System.Drawing.Size(188, 319);
+            this.dataGridAlimentos.TabIndex = 41;
+            this.dataGridAlimentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAlimentos_CellContentClick);
             // 
             // ModificarAlimento
             // 
@@ -186,14 +194,15 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.tbBuscar);
-            this.Controls.Add(this.dGVAlimentos);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.dataGridAlimentos);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarAlimento";
             this.Text = "ModificarAlimento";
-            ((System.ComponentModel.ISupportInitialize)(this.dGVAlimentos)).EndInit();
+            this.Load += new System.EventHandler(this.ModificarAlimento_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlimentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,8 +211,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.DataGridView dGVAlimentos;
-        private System.Windows.Forms.TextBox tbBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
@@ -214,5 +222,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridAlimentos;
     }
 }

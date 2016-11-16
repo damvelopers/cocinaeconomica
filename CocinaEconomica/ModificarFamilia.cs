@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace CocinaEconomica
 {
@@ -18,6 +20,46 @@ namespace CocinaEconomica
         {
             this.familia = familia;
             InitializeComponent();
+            txtNombre.Text = this.familia.Nombre;
+        }
+
+        private void cargarDataGridView()
+        {
+            DataTable result = new DataTable();
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string select = "SELECT * from Familia";
+                using (SqlCommand cmd = new SqlCommand(select, conexion))
+                {
+                    conexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        result.Load(reader);
+                    }
+                }
+                dataGridFamilia.DataSource = result;
+            }
+        }
+
+        private void filtrarDataGridView(string nombre)
+        {
+            DataTable result = new DataTable();
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string select = "SELECT * FROM Familia" +
+                    " WHERE Nombre like @nombre";
+                //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO
+                using (SqlCommand cmd = new SqlCommand(select, conexion))
+                {
+                    cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = "%" + nombre + "%";
+                    conexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        result.Load(reader);
+                    }
+                }
+                dataGridFamilia.DataSource = result;
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -46,6 +88,41 @@ namespace CocinaEconomica
                 {
                     MessageBox.Show(this, "Se ha modificado una familia correctamente.", "Familia modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void tbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+                filtrarDataGridView(txtBuscar.Text);
+            else
+                cargarDataGridView();
+        }
+
+        private void btnBuscarFamilia_Click(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+                filtrarDataGridView(txtBuscar.Text);
+            else
+                cargarDataGridView();
+        }
+
+        private void ModificarFamilia_Load(object sender, EventArgs e)
+        {
+            cargarDataGridView();
+        }
+
+        private void dataGridFamilia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int id = (int)dataGridFamilia.CurrentRow.Cells["Id"].Value;
+                this.familia = Familia.Select(id);
+                txtNombre.Text = this.familia.Nombre;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Se debe seleccionar una familia", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

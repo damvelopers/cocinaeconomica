@@ -29,27 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarFamilia));
-            this.label4 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnBuscarFamilia = new System.Windows.Forms.Button();
-            this.tbBuscar = new System.Windows.Forms.TextBox();
-            this.dGVFamilias = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVFamilias)).BeginInit();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscarFamilia = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataGridFamilia = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFamilia)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(214, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 17);
-            this.label4.TabIndex = 85;
-            this.label4.Text = "Buscar familia";
             // 
             // btnCerrar
             // 
@@ -71,16 +61,6 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(215, 150);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
-            this.label1.TabIndex = 80;
-            this.label1.Text = "Nombre";
-            // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -88,6 +68,28 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(259, 23);
             this.txtNombre.TabIndex = 79;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(42)))), ((int)(((byte)(126)))));
+            this.lblTitulo.Location = new System.Drawing.Point(8, 10);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(92, 20);
+            this.lblTitulo.TabIndex = 75;
+            this.lblTitulo.Text = "FAMILIAS";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBuscar.Location = new System.Drawing.Point(218, 63);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(259, 23);
+            this.txtBuscar.TabIndex = 77;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.tbBuscar_TextChanged);
             // 
             // btnBuscarFamilia
             // 
@@ -97,34 +99,38 @@
             this.btnBuscarFamilia.TabIndex = 78;
             this.btnBuscarFamilia.Text = "Buscar";
             this.btnBuscarFamilia.UseVisualStyleBackColor = true;
+            this.btnBuscarFamilia.Click += new System.EventHandler(this.btnBuscarFamilia_Click);
             // 
-            // tbBuscar
+            // label1
             // 
-            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbBuscar.Location = new System.Drawing.Point(218, 63);
-            this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(259, 23);
-            this.tbBuscar.TabIndex = 77;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(215, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "Nombre";
             // 
-            // dGVFamilias
+            // label4
             // 
-            this.dGVFamilias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVFamilias.Location = new System.Drawing.Point(12, 43);
-            this.dGVFamilias.Name = "dGVFamilias";
-            this.dGVFamilias.Size = new System.Drawing.Size(188, 228);
-            this.dGVFamilias.TabIndex = 76;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(214, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 17);
+            this.label4.TabIndex = 85;
+            this.label4.Text = "Buscar familia";
             // 
-            // lblTitulo
+            // dataGridFamilia
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(42)))), ((int)(((byte)(126)))));
-            this.lblTitulo.Location = new System.Drawing.Point(8, 10);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(92, 20);
-            this.lblTitulo.TabIndex = 75;
-            this.lblTitulo.Text = "FAMILIAS";
+            this.dataGridFamilia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridFamilia.Location = new System.Drawing.Point(12, 43);
+            this.dataGridFamilia.Name = "dataGridFamilia";
+            this.dataGridFamilia.Size = new System.Drawing.Size(188, 228);
+            this.dataGridFamilia.TabIndex = 76;
+            this.dataGridFamilia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridFamilia_CellContentClick);
             // 
             // ModificarFamilia
             // 
@@ -138,28 +144,29 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnBuscarFamilia);
-            this.Controls.Add(this.tbBuscar);
-            this.Controls.Add(this.dGVFamilias);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.dataGridFamilia);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarFamilia";
             this.Text = "ModificarFamilia";
-            ((System.ComponentModel.ISupportInitialize)(this.dGVFamilias)).EndInit();
+            this.Load += new System.EventHandler(this.ModificarFamilia_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFamilia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Button btnBuscarFamilia;
-        private System.Windows.Forms.TextBox tbBuscar;
-        private System.Windows.Forms.DataGridView dGVFamilias;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnBuscarFamilia;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridFamilia;
     }
 }

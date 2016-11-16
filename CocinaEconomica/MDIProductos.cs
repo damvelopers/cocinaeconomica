@@ -32,10 +32,17 @@ namespace CocinaEconomica
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            // Provisional, tiene que haber un producto o más seleccionados y generar el objeto
-            Producto p = new Producto();
-            ModificarProducto f = new ModificarProducto(p);
-            f.ShowDialog();
+            try
+            {
+                int id = (int)dataGridProductos.CurrentRow.Cells["Id"].Value;
+                Producto a = Producto.Select(id);
+                ModificarProducto f = new ModificarProducto(a);
+                f.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Se debe seleccionar un producto", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void cargarDataGridView()
@@ -94,6 +101,35 @@ namespace CocinaEconomica
                 filtrarDataGridView(txtBuscar.Text);
             else
                 cargarDataGridView();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+                filtrarDataGridView(txtBuscar.Text);
+            else
+                cargarDataGridView();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = (int)dataGridProductos.CurrentRow.Cells["Id"].Value;
+                Producto p = Producto.Select(id);
+                if (p.Delete())
+                {
+                    MessageBox.Show(this, "Se eliminado el producto correctamente.", "Producto eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(this, "Se ha modificado el producto correctamente.", "Producto modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Se debe seleccionar un producto", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

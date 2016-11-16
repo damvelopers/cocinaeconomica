@@ -17,36 +17,29 @@ namespace CocinaEconomica
         public MDIAlimentos()
         {
             InitializeComponent();
-            cargarDataGridView1();
+            cargarDataGridView();
         }
 
-        private void cargarDataGridView()
+
+
+        private void filtrarDataGridView(string nombre)
         {
-            DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
-            col.HeaderText = "Nombre";
-            col.Width = 300;
-            col.ReadOnly = true;
-
-            DataGridViewTextBoxColumn col1 = new DataGridViewTextBoxColumn();
-            col1.HeaderText = "Familia";
-            col1.Width = 200;
-            col1.ReadOnly = true;
-
-            DataGridViewTextBoxColumn col2 = new DataGridViewTextBoxColumn();
-            col2.HeaderText = "Descripción";
-            col2.Width = 600;
-            col2.ReadOnly = true;
-
-            dataGridAlimentos.Columns.Add(col);
-            dataGridAlimentos.Columns.Add(col1);
-            dataGridAlimentos.Columns.Add(col2);
-
-            ArrayList alimentos = Alimento.SelectAll();
-
-            for (int i = 0; i < alimentos.Count; i++)
+            DataTable result = new DataTable();
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                Alimento a = (Alimento)alimentos[i];
-                dataGridAlimentos.Rows.Add(a.Nombre,a.Familia.Nombre,a.Descripcion);
+                string select = "SELECT * FROM Alimento a" +
+                    " WHERE Nombre like @nombre";
+                //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO
+                using (SqlCommand cmd = new SqlCommand(select, conexion))
+                {
+                    cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = "%" + nombre + "%";
+                    conexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        result.Load(reader);
+                    }
+                }
+                dataGridAlimentos.DataSource = result;
             }
         }
 
@@ -78,11 +71,17 @@ namespace CocinaEconomica
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            // Provisional, tiene que estar seleccionado un alimento 
-            // y se tiene que generar el objeto para ser modificado
-            Alimento a = new Alimento();
-            ModificarAlimento f = new ModificarAlimento(a);
-            f.ShowDialog();
+            try
+            {
+                int id = (int)dataGridAlimentos.CurrentRow.Cells["Id"].Value;
+                Alimento a = Alimento.Select(id);
+                ModificarAlimento f = new ModificarAlimento(a);
+                f.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Se debe seleccionar un alimento", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void MDIAlimentos_Load(object sender, EventArgs e)
@@ -90,7 +89,7 @@ namespace CocinaEconomica
             
         }
 
-        private void cargarDataGridView1()
+        private void cargarDataGridView()
         {
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
@@ -105,6 +104,42 @@ namespace CocinaEconomica
                     }
                 }
                 dataGridAlimentos.DataSource = result;
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+                filtrarDataGridView(txtBuscar.Text);
+            else
+                cargarDataGridView();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+                filtrarDataGridView(txtBuscar.Text);
+            else
+                cargarDataGridView();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = (int)dataGridAlimentos.CurrentRow.Cells["Id"].Value;
+                Alimento a = Alimento.Select(id);
+                if (a.Delete())
+                {
+                    MessageBox.Show(this, "Se eliminado el alimento correctamente.", "Alimento eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(this, "Se ha modificado el alimento correctamente.", "Alimento modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show(this, "Se debe seleccionar un alimento", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

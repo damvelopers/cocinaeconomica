@@ -158,10 +158,18 @@ namespace CocinaEconomica
                     SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
                     {
+                        a = new Alimento();
                         a.Id = reader.GetInt32(0);
                         a.Nombre = reader.GetString(1);
-                        a.Familia = Familia.Select(reader.GetInt32(2));
-                        a.Imagen = Alimento.GetImagen(reader.GetInt32(3));
+                        try
+                        {
+                            a.Imagen = Alimento.GetImagen(reader.GetInt32(2));
+                        }catch(Exception e)
+                        {
+                            a.Imagen = null;
+                        }
+                       
+                        a.Familia = Familia.Select(reader.GetInt32(3));            
                         a.Descripcion = reader.GetString(4);
                     }
                 }

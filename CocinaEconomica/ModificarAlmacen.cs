@@ -17,6 +17,9 @@ namespace CocinaEconomica
         {
             this.almacen = almacen;
             InitializeComponent();
+            txtNombre.Text = this.almacen.Nombre;
+            txtUbicacion.Text = "";
+            txtDescripcion.Text = this.almacen.Descripcion;
         }
 
         private void button3_Click(object sender, EventArgs e)

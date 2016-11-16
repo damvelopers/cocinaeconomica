@@ -50,6 +50,7 @@
             // lblAlimento
             // 
             this.lblAlimento.AutoSize = true;
+            this.lblAlimento.BackColor = System.Drawing.Color.Transparent;
             this.lblAlimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlimento.Location = new System.Drawing.Point(13, 108);
             this.lblAlimento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -62,6 +63,7 @@
             // lblFechaEn
             // 
             this.lblFechaEn.AutoSize = true;
+            this.lblFechaEn.BackColor = System.Drawing.Color.Transparent;
             this.lblFechaEn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaEn.Location = new System.Drawing.Point(13, 153);
             this.lblFechaEn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -73,6 +75,7 @@
             // fechaCad
             // 
             this.fechaCad.AutoSize = true;
+            this.fechaCad.BackColor = System.Drawing.Color.Transparent;
             this.fechaCad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaCad.Location = new System.Drawing.Point(13, 197);
             this.fechaCad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -84,6 +87,7 @@
             // fechaPref
             // 
             this.fechaPref.AutoSize = true;
+            this.fechaPref.BackColor = System.Drawing.Color.Transparent;
             this.fechaPref.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaPref.Location = new System.Drawing.Point(13, 242);
             this.fechaPref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -130,6 +134,7 @@
             // cantidad
             // 
             this.cantidad.AutoSize = true;
+            this.cantidad.BackColor = System.Drawing.Color.Transparent;
             this.cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cantidad.Location = new System.Drawing.Point(13, 328);
             this.cantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -161,6 +166,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(42)))), ((int)(((byte)(126)))));
             this.lblTitulo.Location = new System.Drawing.Point(225, 37);
@@ -192,6 +198,7 @@
             // origen
             // 
             this.origen.AutoSize = true;
+            this.origen.BackColor = System.Drawing.Color.Transparent;
             this.origen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.origen.Location = new System.Drawing.Point(13, 290);
             this.origen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);

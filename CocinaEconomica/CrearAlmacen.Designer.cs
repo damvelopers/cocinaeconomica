@@ -44,6 +44,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(42)))), ((int)(((byte)(126)))));
             this.lblTitulo.Location = new System.Drawing.Point(194, 31);
@@ -78,6 +79,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(14, 81);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -105,6 +107,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(14, 151);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -124,6 +127,7 @@
             // lblUbicacion
             // 
             this.lblUbicacion.AutoSize = true;
+            this.lblUbicacion.BackColor = System.Drawing.Color.Transparent;
             this.lblUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUbicacion.Location = new System.Drawing.Point(14, 115);
             this.lblUbicacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);

@@ -183,7 +183,13 @@ namespace CocinaEconomica
                         p.FechaConsumirPreferente = reader.GetDateTime(4);
                         p.Proveedor = reader.GetString(5);
                         p.Ubicacion = reader.GetString(6);
-                        p.Almacen = Almacen.Select(reader.GetInt32(7));
+                        try
+                        {
+                            p.Almacen = Almacen.Select(reader.GetInt32(7));
+                        }catch(Exception ex)
+                        {
+                            p.Almacen = null;
+                        }
                     }
                     conn.Close();
                 }
@@ -217,7 +223,14 @@ namespace CocinaEconomica
                         p.FechaConsumirPreferente = reader.GetDateTime(4);
                         p.Proveedor = reader.GetString(5);
                         p.Ubicacion = reader.GetString(6);
-                        p.Almacen = Almacen.Select(reader.GetInt32(7));
+                        try
+                        {
+                            p.Almacen = Almacen.Select(reader.GetInt32(7));
+                        }
+                        catch (Exception ex)
+                        {
+                            p.Almacen = null;
+                        }
                         productos.Add(p);
                     }
                     conn.Close();

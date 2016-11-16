@@ -32,29 +32,29 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAlimento = new System.Windows.Forms.TextBox();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
-            this.tbBuscar = new System.Windows.Forms.TextBox();
-            this.dGVProductos = new System.Windows.Forms.DataGridView();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.dataGridProductos = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnBuscarAlimento = new System.Windows.Forms.Button();
             this.fechEntrada = new System.Windows.Forms.DateTimePicker();
             this.fechCaducidad = new System.Windows.Forms.DateTimePicker();
             this.fechConsPref = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbOrigen = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tbCantidad = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVProductos)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.Location = new System.Drawing.Point(212, 31);
             this.label4.Name = "label4";
@@ -82,20 +82,12 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(219, 290);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 13);
-            this.label3.TabIndex = 61;
-            this.label3.Text = "Fecha de caducidad";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(212, 231);
+            this.label2.Location = new System.Drawing.Point(212, 206);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 17);
             this.label2.TabIndex = 59;
@@ -104,6 +96,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(212, 121);
             this.label1.Name = "label1";
@@ -128,26 +121,30 @@
             this.btnBuscarProducto.TabIndex = 56;
             this.btnBuscarProducto.Text = "Buscar";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
-            // tbBuscar
+            // txtBuscar
             // 
-            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbBuscar.Location = new System.Drawing.Point(215, 51);
-            this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(259, 23);
-            this.tbBuscar.TabIndex = 55;
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBuscar.Location = new System.Drawing.Point(215, 51);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(259, 23);
+            this.txtBuscar.TabIndex = 55;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // dGVProductos
+            // dataGridProductos
             // 
-            this.dGVProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVProductos.Location = new System.Drawing.Point(9, 51);
-            this.dGVProductos.Name = "dGVProductos";
-            this.dGVProductos.Size = new System.Drawing.Size(188, 340);
-            this.dGVProductos.TabIndex = 54;
+            this.dataGridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridProductos.Location = new System.Drawing.Point(9, 51);
+            this.dataGridProductos.Name = "dataGridProductos";
+            this.dataGridProductos.Size = new System.Drawing.Size(188, 340);
+            this.dataGridProductos.TabIndex = 54;
+            this.dataGridProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProductos_CellContentClick);
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(42)))), ((int)(((byte)(126)))));
             this.lblTitulo.Location = new System.Drawing.Point(5, 18);
@@ -157,19 +154,10 @@
             this.lblTitulo.TabIndex = 53;
             this.lblTitulo.Text = "PRODUCTOS";
             // 
-            // btnBuscarAlimento
-            // 
-            this.btnBuscarAlimento.Location = new System.Drawing.Point(374, 170);
-            this.btnBuscarAlimento.Name = "btnBuscarAlimento";
-            this.btnBuscarAlimento.Size = new System.Drawing.Size(100, 28);
-            this.btnBuscarAlimento.TabIndex = 66;
-            this.btnBuscarAlimento.Text = "Buscar";
-            this.btnBuscarAlimento.UseVisualStyleBackColor = true;
-            // 
             // fechEntrada
             // 
             this.fechEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.fechEntrada.Location = new System.Drawing.Point(216, 251);
+            this.fechEntrada.Location = new System.Drawing.Point(216, 226);
             this.fechEntrada.Name = "fechEntrada";
             this.fechEntrada.Size = new System.Drawing.Size(259, 23);
             this.fechEntrada.TabIndex = 67;
@@ -177,7 +165,7 @@
             // fechCaducidad
             // 
             this.fechCaducidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.fechCaducidad.Location = new System.Drawing.Point(215, 306);
+            this.fechCaducidad.Location = new System.Drawing.Point(215, 281);
             this.fechCaducidad.Name = "fechCaducidad";
             this.fechCaducidad.Size = new System.Drawing.Size(259, 23);
             this.fechCaducidad.TabIndex = 68;
@@ -185,23 +173,15 @@
             // fechConsPref
             // 
             this.fechConsPref.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.fechConsPref.Location = new System.Drawing.Point(215, 361);
+            this.fechConsPref.Location = new System.Drawing.Point(215, 336);
             this.fechConsPref.Name = "fechConsPref";
             this.fechConsPref.Size = new System.Drawing.Size(259, 23);
             this.fechConsPref.TabIndex = 70;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(219, 345);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 13);
-            this.label5.TabIndex = 69;
-            this.label5.Text = "Fecha de consumición preferente";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.Location = new System.Drawing.Point(523, 120);
             this.label6.Name = "label6";
@@ -221,6 +201,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.Location = new System.Drawing.Point(523, 226);
             this.label7.Name = "label7";
@@ -236,38 +217,59 @@
             this.tbCantidad.Size = new System.Drawing.Size(107, 23);
             this.tbCantidad.TabIndex = 74;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Location = new System.Drawing.Point(213, 256);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 17);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "Fecha de caducidad";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label5.Location = new System.Drawing.Point(213, 316);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(219, 17);
+            this.label5.TabIndex = 76;
+            this.label5.Text = "Fecha de consumición preferente";
+            // 
             // ModificarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(761, 403);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.tbCantidad);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbOrigen);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.fechConsPref);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.fechCaducidad);
             this.Controls.Add(this.fechEntrada);
-            this.Controls.Add(this.btnBuscarAlimento);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAlimento);
             this.Controls.Add(this.btnBuscarProducto);
-            this.Controls.Add(this.tbBuscar);
-            this.Controls.Add(this.dGVProductos);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.dataGridProductos);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarProducto";
             this.Text = "ModificarProducto";
             this.Load += new System.EventHandler(this.ModificarProducto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGVProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,22 +280,21 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAlimento;
         private System.Windows.Forms.Button btnBuscarProducto;
-        private System.Windows.Forms.TextBox tbBuscar;
-        private System.Windows.Forms.DataGridView dGVProductos;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.DataGridView dataGridProductos;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnBuscarAlimento;
         private System.Windows.Forms.DateTimePicker fechEntrada;
         private System.Windows.Forms.DateTimePicker fechCaducidad;
         private System.Windows.Forms.DateTimePicker fechConsPref;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbOrigen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbCantidad;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }
