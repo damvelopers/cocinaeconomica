@@ -17,6 +17,7 @@ namespace CocinaEconomica
         public int Id;
         public string Nombre;
         public Familia Familia;
+        public int idFamilia;
         public string Descripcion;
         public Image Imagen;
 
@@ -35,6 +36,15 @@ namespace CocinaEconomica
             this.Nombre = Nombre;
             this.Imagen = Imagen;
             this.Familia = Familia;
+            this.Descripcion = Descripcion;
+        }
+
+        public Alimento(int Id, string Nombre, int Familia, string Descripcion, Image Imagen)
+        {
+            this.Id = Id;
+            this.Nombre = Nombre;
+            this.Imagen = Imagen;
+            this.idFamilia = Familia;
             this.Descripcion = Descripcion;
         }
 
@@ -130,8 +140,12 @@ namespace CocinaEconomica
                         Alimento a = new Alimento();
                         a.Id = reader.GetInt32(0);
                         a.Nombre = reader.GetString(1);
-                        a.Familia = Familia.Select(reader.GetInt32(2));
-                        a.Imagen = Alimento.GetImagen(reader.GetInt32(3));
+                        try
+                        {
+                            a.Imagen = Alimento.GetImagen(reader.GetInt32(2));
+                        }catch(System.Data.SqlTypes.SqlNullValueException ex) {}
+                        
+                        a.Familia = Familia.Select(reader.GetInt32(3));
                         a.Descripcion = reader.GetString(4);
                         alimentos.Add(a);
                     }

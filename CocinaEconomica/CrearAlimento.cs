@@ -17,20 +17,16 @@ namespace CocinaEconomica
         {
             
             InitializeComponent();
-            SetNombresFamilias();
         }
 
         private void FormularioInsertar_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void SetNombresFamilias()
-        {
-            ArrayList familias = Familia.SelectAll();
-            foreach (Familia familia in familias)
+        {       
+            ArrayList familias = Familia.SelectAll(); 
+            for (int i = 0; i < familias.Count; i++)
             {
-                txt_familia.Text = familia.Nombre;
+ 
+                Familia f = (Familia)familias[i];
+                cmb_familias.Items.Add(f.Nombre);
             }
         }
 
@@ -42,9 +38,15 @@ namespace CocinaEconomica
                 return;
             }
                 
-            if (txt_familia.Text == "")
+            if (cmb_familias.Text == "")
             {
                 MessageBox.Show(this, "El campo FAMILIA es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            if (!cmb_familias.Items.Contains(cmb_familias.Text))
+            {
+                MessageBox.Show(this, "La familia no existe", "Eliga una Familia ya creada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
 
@@ -52,7 +54,7 @@ namespace CocinaEconomica
             a.Nombre = txtNombre.Text;
             a.Imagen = imagenAlimento.Image;
             a.Descripcion = txtDescripcion.Text;
-            a.Familia = Familia.SelectWhereNombreIs(txt_familia.Text);
+            a.Familia = Familia.SelectWhereNombreIs(cmb_familias.Text);
             if (a.Nombre != "")
             {
                 bool ok = a.Insert();
