@@ -116,6 +116,7 @@
             this.btnAñadirSalida.TabIndex = 45;
             this.btnAñadirSalida.Text = "Añadir salida";
             this.btnAñadirSalida.UseVisualStyleBackColor = true;
+            this.btnAñadirSalida.Click += new System.EventHandler(this.btnAñadirSalida_Click);
             // 
             // btnCerrar
             // 
@@ -136,9 +137,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.Location = new System.Drawing.Point(267, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 17);
+            this.label3.Size = new System.Drawing.Size(119, 17);
             this.label3.TabIndex = 47;
-            this.label3.Text = "Buscar producto";
+            this.label3.Text = "Buscar productos";
             // 
             // txtBuscar
             // 

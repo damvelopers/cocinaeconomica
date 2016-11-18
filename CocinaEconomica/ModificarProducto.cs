@@ -14,10 +14,12 @@ namespace CocinaEconomica
     public partial class ModificarProducto : Form
     {
         private Producto producto;
+        private MDIProductos fProductos;
 
-        public ModificarProducto(Producto producto)
+        public ModificarProducto(Producto producto,MDIProductos fProductos)
         {
             this.producto = producto;
+            this.fProductos = fProductos;
             InitializeComponent();
             txtAlimento.Text = this.producto.Alimento.Nombre;
             cbOrigen.SelectedItem = this.producto.Proveedor;
@@ -79,6 +81,7 @@ namespace CocinaEconomica
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            this.fProductos.cargarDataGridView();
             this.Close();
         }
 
@@ -107,6 +110,8 @@ namespace CocinaEconomica
                 else
                 {
                     MessageBox.Show(this, "Se ha modificado un producto correctamente.", "Producto modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.fProductos.cargarDataGridView();
+                    cargarDataGridView();
                 }
             }
         }

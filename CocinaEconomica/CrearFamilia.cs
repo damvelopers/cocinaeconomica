@@ -12,6 +12,14 @@ namespace CocinaEconomica
 {
     public partial class CrearFamilia : Form
     {
+        private MDIFamilias fFamilias;
+
+        public CrearFamilia(MDIFamilias fFamilias)
+        {
+            this.fFamilias = fFamilias;
+            InitializeComponent();
+        }
+
         public CrearFamilia()
         {
             InitializeComponent();
@@ -30,6 +38,11 @@ namespace CocinaEconomica
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                this.fFamilias.cargarDataGridView();
+            }catch(Exception ex) { }
+            
             this.Close();
         }
 
@@ -55,6 +68,10 @@ namespace CocinaEconomica
                 {
                     MessageBox.Show(this, "Se añadido una nueva familia correctamente.", "Familia añadida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtFamilia.Text = "";
+                    try
+                    {
+                        this.fFamilias.cargarDataGridView();
+                    }catch(Exception ex) { }
                 }
             }
         }

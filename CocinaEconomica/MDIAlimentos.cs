@@ -65,7 +65,7 @@ namespace CocinaEconomica
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            CrearAlimento f = new CrearAlimento();
+            CrearAlimento f = new CrearAlimento(this);
             f.ShowDialog();
         }
 
@@ -75,7 +75,7 @@ namespace CocinaEconomica
             {
                 int id = (int)dataGridAlimentos.CurrentRow.Cells["Id"].Value;
                 Alimento a = Alimento.Select(id);
-                ModificarAlimento f = new ModificarAlimento(a);
+                ModificarAlimento f = new ModificarAlimento(a,this);
                 f.ShowDialog();
             }
             catch (Exception ex)
@@ -89,7 +89,7 @@ namespace CocinaEconomica
             
         }
 
-        private void cargarDataGridView()
+        public void cargarDataGridView()
         {
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))

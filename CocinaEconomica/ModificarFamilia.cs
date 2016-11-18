@@ -15,10 +15,12 @@ namespace CocinaEconomica
     public partial class ModificarFamilia : Form
     {
         private Familia familia;
+        private MDIFamilias fFamilias;
 
-        public ModificarFamilia(Familia familia)
+        public ModificarFamilia(Familia familia,MDIFamilias fFamilias)
         {
             this.familia = familia;
+            this.fFamilias = fFamilias;
             InitializeComponent();
             txtNombre.Text = this.familia.Nombre;
         }
@@ -64,6 +66,7 @@ namespace CocinaEconomica
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            this.fFamilias.cargarDataGridView();
             this.Close();
         }
 
@@ -87,6 +90,8 @@ namespace CocinaEconomica
                 else
                 {
                     MessageBox.Show(this, "Se ha modificado una familia correctamente.", "Familia modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargarDataGridView();
+                    this.fFamilias.cargarDataGridView();
                 }
             }
         }

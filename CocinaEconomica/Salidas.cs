@@ -13,8 +13,11 @@ namespace CocinaEconomica
 {
     public partial class Salidas : Form
     {
-        public Salidas()
+        private MDISalidas fSalidas;
+
+        public Salidas(MDISalidas fSalidas)
         {
+            this.fSalidas = fSalidas;
             InitializeComponent();
         }
 
@@ -83,6 +86,7 @@ namespace CocinaEconomica
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            this.fSalidas.cargarDataGridView();
             this.Close();
         }
 
@@ -107,5 +111,28 @@ namespace CocinaEconomica
             cargarDataGridViewProductos();
             cargarDataGridViewSalidas();
         }
+
+        private void btnAñadirSalida_Click(object sender, EventArgs e)
+        {
+            try { 
+                int id = (int)dataGridProductos.CurrentRow.Cells["Id"].Value;
+                Producto p = Producto.Select(id);
+                Alimento a = p.Alimento;
+                Salida s = new Salida();
+                s.FechaSalida = dtpSalida.Value;
+                s.Alimento = a;
+                if (s.Insert())
+                {
+                    MessageBox.Show(this, "Se ha insertado una salida correctamente", "Salida insertada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }else
+                {
+                    MessageBox.Show(this, "Se ha producido un error insertando la salida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Se debe seleccionar un producto", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+}
     }
 }

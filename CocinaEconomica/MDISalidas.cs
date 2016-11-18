@@ -19,7 +19,7 @@ namespace CocinaEconomica
             cargarDataGridView();
         }
 
-        private void cargarDataGridView()
+        public void cargarDataGridView()
         {
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
@@ -67,7 +67,7 @@ namespace CocinaEconomica
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Salidas f = new Salidas();
+            Salidas f = new Salidas(this);
             f.ShowDialog();
         }
 

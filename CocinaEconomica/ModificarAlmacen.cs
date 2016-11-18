@@ -13,9 +13,11 @@ namespace CocinaEconomica
     public partial class ModificarAlmacen : Form
     {
         private Almacen almacen;
-        public ModificarAlmacen(Almacen almacen)
+        private MDIAlmacenes fAlmacenes;
+        public ModificarAlmacen(Almacen almacen,MDIAlmacenes fAlmacenes)
         {
             this.almacen = almacen;
+            this.fAlmacenes = fAlmacenes;
             InitializeComponent();
             txtNombre.Text = this.almacen.Nombre;
             txtUbicacion.Text = "";
@@ -24,6 +26,7 @@ namespace CocinaEconomica
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.fAlmacenes.cargarDataGridView();
             this.Close();
         }
 
@@ -48,6 +51,7 @@ namespace CocinaEconomica
                 else
                 {
                     MessageBox.Show(this, "Se ha modificado un almacén correctamente.", "Almacén modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.fAlmacenes.cargarDataGridView();
                 }
             }
         }

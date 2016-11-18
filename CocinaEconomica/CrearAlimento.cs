@@ -13,9 +13,16 @@ namespace CocinaEconomica
 {
     public partial class CrearAlimento : Form
     {
+        private MDIAlimentos fAlimentos;
+        public CrearAlimento(MDIAlimentos fAlimentos)
+        {
+            this.fAlimentos = fAlimentos;
+            InitializeComponent();
+            SetNombresFamilias();
+        }
+
         public CrearAlimento()
         {
-            
             InitializeComponent();
             SetNombresFamilias();
         }
@@ -64,6 +71,10 @@ namespace CocinaEconomica
                     MessageBox.Show(this, "Se añadido un nuevo alimento correctamente.", "Alimento añadido",  MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNombre.Text = "";
                     txtDescripcion.Text = "";
+                    try
+                    {
+                        this.fAlimentos.cargarDataGridView();
+                    }catch(Exception ex) { }
                 }
             }
         }
@@ -88,6 +99,10 @@ namespace CocinaEconomica
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                this.fAlimentos.cargarDataGridView();
+            }catch(Exception ex) { }
             this.Close();
         }
     }

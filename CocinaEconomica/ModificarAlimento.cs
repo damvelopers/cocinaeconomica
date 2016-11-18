@@ -14,9 +14,11 @@ namespace CocinaEconomica
     public partial class ModificarAlimento : Form
     {
         private Alimento alimento;
-        public ModificarAlimento(Alimento alimento)
+        private MDIAlimentos fAlimentos;
+        public ModificarAlimento(Alimento alimento,MDIAlimentos fAlimentos)
         {
             this.alimento = alimento;
+            this.fAlimentos = fAlimentos;
             InitializeComponent();
             txtNombre.Text = this.alimento.Nombre;
             txtFamilia.Text = this.alimento.Familia.Nombre;
@@ -64,6 +66,7 @@ namespace CocinaEconomica
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            this.fAlimentos.cargarDataGridView();
             this.Close();
         }
 
@@ -94,6 +97,7 @@ namespace CocinaEconomica
                 }
                 else
                 {
+                    cargarDataGridView();
                     MessageBox.Show(this, "Se ha modificado un alimento correctamente.", "Alimento modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

@@ -13,8 +13,11 @@ namespace CocinaEconomica
 {
     public partial class crearProducto : Form
     {
-        public crearProducto()
+        private MDIProductos fProductos;
+
+        public crearProducto(MDIProductos fProductos)
         {
+            this.fProductos = fProductos;
             InitializeComponent();
         }
 
@@ -41,6 +44,7 @@ namespace CocinaEconomica
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            this.fProductos.cargarDataGridView();
             this.Close();
         }
 
@@ -59,31 +63,6 @@ namespace CocinaEconomica
             p.FechaConsumirPreferente = dateTimeFechaPref.Value;
             p.Proveedor = comboBoxOrigen.SelectedItem.ToString();
             int cant = Int32.Parse(txtCantidad.Text);
-            /*
-            for (int i = 0; i < cant; i++)
-            {
-                if (p.Alimento != null)
-                {
-                    bool ok = p.Insert();
-                    // Feedback!
-                    if (!ok)
-                    {
-                        MessageBox.Show(this, "Se ha producido un error insertando el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        error = true;
-                    }
-                    else
-                    {
-                        //MessageBox.Show(this, "Se añadido un nuevo producto correctamente.", "Producto añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (!error)
-                        {
-                            txtAlimento.Text = "";
-                            txtCantidad.Text = "";
-                        }
-
-                    }
-                }
-            }
-            */
             bool ok = false;
             if (txtCantidad.Text != "")
                 ok = p.Insert(cant);
@@ -99,6 +78,7 @@ namespace CocinaEconomica
                 //MessageBox.Show(this, "Se añadido un nuevo producto correctamente.", "Producto añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtAlimento.Text = "";
                 txtCantidad.Text = "";
+                this.fProductos.cargarDataGridView();
             }
         }
     }

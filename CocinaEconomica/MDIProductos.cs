@@ -26,7 +26,7 @@ namespace CocinaEconomica
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            crearProducto f = new crearProducto();
+            crearProducto f = new crearProducto(this);
             f.ShowDialog();
         }
 
@@ -36,7 +36,7 @@ namespace CocinaEconomica
             {
                 int id = (int)dataGridProductos.CurrentRow.Cells["Id"].Value;
                 Producto a = Producto.Select(id);
-                ModificarProducto f = new ModificarProducto(a);
+                ModificarProducto f = new ModificarProducto(a,this);
                 f.ShowDialog();
             }
             catch (Exception ex)
@@ -45,7 +45,7 @@ namespace CocinaEconomica
             }
         }
 
-        private void cargarDataGridView()
+        public void cargarDataGridView()
         {
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
@@ -120,10 +120,15 @@ namespace CocinaEconomica
                 if (p.Delete())
                 {
                     MessageBox.Show(this, "Se eliminado el producto correctamente.", "Producto eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargarDataGridView();
+                    Salida s = new Salida();
+                    s.Alimento = p.Alimento;
+                    s.Insert();
                 }
                 else
                 {
-                    MessageBox.Show(this, "Se ha modificado el producto correctamente.", "Producto modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "No se ha eliminado el producto.", "Producto no eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
             catch (Exception ex)

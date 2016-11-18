@@ -12,8 +12,10 @@ namespace CocinaEconomica
 {
     public partial class CrearAlmacen : Form
     {
-        public CrearAlmacen()
+        private MDIAlmacenes fAlmacenes;
+        public CrearAlmacen(MDIAlmacenes fAlmacenes)
         {
+            this.fAlmacenes = fAlmacenes;
             InitializeComponent();
         }
 
@@ -24,6 +26,7 @@ namespace CocinaEconomica
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            this.fAlmacenes.cargarDataGridView();
             this.Close();
         }
 
@@ -52,6 +55,7 @@ namespace CocinaEconomica
                     txtNombre.Text = "";
                     txtUbicacion.Text = "";
                     txtDescripcion.Text = "";
+                    this.fAlmacenes.cargarDataGridView();
                 }
             }
         }

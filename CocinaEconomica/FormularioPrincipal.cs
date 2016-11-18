@@ -97,8 +97,8 @@ namespace CocinaEconomica
 
         private void crearProducto(object sender, EventArgs e)
         {
-            crearProducto crearProducto = new crearProducto();
-            crearProducto.ShowDialog();
+            //crearProducto crearProducto = new crearProducto();
+            //crearProducto.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -109,8 +109,8 @@ namespace CocinaEconomica
 
         private void productoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            crearProducto crearProducto = new crearProducto();
-            crearProducto.ShowDialog();
+            //crearProducto crearProducto = new crearProducto();
+            //crearProducto.ShowDialog();
         }
 
         private void alimentoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -151,8 +151,8 @@ namespace CocinaEconomica
 
         private void crearAlmacenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CrearAlmacen crearAlmacen = new CrearAlmacen();
-            crearAlmacen.ShowDialog();
+            //CrearAlmacen crearAlmacen = new CrearAlmacen();
+            //crearAlmacen.ShowDialog();
         }
 
         private void modificarAlmacenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -175,8 +175,8 @@ namespace CocinaEconomica
 
         private void salidasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Salidas salidas = new Salidas();
-            salidas.ShowDialog();
+            //Salidas salidas = new Salidas();
+            //salidas.ShowDialog();
         }
 
         private void listadoDeProductos2ToolStripMenuItem_Click(object sender, EventArgs e)
