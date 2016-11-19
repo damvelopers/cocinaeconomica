@@ -18,7 +18,6 @@ namespace CocinaEconomica
         {
             this.fAlimentos = fAlimentos;
             InitializeComponent();
-            SetNombresFamilias();
         }
 
         public CrearAlimento()

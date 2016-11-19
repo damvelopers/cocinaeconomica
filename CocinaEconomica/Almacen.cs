@@ -85,12 +85,13 @@ namespace CocinaEconomica
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 conexion.Open();
-                string insert = "UPDATE dbo.Almacen (Nombre, Descripcion)" +
-                    " VALUES (@nombre, @descripcion)";
+                string update = "UPDATE dbo.Almacen set Nombre = @nombre, Descripcion = @descripcion " +
+                    "WHERE Id = @Id";
 
-                using (SqlCommand query = new SqlCommand(insert))
+                using (SqlCommand query = new SqlCommand(update))
                 {
                     query.Connection = conexion;
+                    query.Parameters.Add("@Id", SqlDbType.Int).Value = this.Id;
                     query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = this.Nombre;
                     query.Parameters.Add("@descripcion", SqlDbType.VarChar, 200).Value = this.Descripcion;
                     rows = query.ExecuteNonQuery();

@@ -74,12 +74,14 @@ namespace CocinaEconomica
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 conexion.Open();
-                string insert = "UPDATE dbo.Producto (Alimeto,FechaEntrada,FechaCaducidad,FechaConsPref,Proveedor,Ubicacion,Almacen)" +
-                    " VALUES (@Alimento, @FechaEntrada,@FechaCaducidad,@FechaConsPref,@Proveedor,@Ubicacion,@Almacen)";
+                string update = "UPDATE dbo.Producto set Alimento = @Alimento, FechaEntrada = @FechaEntrada, FechaCaducidad = @FechaCaducidad, " +
+                    "FechaConsPref = @FechaConsPref, @Proveedor = @Proveedor, Ubicacion = @Ubicacion, Almacen = @Almacen " +
+                    "WHERE Id = @Id";
 
-                using (SqlCommand query = new SqlCommand(insert))
+                using (SqlCommand query = new SqlCommand(update))
                 {
                     query.Connection = conexion;
+                    query.Parameters.Add("@Id", SqlDbType.Int).Value = this.Id;
                     query.Parameters.Add("@Alimento", SqlDbType.Int).Value = this.Alimento.Id;
                     query.Parameters.Add("@FechaEntrada", SqlDbType.Date, 200).Value = this.FechaEntrada;
                     query.Parameters.Add("@FechaCaducidad", SqlDbType.Date, 200).Value = this.FechaCaducidad;

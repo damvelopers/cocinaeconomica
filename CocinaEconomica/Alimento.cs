@@ -78,7 +78,6 @@ namespace CocinaEconomica
             {
                 conexion.Open();
                 string insert = "DELETE FROM dbo.Alimento WHERE Id = @id";
-
                 using (SqlCommand query = new SqlCommand(insert))
                 {
                     query.Connection = conexion;
@@ -102,12 +101,17 @@ namespace CocinaEconomica
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 conexion.Open();
-                string insert = "UPDATE dbo.Alimento (Nombre, Descripcion)" +
-                    " VALUES (@nombre, @descripcion)";
+                string insert = "UPDATE dbo.Alimento set Nombre = @nombre, Familia = @familia, Descripcion = @descripcion " +
+                    "WHERE Id = @Id";
 
                 using (SqlCommand query = new SqlCommand(insert))
                 {
                     query.Connection = conexion;
+                    query.Parameters.Add("@Id", SqlDbType.Int).Value = this.Id;
+                    if (this.Familia != null)
+                        query.Parameters.Add("@familia", SqlDbType.Int).Value = this.Familia.Id;
+                    else
+                        query.Parameters.Add("@familia", SqlDbType.Int).Value = DBNull.Value;
                     query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = this.Nombre;
                     query.Parameters.Add("@descripcion", SqlDbType.VarChar, 200).Value = this.Descripcion;
                     rows = query.ExecuteNonQuery();
@@ -294,6 +298,39 @@ namespace CocinaEconomica
             }
             else
                 return id;
+        }
+
+        /// <summary>
+        /// Inserta una imagen y devuelve el valor del id que se le ha asignado
+        /// </summary>
+        /// <param name="imagen">La imagen que se va a insertar</param>
+        /// <returns>Id de la imagen que se ha añadido</returns>
+        public static bool ActualizarImagen(Image imagen, int IdImagen)
+        {
+            int rows = 0;
+            if (imagen != null)
+            {
+                using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+                {
+                    conexion.Open();
+                    byte[] arr;
+                    ImageConverter converter = new ImageConverter();
+                    arr = (byte[])converter.ConvertTo(imagen, typeof(byte[]));
+                    string insertImagen = "UPDATE dbo.Imagen set Imagen = @imagen WHERE Id = @Id";
+                    using (SqlCommand query = new SqlCommand(insertImagen))
+                    {
+                        query.Connection = conexion;
+                        query.Parameters.Add("@Id", SqlDbType.Int).Value = IdImagen;
+                        query.Parameters.Add("@imagen", SqlDbType.VarBinary).Value = arr;
+                        query.CommandType = CommandType.Text;
+                        rows = query.ExecuteNonQuery();
+                    }
+                    conexion.Close();
+                    return rows > 0;
+                }
+            }
+            else
+                return false;
         }
 
         /// <summary>
