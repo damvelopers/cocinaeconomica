@@ -41,10 +41,10 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.txtAlimento = new System.Windows.Forms.TextBox();
             this.btnCrearAlimento = new System.Windows.Forms.Button();
             this.origen = new System.Windows.Forms.Label();
             this.comboBoxOrigen = new System.Windows.Forms.ComboBox();
+            this.cmb_alimentos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblAlimento
@@ -176,14 +176,6 @@
             this.lblTitulo.TabIndex = 21;
             this.lblTitulo.Text = "AÑADIR NUEVO PRODUCTO";
             // 
-            // txtAlimento
-            // 
-            this.txtAlimento.Location = new System.Drawing.Point(229, 105);
-            this.txtAlimento.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAlimento.Name = "txtAlimento";
-            this.txtAlimento.Size = new System.Drawing.Size(354, 23);
-            this.txtAlimento.TabIndex = 22;
-            // 
             // btnCrearAlimento
             // 
             this.btnCrearAlimento.Location = new System.Drawing.Point(591, 102);
@@ -221,16 +213,26 @@
             this.comboBoxOrigen.Size = new System.Drawing.Size(243, 24);
             this.comboBoxOrigen.TabIndex = 25;
             // 
+            // cmb_alimentos
+            // 
+            this.cmb_alimentos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_alimentos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_alimentos.FormattingEnabled = true;
+            this.cmb_alimentos.Location = new System.Drawing.Point(229, 102);
+            this.cmb_alimentos.Name = "cmb_alimentos";
+            this.cmb_alimentos.Size = new System.Drawing.Size(354, 24);
+            this.cmb_alimentos.TabIndex = 26;
+            // 
             // crearProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(704, 413);
+            this.Controls.Add(this.cmb_alimentos);
             this.Controls.Add(this.comboBoxOrigen);
             this.Controls.Add(this.origen);
             this.Controls.Add(this.btnCrearAlimento);
-            this.Controls.Add(this.txtAlimento);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtCantidad);
@@ -270,9 +272,9 @@
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.TextBox txtAlimento;
         private System.Windows.Forms.Button btnCrearAlimento;
         private System.Windows.Forms.Label origen;
         private System.Windows.Forms.ComboBox comboBoxOrigen;
+        private System.Windows.Forms.ComboBox cmb_alimentos;
     }
 }

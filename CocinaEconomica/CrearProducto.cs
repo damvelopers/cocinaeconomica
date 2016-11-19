@@ -19,6 +19,8 @@ namespace CocinaEconomica
         {
             this.fProductos = fProductos;
             InitializeComponent();
+            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,7 +35,12 @@ namespace CocinaEconomica
 
         private void crearProducto_Load(object sender, EventArgs e)
         {
-
+            ArrayList alimentos = Alimento.SelectAll();
+            for (int i = 0; i < alimentos.Count; i++)
+            {
+                Alimento a = (Alimento)alimentos[i];
+                cmb_alimentos.Items.Add(a.Nombre);
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -50,14 +57,19 @@ namespace CocinaEconomica
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            if (txtAlimento.Text == "")
+            if (cmb_alimentos.Text == "")
             {
                 MessageBox.Show(this, "El campo Alimento es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
 
+            if (!cmb_alimentos.Items.Contains(cmb_alimentos.Text)){
+                MessageBox.Show(this, "El Alimento no existe", "Eliga un Alimento ya creado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
             Producto p = new Producto();
-            p.Alimento = Alimento.SelectWhereNombreIs(txtAlimento.Text);
+            p.Alimento = Alimento.SelectWhereNombreIs(cmb_alimentos.Text);
             p.FechaEntrada = dateTimeFechaEn.Value;
             p.FechaCaducidad = dateTimeFechaCad.Value;
             p.FechaConsumirPreferente = dateTimeFechaPref.Value;
@@ -76,7 +88,7 @@ namespace CocinaEconomica
             else
             {
                 //MessageBox.Show(this, "Se añadido un nuevo producto correctamente.", "Producto añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtAlimento.Text = "";
+                cmb_alimentos.Text = "";
                 txtCantidad.Text = "";
                 this.fProductos.cargarDataGridView();
             }

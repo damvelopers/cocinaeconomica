@@ -36,11 +36,11 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_familia = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnAddFamilia = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.cmb_familias = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.imagenAlimento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +48,7 @@
             // 
             this.imagenAlimento.BackColor = System.Drawing.SystemColors.ControlLight;
             this.imagenAlimento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imagenAlimento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imagenAlimento.Location = new System.Drawing.Point(12, 73);
             this.imagenAlimento.Name = "imagenAlimento";
             this.imagenAlimento.Size = new System.Drawing.Size(213, 267);
@@ -117,14 +118,6 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Descripción";
             // 
-            // txt_familia
-            // 
-            this.txt_familia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_familia.Location = new System.Drawing.Point(234, 132);
-            this.txt_familia.Name = "txt_familia";
-            this.txt_familia.Size = new System.Drawing.Size(186, 23);
-            this.txt_familia.TabIndex = 21;
-            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
@@ -161,15 +154,25 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // cmb_familias
+            // 
+            this.cmb_familias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_familias.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_familias.FormattingEnabled = true;
+            this.cmb_familias.Location = new System.Drawing.Point(234, 134);
+            this.cmb_familias.Name = "cmb_familias";
+            this.cmb_familias.Size = new System.Drawing.Size(193, 21);
+            this.cmb_familias.TabIndex = 40;
+            // 
             // CrearAlimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(546, 399);
+            this.Controls.Add(this.cmb_familias);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.txt_familia);
             this.Controls.Add(this.btnAddFamilia);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescripcion);
@@ -201,10 +204,10 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_familia;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnAddFamilia;
         private System.Windows.Forms.Button btnCerrar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ComboBox cmb_familias;
     }
 }
