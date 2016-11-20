@@ -1,4 +1,6 @@
-﻿namespace CocinaEconomica
+﻿using System.Windows.Forms;
+
+namespace CocinaEconomica
 {
     partial class MDIPrincipal
     {
@@ -433,7 +435,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            MdiClient ctlMDI;
+            foreach (Control ctl in this.Controls)
+            {
+                try
+                {
+                    ctlMDI = (MdiClient)ctl;
+                    ctlMDI.BackColor = System.Drawing.SystemColors.ControlLight;
+                }
+                catch (System.InvalidCastException)
+                {
+                }
+            }
         }
         #endregion
 
