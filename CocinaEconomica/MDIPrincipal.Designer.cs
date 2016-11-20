@@ -166,7 +166,7 @@
             this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusBarToolStripMenuItem});
             this.viewMenu.Name = "viewMenu";
-            this.viewMenu.Size = new System.Drawing.Size(36, 20);
+            this.viewMenu.Size = new System.Drawing.Size(35, 20);
             this.viewMenu.Text = "&Ver";
             // 
             // statusBarToolStripMenuItem
@@ -211,7 +211,7 @@
             this.closeAllToolStripMenuItem,
             this.arrangeIconsToolStripMenuItem});
             this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(67, 20);
+            this.windowsMenu.Size = new System.Drawing.Size(66, 20);
             this.windowsMenu.Text = "&Ventanas";
             // 
             // cascadeToolStripMenuItem
@@ -410,6 +410,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1197, 667);
             this.Controls.Add(this.tablaContenedor);
             this.Controls.Add(this.statusStrip);
@@ -421,6 +422,7 @@
             this.Name = "MDIPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cocina Económica";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);

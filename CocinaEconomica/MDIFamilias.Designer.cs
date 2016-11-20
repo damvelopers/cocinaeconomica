@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TablaContenido = new System.Windows.Forms.TableLayoutPanel();
             this.panelBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -37,17 +38,17 @@
             this.btnAyuda = new System.Windows.Forms.Button();
             this.gbPrincipal = new System.Windows.Forms.GroupBox();
             this.tablaDatos = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridFamilias = new System.Windows.Forms.DataGridView();
             this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.dataGridFamilias = new System.Windows.Forms.DataGridView();
             this.TablaContenido.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.gbPrincipal.SuspendLayout();
             this.tablaDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridFamilias)).BeginInit();
             this.panelBuscar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFamilias)).BeginInit();
             this.SuspendLayout();
             // 
             // TablaContenido
@@ -167,15 +168,6 @@
             this.tablaDatos.Size = new System.Drawing.Size(1059, 436);
             this.tablaDatos.TabIndex = 1;
             // 
-            // dataGridFamilias
-            // 
-            this.dataGridFamilias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridFamilias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridFamilias.Location = new System.Drawing.Point(3, 3);
-            this.dataGridFamilias.Name = "dataGridFamilias";
-            this.dataGridFamilias.Size = new System.Drawing.Size(1053, 430);
-            this.dataGridFamilias.TabIndex = 0;
-            // 
             // panelBuscar
             // 
             this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
@@ -215,6 +207,29 @@
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
+            // dataGridFamilias
+            // 
+            this.dataGridFamilias.AllowUserToAddRows = false;
+            this.dataGridFamilias.AllowUserToDeleteRows = false;
+            this.dataGridFamilias.AllowUserToOrderColumns = true;
+            this.dataGridFamilias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridFamilias.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridFamilias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridFamilias.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridFamilias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridFamilias.Location = new System.Drawing.Point(3, 3);
+            this.dataGridFamilias.Name = "dataGridFamilias";
+            this.dataGridFamilias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridFamilias.Size = new System.Drawing.Size(1053, 430);
+            this.dataGridFamilias.TabIndex = 1;
+            // 
             // MDIFamilias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,9 +248,9 @@
             this.panelBotones.ResumeLayout(false);
             this.gbPrincipal.ResumeLayout(false);
             this.tablaDatos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridFamilias)).EndInit();
             this.panelBuscar.ResumeLayout(false);
             this.panelBuscar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFamilias)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,10 +266,10 @@
         private System.Windows.Forms.Button btnAyuda;
         private System.Windows.Forms.GroupBox gbPrincipal;
         private System.Windows.Forms.TableLayoutPanel tablaDatos;
-        private System.Windows.Forms.DataGridView dataGridFamilias;
         private System.Windows.Forms.FlowLayoutPanel panelBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DataGridView dataGridFamilias;
     }
 }

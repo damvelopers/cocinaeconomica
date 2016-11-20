@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.TablaContenido = new System.Windows.Forms.TableLayoutPanel();
             this.panelBotones = new System.Windows.Forms.FlowLayoutPanel();
@@ -178,10 +179,24 @@
             // 
             // dataGridAlimentos
             // 
+            this.dataGridAlimentos.AllowUserToAddRows = false;
+            this.dataGridAlimentos.AllowUserToDeleteRows = false;
+            this.dataGridAlimentos.AllowUserToOrderColumns = true;
+            this.dataGridAlimentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridAlimentos.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridAlimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridAlimentos.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridAlimentos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridAlimentos.Location = new System.Drawing.Point(3, 3);
             this.dataGridAlimentos.Name = "dataGridAlimentos";
+            this.dataGridAlimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridAlimentos.Size = new System.Drawing.Size(1053, 430);
             this.dataGridAlimentos.TabIndex = 0;
             // 

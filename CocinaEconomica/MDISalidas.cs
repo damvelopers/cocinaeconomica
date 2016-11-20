@@ -24,7 +24,8 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT * from Salida";
+                string select = "SELECT s.Id, a.Nombre as 'Alimento', s.FechaSalida as 'Fecha de salida' " +
+                    "FROM Salida s join Alimento a on a.Id = s.Alimento ";
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     conexion.Open();
@@ -42,11 +43,9 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT s.Id, s.FechaSalida as 'Fecha de salida', " +
-                    "s.Alimento as 'Alimento', " +
-                    "FROM Salida s join Alimento a on a.Id = s.Alimento.Id " +
-                    " WHERE a.Nombre like @nombre";
-                //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO
+                string select = "SELECT s.Id, a.Nombre as 'Alimento', s.FechaSalida as 'Fecha de salida' " +
+                    "FROM Salida s join Alimento a on a.Id = s.Alimento " +
+                    "WHERE a.Nombre like @nombre";
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = "%" + nombre + "%";
