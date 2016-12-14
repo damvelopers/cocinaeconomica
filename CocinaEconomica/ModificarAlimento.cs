@@ -61,6 +61,7 @@ namespace CocinaEconomica
                     }
                 }
                 dataGridAlimentos.DataSource = result;
+                dataGridAlimentos.Columns[0].Visible = false;
             }
         }
 

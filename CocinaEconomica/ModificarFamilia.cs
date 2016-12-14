@@ -40,6 +40,7 @@ namespace CocinaEconomica
                     }
                 }
                 dataGridFamilia.DataSource = result;
+                dataGridFamilia.Columns[0].Visible = false;
             }
         }
 
