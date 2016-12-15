@@ -134,6 +134,7 @@
             // 
             // dataGridProductos
             // 
+            this.dataGridProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridProductos.Location = new System.Drawing.Point(9, 51);
             this.dataGridProductos.Name = "dataGridProductos";

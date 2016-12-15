@@ -125,6 +125,7 @@
             // 
             // dataGridFamilia
             // 
+            this.dataGridFamilia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridFamilia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridFamilia.Location = new System.Drawing.Point(12, 43);
             this.dataGridFamilia.Name = "dataGridFamilia";

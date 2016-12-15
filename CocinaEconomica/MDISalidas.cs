@@ -35,6 +35,7 @@ namespace CocinaEconomica
                     }
                 }
                 dataGridSalidas.DataSource = result;
+                dataGridSalidas.Columns[0].Visible = false;
             }
         }
 
@@ -56,6 +57,7 @@ namespace CocinaEconomica
                     }
                 }
                 dataGridSalidas.DataSource = result;
+                dataGridSalidas.Columns[0].Visible = false;
             }
         }
 

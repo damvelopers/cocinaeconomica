@@ -171,6 +171,7 @@
             // 
             // dataGridAlimentos
             // 
+            this.dataGridAlimentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridAlimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridAlimentos.Location = new System.Drawing.Point(14, 43);
             this.dataGridAlimentos.Name = "dataGridAlimentos";

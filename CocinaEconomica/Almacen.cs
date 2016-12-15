@@ -153,6 +153,7 @@ namespace CocinaEconomica
                     SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
                     {
+                        a = new Almacen();
                         a.Id = reader.GetInt32(0);
                         a.Nombre = reader.GetString(1);
                         a.Descripcion = reader.GetString(2);
