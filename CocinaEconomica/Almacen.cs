@@ -120,7 +120,6 @@ namespace CocinaEconomica
                 string selectString = "select * from Almacen";
                 using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
                 {
-                    conn.Open();
                     SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
                     {
@@ -150,6 +149,34 @@ namespace CocinaEconomica
                 {
                     conn.Open();
                     selectCommand.Parameters.Add("@id", SqlDbType.Int).Value = Id;
+                    SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        a = new Almacen();
+                        a.Id = reader.GetInt32(0);
+                        a.Nombre = reader.GetString(1);
+                        a.Descripcion = reader.GetString(2);
+                    }
+                }
+            }
+            return a;
+        }
+
+        /// <summary>
+        /// Devuelve un Almacen dado su Id
+        /// </summary>
+        /// <param name="Id">Id del almacén</param>
+        /// <returns>El almacén</returns>
+        public static Almacen Select(string Nombre)
+        {
+            Almacen a = null;
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string selectString = "select * from Almacen where Nombre = @nombre";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    conn.Open();
+                    selectCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre;
                     SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
                     {

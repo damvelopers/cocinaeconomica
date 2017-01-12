@@ -45,6 +45,8 @@
             this.origen = new System.Windows.Forms.Label();
             this.comboBoxOrigen = new System.Windows.Forms.ComboBox();
             this.cmb_alimentos = new System.Windows.Forms.ComboBox();
+            this.cbxAlmacen = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblAlimento
@@ -122,7 +124,7 @@
             // 
             // btnAnadir
             // 
-            this.btnAnadir.Location = new System.Drawing.Point(13, 372);
+            this.btnAnadir.Location = new System.Drawing.Point(13, 414);
             this.btnAnadir.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(100, 28);
@@ -136,7 +138,7 @@
             this.cantidad.AutoSize = true;
             this.cantidad.BackColor = System.Drawing.Color.Transparent;
             this.cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantidad.Location = new System.Drawing.Point(13, 328);
+            this.cantidad.Location = new System.Drawing.Point(13, 370);
             this.cantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cantidad.Name = "cantidad";
             this.cantidad.Size = new System.Drawing.Size(68, 17);
@@ -146,7 +148,7 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(229, 325);
+            this.txtCantidad.Location = new System.Drawing.Point(229, 367);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(129, 23);
@@ -154,7 +156,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(591, 372);
+            this.btnCerrar.Location = new System.Drawing.Point(591, 414);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(100, 28);
@@ -192,7 +194,7 @@
             this.origen.AutoSize = true;
             this.origen.BackColor = System.Drawing.Color.Transparent;
             this.origen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.origen.Location = new System.Drawing.Point(13, 290);
+            this.origen.Location = new System.Drawing.Point(13, 284);
             this.origen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.origen.Name = "origen";
             this.origen.Size = new System.Drawing.Size(55, 17);
@@ -207,7 +209,7 @@
             "Donado",
             "Comprado",
             "Banco de alimentos"});
-            this.comboBoxOrigen.Location = new System.Drawing.Point(229, 287);
+            this.comboBoxOrigen.Location = new System.Drawing.Point(229, 281);
             this.comboBoxOrigen.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxOrigen.Name = "comboBoxOrigen";
             this.comboBoxOrigen.Size = new System.Drawing.Size(243, 24);
@@ -223,12 +225,37 @@
             this.cmb_alimentos.Size = new System.Drawing.Size(354, 24);
             this.cmb_alimentos.TabIndex = 26;
             // 
+            // cbxAlmacen
+            // 
+            this.cbxAlmacen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxAlmacen.FormattingEnabled = true;
+            this.cbxAlmacen.Location = new System.Drawing.Point(229, 327);
+            this.cbxAlmacen.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxAlmacen.Name = "cbxAlmacen";
+            this.cbxAlmacen.Size = new System.Drawing.Size(243, 24);
+            this.cbxAlmacen.TabIndex = 28;
+            this.cbxAlmacen.SelectedIndexChanged += new System.EventHandler(this.cbxAlmacen_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 330);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Almacén:";
+            // 
             // crearProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(704, 413);
+            this.ClientSize = new System.Drawing.Size(704, 455);
+            this.Controls.Add(this.cbxAlmacen);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmb_alimentos);
             this.Controls.Add(this.comboBoxOrigen);
             this.Controls.Add(this.origen);
@@ -276,5 +303,7 @@
         private System.Windows.Forms.Label origen;
         private System.Windows.Forms.ComboBox comboBoxOrigen;
         private System.Windows.Forms.ComboBox cmb_alimentos;
+        private System.Windows.Forms.ComboBox cbxAlmacen;
+        private System.Windows.Forms.Label label1;
     }
 }

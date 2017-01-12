@@ -323,6 +323,7 @@ namespace CocinaEconomica
         /// <returns>Si se ha insertado correctamente o no</returns>
         public bool Insert(int numero)
         {
+            
             // Este método sirve para optimizar el insert de muchos productos a la vez.
             // En vez de conectarnos N veces a la BD y ejecutar una consulta cada vez, 
             // nos conectamos una vez y ejecutamos todas las consultas bajo la misma conexión
@@ -374,6 +375,8 @@ namespace CocinaEconomica
                 }
                 conexion.Close();
             }
+            
+            
             return inserted;
         }
 

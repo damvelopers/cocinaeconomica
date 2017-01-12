@@ -59,6 +59,7 @@
             // 
             // dataGridProductos
             // 
+            this.dataGridProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridProductos.Location = new System.Drawing.Point(13, 43);
             this.dataGridProductos.Name = "dataGridProductos";
@@ -101,6 +102,7 @@
             // 
             // dataGridSalidas
             // 
+            this.dataGridSalidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridSalidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridSalidas.Location = new System.Drawing.Point(17, 416);
             this.dataGridSalidas.Name = "dataGridSalidas";

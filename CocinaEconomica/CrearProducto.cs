@@ -41,6 +41,13 @@ namespace CocinaEconomica
                 Alimento a = (Alimento)alimentos[i];
                 cmb_alimentos.Items.Add(a.Nombre);
             }
+
+            ArrayList almacenes = Almacen.SelectAll();
+            for (int i = 0; i < almacenes.Count; i++)
+            {
+                Almacen a = (Almacen)almacenes[i];
+                cbxAlmacen.Items.Add(a.Nombre);
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -70,16 +77,21 @@ namespace CocinaEconomica
 
             Producto p = new Producto();
             p.Alimento = Alimento.SelectWhereNombreIs(cmb_alimentos.Text);
+            p.Almacen = Almacen.Select(cbxAlmacen.SelectedItem.ToString());
             p.FechaEntrada = dateTimeFechaEn.Value;
             p.FechaCaducidad = dateTimeFechaCad.Value;
             p.FechaConsumirPreferente = dateTimeFechaPref.Value;
             p.Proveedor = comboBoxOrigen.SelectedItem.ToString();
             int cant = Int32.Parse(txtCantidad.Text);
             bool ok = false;
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             if (txtCantidad.Text != "")
                 ok = p.Insert(cant);
             else
                 ok = p.Insert();
+
+            watch.Stop();
+            MessageBox.Show(this, watch.ElapsedMilliseconds + "", "Tiempo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             // Feedback!
             if (!ok)
             {
@@ -92,6 +104,11 @@ namespace CocinaEconomica
                 txtCantidad.Text = "";
                 this.fProductos.cargarDataGridView();
             }
+        }
+
+        private void cbxAlmacen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

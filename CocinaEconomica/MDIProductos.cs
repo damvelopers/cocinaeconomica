@@ -50,10 +50,10 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT p.Id, a.Nombre as 'Alimento', FechaEntrada as 'Fecha de entrada', " +
-                    "FechaCaducidad as 'Fecha de caducidad', FechaConsPref as 'Consumo preferente antes de', " +
-                    "al.Nombre as 'Almacén', Ubicacion as 'Ubicación', Proveedor " +
-                    "FROM Producto p join Alimento a on a.Id = p.Alimento left outer join Almacen al on al.Id = p.Almacen ";
+                string select = "SELECT a.Nombre, p.FechaCaducidad, al.Nombre as 'Almacén', " +
+                                "p.FechaConsPref as 'Consumo preferente antes de', COUNT(p.Id) as 'Cantidad' "+
+                                "FROM Producto p join Alimento a on p.Alimento = a.Id join Almacen al on p.Almacen = al.Id " +
+                                "GROUP BY a.Nombre, p.FechaCaducidad, p.FechaEntrada, p.FechaConsPref, al.Nombre ";
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     conexion.Open();
@@ -63,7 +63,7 @@ namespace CocinaEconomica
                     }
                 }
                 dataGridProductos.DataSource = result;
-                dataGridProductos.Columns[0].Visible = false;
+                //dataGridProductos.Columns[0].Visible = false;
             }
         }
 
@@ -72,11 +72,12 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT p.Id, a.Nombre as 'Alimento', FechaEntrada as 'Fecha de entrada', " +
-                    "FechaCaducidad as 'Fecha de caducidad', FechaConsPref as 'Consumo preferente antes de', " +
-                    "al.Nombre as 'Almacén', Ubicacion as 'Ubicación', Proveedor " +
-                    "FROM Producto p join Alimento a on a.Id = p.Alimento left outer join Almacen al on al.Id = p.Almacen " +
-                    "WHERE a.Nombre like @nombre";
+                string select = "SELECT a.Nombre, p.FechaCaducidad, al.Nombre as 'Almacén', " +
+                                "p.FechaConsPref as 'Consumo preferente antes de', COUNT(p.Id) as 'Cantidad' " +
+                                "FROM Producto p join Alimento a on p.Alimento = a.Id join Almacen al on p.Almacen = al.Id " +
+                                 "WHERE a.Nombre like @nombre " +
+                                "GROUP BY a.Nombre, p.FechaCaducidad, p.FechaEntrada, p.FechaConsPref, al.Nombre ";
+                   
                     //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
@@ -88,7 +89,7 @@ namespace CocinaEconomica
                     }
                 }
                 dataGridProductos.DataSource = result;
-                dataGridProductos.Columns[0].Visible = false;
+                //dataGridProductos.Columns[0].Visible = false;
             }
         }
 
