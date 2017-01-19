@@ -120,6 +120,7 @@ namespace CocinaEconomica
             {
                 int id = (int)dataGridProductos.CurrentRow.Cells["Id"].Value;
                 Producto p = Producto.Select(id);
+               
                 if (p.Delete())
                 {
                     MessageBox.Show(this, "Se eliminado el producto correctamente.", "Producto eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);

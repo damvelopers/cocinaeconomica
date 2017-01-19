@@ -206,14 +206,14 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(3, 3);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(683, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(371, 26);
             this.txtBuscar.TabIndex = 0;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnBuscar
             // 
             this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBuscar.Location = new System.Drawing.Point(692, 3);
+            this.btnBuscar.Location = new System.Drawing.Point(380, 3);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 26);
             this.btnBuscar.TabIndex = 1;

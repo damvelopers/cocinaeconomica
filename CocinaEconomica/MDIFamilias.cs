@@ -114,6 +114,10 @@ namespace CocinaEconomica
             {
                 int id = (int)dataGridFamilias.CurrentRow.Cells["Id"].Value;
                 Familia f = Familia.Select(id);
+                if (MessageBox.Show(this, String.Format("Se va ha eliminar la familia '{0}' ¿Está seguro?", f.Nombre), "Eliminar familia", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
+                {
+                    return;
+                }
                 if (f.Delete())
                 {
                     MessageBox.Show(this, "Se eliminado la familia correctamente.", "Familia eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);

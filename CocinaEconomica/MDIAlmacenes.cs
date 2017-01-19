@@ -107,6 +107,10 @@ namespace CocinaEconomica
             try { 
                 int id = (int)dataGridAlmacenes.CurrentRow.Cells["Id"].Value;
                 Almacen a = Almacen.Select(id);
+                if (MessageBox.Show(this, String.Format("Se va ha eliminar el almacén '{0}' ¿Está seguro?", a.Nombre), "Eliminar almacén", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
+                {
+                    return;
+                }
                 if (a.Delete())
                 {
                     MessageBox.Show(this, "Se eliminado el almacén correctamente.", "Almacén eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);

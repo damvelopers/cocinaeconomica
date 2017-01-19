@@ -74,6 +74,11 @@ namespace CocinaEconomica
                 MessageBox.Show(this, "El Alimento no existe", "Eliga un Alimento ya creado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
+            int cant = Int32.Parse(txtCantidad.Text);
+            if (MessageBox.Show(this, "Se va" + (cant == 1 ? "" : "n") + " a registrar " + cant + " producto" + (cant == 1 ? "" : "s") +" del alimento " +  cmb_alimentos.Text + ". ¿Está seguro?", "Añadir Productos", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
+            {
+                return;
+            }
 
             Producto p = new Producto();
             p.Alimento = Alimento.SelectWhereNombreIs(cmb_alimentos.Text);
@@ -82,7 +87,6 @@ namespace CocinaEconomica
             p.FechaCaducidad = dateTimeFechaCad.Value;
             p.FechaConsumirPreferente = dateTimeFechaPref.Value;
             p.Proveedor = comboBoxOrigen.SelectedItem.ToString();
-            int cant = Int32.Parse(txtCantidad.Text);
             bool ok = false;
             var watch = System.Diagnostics.Stopwatch.StartNew();
             if (txtCantidad.Text != "")

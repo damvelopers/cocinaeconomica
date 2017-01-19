@@ -131,6 +131,11 @@ namespace CocinaEconomica
             {
                 int id = (int)dataGridAlimentos.CurrentRow.Cells["Id"].Value;
                 Alimento a = Alimento.Select(id);
+                if (MessageBox.Show(this, String.Format("Se va ha eliminar el alimento '{0}' ¿Está seguro?", a.Nombre), "Eliminar alimento", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
+                {
+                    return;
+                }
+                
                 if (a.Delete())
                 {
                     MessageBox.Show(this, "Se eliminado el alimento correctamente.", "Alimento eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);

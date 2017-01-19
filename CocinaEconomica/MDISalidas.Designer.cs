@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TablaContenido = new System.Windows.Forms.TableLayoutPanel();
             this.panelBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -38,17 +38,17 @@
             this.btnAyuda = new System.Windows.Forms.Button();
             this.gbPrincipal = new System.Windows.Forms.GroupBox();
             this.tablaDatos = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridSalidas = new System.Windows.Forms.DataGridView();
             this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dataGridSalidas = new System.Windows.Forms.DataGridView();
             this.TablaContenido.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.gbPrincipal.SuspendLayout();
             this.tablaDatos.SuspendLayout();
-            this.panelBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalidas)).BeginInit();
+            this.panelBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // TablaContenido
@@ -116,6 +116,7 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCerrar
@@ -169,6 +170,29 @@
             this.tablaDatos.Size = new System.Drawing.Size(1059, 436);
             this.tablaDatos.TabIndex = 1;
             // 
+            // dataGridSalidas
+            // 
+            this.dataGridSalidas.AllowUserToAddRows = false;
+            this.dataGridSalidas.AllowUserToDeleteRows = false;
+            this.dataGridSalidas.AllowUserToOrderColumns = true;
+            this.dataGridSalidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridSalidas.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridSalidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridSalidas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridSalidas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridSalidas.Location = new System.Drawing.Point(3, 3);
+            this.dataGridSalidas.Name = "dataGridSalidas";
+            this.dataGridSalidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridSalidas.Size = new System.Drawing.Size(1053, 430);
+            this.dataGridSalidas.TabIndex = 1;
+            // 
             // panelBuscar
             // 
             this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
@@ -184,14 +208,14 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(3, 3);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(683, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(371, 26);
             this.txtBuscar.TabIndex = 0;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnBuscar
             // 
             this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBuscar.Location = new System.Drawing.Point(692, 3);
+            this.btnBuscar.Location = new System.Drawing.Point(380, 3);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 26);
             this.btnBuscar.TabIndex = 1;
@@ -208,29 +232,6 @@
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
-            // dataGridSalidas
-            // 
-            this.dataGridSalidas.AllowUserToAddRows = false;
-            this.dataGridSalidas.AllowUserToDeleteRows = false;
-            this.dataGridSalidas.AllowUserToOrderColumns = true;
-            this.dataGridSalidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridSalidas.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridSalidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridSalidas.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridSalidas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridSalidas.Location = new System.Drawing.Point(3, 3);
-            this.dataGridSalidas.Name = "dataGridSalidas";
-            this.dataGridSalidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridSalidas.Size = new System.Drawing.Size(1053, 430);
-            this.dataGridSalidas.TabIndex = 1;
-            // 
             // MDISalidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,9 +247,9 @@
             this.panelBotones.ResumeLayout(false);
             this.gbPrincipal.ResumeLayout(false);
             this.tablaDatos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSalidas)).EndInit();
             this.panelBuscar.ResumeLayout(false);
             this.panelBuscar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridSalidas)).EndInit();
             this.ResumeLayout(false);
 
         }

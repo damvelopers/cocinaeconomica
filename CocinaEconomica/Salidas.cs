@@ -123,6 +123,10 @@ namespace CocinaEconomica
                 MessageBox.Show(this, "Se debe introducir una cantidad mayor de cero", "Cantidad incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
+            if(MessageBox.Show(this, "Se va" + (cantidad == 1 ? "" : "n") + " a registrar " + cantidad + " salida"+ (cantidad == 1 ? "" : "s") +". ¿Está seguro?", "Añadir salidas", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
+            {
+                return;
+            }
             try
             {
                 string alimento = (string) dataGridProductos.CurrentRow.Cells[0].Value;

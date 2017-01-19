@@ -100,6 +100,10 @@ namespace CocinaEconomica
             {
                 int id = (int)dataGridSalidas.CurrentRow.Cells["Id"].Value;
                 Salida s = Salida.Select(id);
+                if (MessageBox.Show(this, String.Format("Se va ha eliminar la salida del producto '{0}' a fecha de '{1:d}' ¿Está seguro?", s.Alimento.Nombre, s.FechaSalida), "Eliminar salida", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
+                {
+                    return;
+                }
                 if (s.Delete())
                 {
                     MessageBox.Show(this, "Se eliminado la salida correctamente.", "Salida eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);

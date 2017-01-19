@@ -38,17 +38,17 @@
             this.btnAyuda = new System.Windows.Forms.Button();
             this.gbPrincipal = new System.Windows.Forms.GroupBox();
             this.tablaDatos = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridAlmacenes = new System.Windows.Forms.DataGridView();
             this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dataGridAlmacenes = new System.Windows.Forms.DataGridView();
             this.TablaContenido.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.gbPrincipal.SuspendLayout();
             this.tablaDatos.SuspendLayout();
-            this.panelBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlmacenes)).BeginInit();
+            this.panelBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // TablaContenido
@@ -168,45 +168,6 @@
             this.tablaDatos.Size = new System.Drawing.Size(1059, 436);
             this.tablaDatos.TabIndex = 1;
             // 
-            // panelBuscar
-            // 
-            this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.panelBuscar.Controls.Add(this.txtBuscar);
-            this.panelBuscar.Controls.Add(this.btnBuscar);
-            this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBuscar.Location = new System.Drawing.Point(3, 22);
-            this.panelBuscar.Name = "panelBuscar";
-            this.panelBuscar.Size = new System.Drawing.Size(1059, 31);
-            this.panelBuscar.TabIndex = 0;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(3, 3);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(683, 26);
-            this.txtBuscar.TabIndex = 0;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBuscar.Location = new System.Drawing.Point(692, 3);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 26);
-            this.btnBuscar.TabIndex = 1;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1196, 498);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
-            // 
             // dataGridAlmacenes
             // 
             this.dataGridAlmacenes.AllowUserToAddRows = false;
@@ -230,6 +191,45 @@
             this.dataGridAlmacenes.Size = new System.Drawing.Size(1053, 430);
             this.dataGridAlmacenes.TabIndex = 1;
             // 
+            // panelBuscar
+            // 
+            this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.panelBuscar.Controls.Add(this.txtBuscar);
+            this.panelBuscar.Controls.Add(this.btnBuscar);
+            this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBuscar.Location = new System.Drawing.Point(3, 22);
+            this.panelBuscar.Name = "panelBuscar";
+            this.panelBuscar.Size = new System.Drawing.Size(1059, 31);
+            this.panelBuscar.TabIndex = 0;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(3, 3);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(371, 26);
+            this.txtBuscar.TabIndex = 0;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBuscar.Location = new System.Drawing.Point(380, 3);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 26);
+            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(1196, 498);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
+            // 
             // MDIAlmacenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,9 +246,9 @@
             this.panelBotones.ResumeLayout(false);
             this.gbPrincipal.ResumeLayout(false);
             this.tablaDatos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlmacenes)).EndInit();
             this.panelBuscar.ResumeLayout(false);
             this.panelBuscar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlmacenes)).EndInit();
             this.ResumeLayout(false);
 
         }

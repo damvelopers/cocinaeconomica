@@ -435,7 +435,7 @@ namespace CocinaEconomica
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            MdiClient ctlMDI;
+            /*MdiClient ctlMDI;
             foreach (Control ctl in this.Controls)
             {
                 try
@@ -446,7 +446,7 @@ namespace CocinaEconomica
                 catch (System.InvalidCastException)
                 {
                 }
-            }
+            }*/
         }
         #endregion
 
