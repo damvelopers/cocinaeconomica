@@ -24,8 +24,9 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT s.Id, a.Nombre as 'Alimento', s.FechaSalida as 'Fecha de salida' " +
-                    "FROM Salida s join Alimento a on a.Id = s.Alimento ";
+                string select = "SELECT a.Nombre, FechaSalida, count(*) as Cantidad " +
+                                "FROM Salida s join Alimento a on s.Alimento = a.Id " +
+                                "GROUP BY a.Nombre, FechaSalida";
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     conexion.Open();
@@ -35,7 +36,7 @@ namespace CocinaEconomica
                     }
                 }
                 dataGridSalidas.DataSource = result;
-                dataGridSalidas.Columns[0].Visible = false;
+                //dataGridSalidas.Columns[0].Visible = false;
             }
         }
 

@@ -91,7 +91,7 @@ namespace CocinaEconomica
                 ok = p.Insert();
 
             watch.Stop();
-            MessageBox.Show(this, watch.ElapsedMilliseconds + "", "Tiempo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            System.Diagnostics.Debug.WriteLine(watch.ElapsedMilliseconds);
             // Feedback!
             if (!ok)
             {

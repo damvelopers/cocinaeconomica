@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace CocinaEconomica
 {
@@ -26,7 +27,9 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT * from Salida";
+                string select = "SELECT a.Nombre, FechaSalida, count(*) as Cantidad " +
+                                "FROM Salida s join Alimento a on s.Alimento = a.Id " + 
+                                "GROUP BY a.Nombre, FechaSalida";
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     conexion.Open();
@@ -114,25 +117,53 @@ namespace CocinaEconomica
 
         private void btnAñadirSalida_Click(object sender, EventArgs e)
         {
-            try { 
-                int id = (int)dataGridProductos.CurrentRow.Cells["Id"].Value;
-                Producto p = Producto.Select(id);
-                Alimento a = p.Alimento;
+            int cantidad = (int)numericCantidad.Value;
+            if (cantidad == 0)
+            {
+                MessageBox.Show(this, "Se debe introducir una cantidad mayor de cero", "Cantidad incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+            try
+            {
+                string alimento = (string) dataGridProductos.CurrentRow.Cells[0].Value;
+                DateTime fechaCad = (DateTime) dataGridProductos.CurrentRow.Cells[1].Value;
+                string almacen = (string) dataGridProductos.CurrentRow.Cells[2].Value;
+                Alimento ali = Alimento.SelectWhereNombreIs(alimento);
+                Almacen a = Almacen.Select(almacen);
+                ArrayList productos = Producto.SelectGroupByFechaCadAlmacen(ali, fechaCad, a);
+
                 Salida s = new Salida();
                 s.FechaSalida = dtpSalida.Value;
-                s.Alimento = a;
-                if (s.Insert())
+                s.Alimento = ali;
+                
+
+                for (int i = 0; i < cantidad; i++)
                 {
-                    MessageBox.Show(this, "Se ha insertado una salida correctamente", "Salida insertada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }else
+                    ((Producto)productos[i]).Delete();
+                }
+
+                if (s.Insert(cantidad))
+                {
+                    MessageBox.Show(this, "Se ha insertado una salida correctamente", "Salida insertada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
                 {
                     MessageBox.Show(this, "Se ha producido un error insertando la salida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(this, "Se debe seleccionar un producto", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Se debe seleccionar un producto", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-}
+            cargarDataGridViewProductos();
+            cargarDataGridViewSalidas();
+        }
+
+        private void dataGridProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int max = (int)dataGridProductos.CurrentRow.Cells["Cantidad"].Value;
+            numericCantidad.Maximum = max;
+            lblNombreProducto.Text = (string)dataGridProductos.CurrentRow.Cells[0].Value;
+        }
     }
 }

@@ -276,6 +276,44 @@ namespace CocinaEconomica
             return productos;
         }
 
+        /// <summary>
+        /// Devuelve un ArrayList con los Productos que tienen una misma fecha de caducidad y almacén
+        /// </summary>
+        /// <param name="fechaCaducidad">La fecha de caducidad</param>
+        /// <param name="almacen">El almacén</param>
+        /// <returns></returns>
+        public static ArrayList SelectGroupByFechaCadAlmacen(Alimento alimento, DateTime fechaCaducidad, Almacen almacen)
+        {
+            ArrayList productos = new ArrayList();
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conn.Open();
+                string selectString = "select * from Producto where Alimento = @alimento and FechaCaducidad = @fechacaducidad and Almacen =  @almacen";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    selectCommand.Parameters.Add("@alimento", SqlDbType.Int).Value = alimento.Id;
+                    selectCommand.Parameters.Add("@fechacaducidad", SqlDbType.DateTime).Value = fechaCaducidad;
+                    selectCommand.Parameters.Add("@almacen", SqlDbType.Int).Value = almacen.Id;
+                    SqlDataReader reader = selectCommand.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Producto p = new Producto();
+                        p.Id = reader.GetInt32(0);
+                        p.Alimento = Alimento.Select(reader.GetInt32(1));
+                        p.FechaEntrada = reader.GetDateTime(2);
+                        p.FechaCaducidad = reader.GetDateTime(3);
+                        p.FechaConsumirPreferente = reader.GetDateTime(4);
+                        p.Proveedor = reader.GetString(5);
+                        p.Ubicacion = reader.GetString(6);
+                        p.Almacen = Almacen.Select(reader.GetInt32(7));
+                        productos.Add(p);
+                    }
+                    conn.Close();
+                }
+            }
+            return productos;
+        }
+
         #endregion
 
         #region INSERTS

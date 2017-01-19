@@ -40,8 +40,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.numericCantidad = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblNombreProducto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalidas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -65,6 +69,7 @@
             this.dataGridProductos.Name = "dataGridProductos";
             this.dataGridProductos.Size = new System.Drawing.Size(919, 240);
             this.dataGridProductos.TabIndex = 40;
+            this.dataGridProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProductos_CellClick);
             // 
             // label1
             // 
@@ -82,7 +87,7 @@
             // dtpSalida
             // 
             this.dtpSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpSalida.Location = new System.Drawing.Point(17, 333);
+            this.dtpSalida.Location = new System.Drawing.Point(199, 335);
             this.dtpSalida.Name = "dtpSalida";
             this.dtpSalida.Size = new System.Drawing.Size(256, 23);
             this.dtpSalida.TabIndex = 42;
@@ -112,7 +117,7 @@
             // btnAñadirSalida
             // 
             this.btnAñadirSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAñadirSalida.Location = new System.Drawing.Point(279, 332);
+            this.btnAñadirSalida.Location = new System.Drawing.Point(461, 334);
             this.btnAñadirSalida.Name = "btnAñadirSalida";
             this.btnAñadirSalida.Size = new System.Drawing.Size(100, 28);
             this.btnAñadirSalida.TabIndex = 45;
@@ -163,12 +168,46 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // numericCantidad
+            // 
+            this.numericCantidad.Location = new System.Drawing.Point(73, 336);
+            this.numericCantidad.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericCantidad.Name = "numericCantidad";
+            this.numericCantidad.Size = new System.Drawing.Size(120, 20);
+            this.numericCantidad.TabIndex = 50;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 338);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "Cantidad";
+            // 
+            // lblNombreProducto
+            // 
+            this.lblNombreProducto.AutoSize = true;
+            this.lblNombreProducto.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreProducto.Location = new System.Drawing.Point(94, 296);
+            this.lblNombreProducto.Name = "lblNombreProducto";
+            this.lblNombreProducto.Size = new System.Drawing.Size(0, 24);
+            this.lblNombreProducto.TabIndex = 52;
+            // 
             // Salidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(942, 707);
+            this.Controls.Add(this.lblNombreProducto);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.numericCantidad);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label3);
@@ -187,6 +226,7 @@
             this.Load += new System.EventHandler(this.Salidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalidas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +245,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown numericCantidad;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNombreProducto;
     }
 }

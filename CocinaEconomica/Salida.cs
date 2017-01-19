@@ -149,6 +149,46 @@ namespace CocinaEconomica
             return inserted;
         }
 
+        public bool Insert(int cantidad)
+        {
+            if (this.Alimento == null || this.Alimento.Id < 0)
+                return false;
+
+            bool inserted = false;
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conexion.Open();
+                // Hay que realizar una transacción para asegurarnos de que entran todos bien
+                using (SqlTransaction tx = conexion.BeginTransaction())
+                {
+                    try
+                    {
+                        for (int i = 0; i < cantidad; i++)
+                        {
+                            string insert = "INSERT into dbo.Salida(FechaSalida, Alimento) " +
+                                "VALUES (@fechasalida, @alimento)";
+                            using (SqlCommand query = new SqlCommand(insert))
+                            {
+                                query.Connection = conexion;
+                                query.Transaction = tx;
+                                query.Parameters.Add("@fechasalida", SqlDbType.VarChar, 50).Value = this.FechaSalida;
+                                query.Parameters.Add("@alimento", SqlDbType.VarChar, 200).Value = this.Alimento.Id;
+                                query.ExecuteNonQuery();
+                            }
+                        }
+                        tx.Commit();
+                        inserted = true;
+                    }
+                    catch
+                    {
+                        tx.Rollback();
+                        inserted = false;
+                    }
+                }
+            }
+            return inserted;
+        }
+
         #endregion
     }
 }
