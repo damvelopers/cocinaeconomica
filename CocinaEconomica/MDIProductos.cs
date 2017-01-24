@@ -182,7 +182,7 @@ namespace CocinaEconomica
                     cant = Int32.Parse(cantidad.Text);
                 }catch(Exception ex)
                 {
-                    MessageBox.Show(this, "Indique correctamente la cantidad a eliminar.", "Cantidad invalida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show(this, "Indique correctamente la cantidad a eliminar.", "Cantidad invalida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 bool todoOk = true;
                 if (cant <= cantidadProducto && cant > 0)
