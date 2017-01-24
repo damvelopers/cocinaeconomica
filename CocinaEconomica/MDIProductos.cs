@@ -143,6 +143,7 @@ namespace CocinaEconomica
             cantidad = new TextBox();
             cantidad.Left = 150;
             cantidad.Top = 20;
+            cantidad.Text = "0";
             Button aceptar = new Button();
             aceptar.Text = "Aceptar";
             aceptar.Left = 100;
@@ -175,9 +176,16 @@ namespace CocinaEconomica
                 //int id = (int)celdas["Id"].Value;
                 //Producto p = Producto.Select(id);
                 int cantidadProducto = (Int32)celdas[4].Value;
-                int cant = Int32.Parse(cantidad.Text);
+                int cant = 0;
+                try
+                {
+                    cant = Int32.Parse(cantidad.Text);
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(this, "Indique correctamente la cantidad a eliminar.", "Cantidad invalida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 bool todoOk = true;
-                if (cant <= cantidadProducto)
+                if (cant <= cantidadProducto && cant > 0)
                 {
                     string alimento = (string)celdas[0].Value;
                     DateTime fechaCad = (DateTime)celdas[1].Value;
@@ -192,21 +200,25 @@ namespace CocinaEconomica
                             todoOk = false;
                         }
                     }
-                }
-                if (todoOk)
-                {
-                    MessageBox.Show(this, "Se eliminado el producto correctamente.", "Producto eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cargarDataGridView();
-                    /*Salida s = new Salida();
-                    s.Alimento = p.Alimento;
-                    s.Insert();*/
-                    frmAbout.Close();
-                }
-                else
-                {
-                    MessageBox.Show(this, "No se ha eliminado el producto.", "Producto no eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (todoOk)
+                    {
+                        MessageBox.Show(this, "Se eliminado el producto correctamente.", "Producto eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cargarDataGridView();
+                        /*Salida s = new Salida();
+                        s.Alimento = p.Alimento;
+                        s.Insert();*/
+                        frmAbout.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "No se ha eliminado el producto.", "Producto no eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    }
+                }else
+                {
+                    MessageBox.Show(this, "Indique correctamente la cantidad a eliminar.", "Cantidad invalida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                
             }
             catch (Exception ex)
             {
