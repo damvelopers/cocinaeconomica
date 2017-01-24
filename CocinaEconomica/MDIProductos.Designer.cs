@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TablaContenido = new System.Windows.Forms.TableLayoutPanel();
             this.panelBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -45,6 +45,7 @@
             this.rbNoCaducados = new System.Windows.Forms.RadioButton();
             this.rBCaducados = new System.Windows.Forms.RadioButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.TablaContenido.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.gbPrincipal.SuspendLayout();
@@ -164,12 +165,12 @@
             this.tablaDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tablaDatos.Controls.Add(this.dataGridProductos, 0, 0);
             this.tablaDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablaDatos.Location = new System.Drawing.Point(3, 53);
+            this.tablaDatos.Location = new System.Drawing.Point(3, 58);
             this.tablaDatos.Name = "tablaDatos";
             this.tablaDatos.RowCount = 1;
             this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 436F));
-            this.tablaDatos.Size = new System.Drawing.Size(1059, 436);
+            this.tablaDatos.Size = new System.Drawing.Size(1059, 431);
             this.tablaDatos.TabIndex = 1;
             // 
             // dataGridProductos
@@ -180,19 +181,19 @@
             this.dataGridProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridProductos.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridProductos.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridProductos.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridProductos.Location = new System.Drawing.Point(3, 3);
             this.dataGridProductos.Name = "dataGridProductos";
             this.dataGridProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridProductos.Size = new System.Drawing.Size(1053, 430);
+            this.dataGridProductos.Size = new System.Drawing.Size(1053, 425);
             this.dataGridProductos.TabIndex = 1;
             // 
             // panelBuscar
@@ -200,10 +201,11 @@
             this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
             this.panelBuscar.Controls.Add(this.txtBuscar);
             this.panelBuscar.Controls.Add(this.btnBuscar);
+            this.panelBuscar.Controls.Add(this.label1);
             this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBuscar.Location = new System.Drawing.Point(3, 22);
             this.panelBuscar.Name = "panelBuscar";
-            this.panelBuscar.Size = new System.Drawing.Size(1059, 31);
+            this.panelBuscar.Size = new System.Drawing.Size(1059, 36);
             this.panelBuscar.TabIndex = 0;
             // 
             // txtBuscar
@@ -258,6 +260,19 @@
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(458, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 8, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(591, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "En esta ventana se pueden añadir/modificar/eliminar productos a la base de datos." +
+    "";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // MDIProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,5 +315,6 @@
         private System.Windows.Forms.RadioButton rbNoCaducados;
         private System.Windows.Forms.RadioButton rBCaducados;
         private System.Windows.Forms.DataGridView dataGridProductos;
+        private System.Windows.Forms.Label label1;
     }
 }

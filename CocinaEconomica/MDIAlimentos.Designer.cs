@@ -43,6 +43,7 @@
             this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.TablaContenido.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.gbPrincipal.SuspendLayout();
@@ -205,6 +206,7 @@
             this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
             this.panelBuscar.Controls.Add(this.txtBuscar);
             this.panelBuscar.Controls.Add(this.btnBuscar);
+            this.panelBuscar.Controls.Add(this.label1);
             this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBuscar.Location = new System.Drawing.Point(3, 22);
             this.panelBuscar.Name = "panelBuscar";
@@ -229,6 +231,18 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(458, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 8, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(588, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "En esta ventana se pueden añadir/modificar/eliminar alimentos a la base de datos." +
+    "";
             // 
             // MDIAlimentos
             // 
@@ -271,5 +285,6 @@
         private System.Windows.Forms.DataGridView dataGridAlimentos;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label1;
     }
 }
