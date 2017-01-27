@@ -85,6 +85,7 @@
     <Compile Include="EliminarAlmacen.Designer.cs">
       <DependentUpon>EliminarAlmacen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entidad.cs" />
     <Compile Include="Familia.cs" />
     <Compile Include="FormConexion.cs">
       <SubType>Form</SubType>

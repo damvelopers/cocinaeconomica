@@ -75,7 +75,7 @@ namespace CocinaEconomica
             {
                 conexion.Open();
                 string update = "UPDATE dbo.Producto set Alimento = @Alimento, FechaEntrada = @FechaEntrada, FechaCaducidad = @FechaCaducidad, " +
-                    "FechaConsPref = @FechaConsPref, @Proveedor = @Proveedor, Ubicacion = @Ubicacion, Almacen = @Almacen " +
+                    "FechaConsPref = @FechaConsPref, Proveedor = @Proveedor, Ubicacion = @Ubicacion, Almacen = @Almacen " +
                     "WHERE Id = @Id";
 
                 using (SqlCommand query = new SqlCommand(update))
