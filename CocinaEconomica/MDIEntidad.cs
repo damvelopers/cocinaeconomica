@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace CocinaEconomica
 {
-    public partial class MDIAlmacenes : Form
+    public partial class MDIEntidad : Form
     {
-        public MDIAlmacenes()
+        public MDIEntidad()
         {
             InitializeComponent();
             cargarDataGridView();
@@ -24,7 +24,7 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT * from Almacen";
+                string select = "SELECT * from Entidad";
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     conexion.Open();
@@ -33,8 +33,8 @@ namespace CocinaEconomica
                         result.Load(reader);
                     }
                 }
-                dataGridAlmacenes.DataSource = result;
-                dataGridAlmacenes.Columns[0].Visible = false;
+                dataGridEntidades.DataSource = result;
+                dataGridEntidades.Columns[0].Visible = false;
             }
         }
 
@@ -43,7 +43,7 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT * FROM Almacen" +
+                string select = "SELECT * FROM Entidad" +
                     " WHERE Nombre like @nombre";
                 //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
@@ -55,19 +55,14 @@ namespace CocinaEconomica
                         result.Load(reader);
                     }
                 }
-                dataGridAlmacenes.DataSource = result;
-                dataGridAlmacenes.Columns[0].Visible = false;
+                dataGridEntidades.DataSource = result;
+                dataGridEntidades.Columns[0].Visible = false;
             }
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            CrearAlmacen f = new CrearAlmacen(this);
+            CrearEntidad f = new CrearEntidad(this);
             f.ShowDialog();
         }
 
@@ -75,15 +70,45 @@ namespace CocinaEconomica
         {
             try
             {
-                int id = (int)dataGridAlmacenes.CurrentRow.Cells["Id"].Value;
-                Almacen a = Almacen.Select(id);
-                ModificarAlmacen f = new ModificarAlmacen(a,this);
+                int id = (int)dataGridEntidades.CurrentRow.Cells["Id"].Value;
+                Entidad en = Entidad.Select(id);
+                ModificarEntidad f = new ModificarEntidad(en, this);
                 f.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Se debe seleccionar un cliente/proveedor", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = (int)dataGridEntidades.CurrentRow.Cells["Id"].Value;
+                Entidad en = Entidad.Select(id);
+                if (MessageBox.Show(this, String.Format("Se va ha eliminar el cliente/proveedor '{0}' ¿Está seguro?", en.Nombre), "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
+                {
+                    return;
+                }
+                if (en.Delete())
+                {
+                    MessageBox.Show(this, "Se eliminado el cliente/proveedor correctamente.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(this, "No se ha eliminado el cliente/proveedor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(this, "Se debe seleccionar un almacén", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -100,34 +125,6 @@ namespace CocinaEconomica
                 filtrarDataGridView(txtBuscar.Text);
             else
                 cargarDataGridView();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            try { 
-                int id = (int)dataGridAlmacenes.CurrentRow.Cells["Id"].Value;
-                Almacen a = Almacen.Select(id);
-                if (MessageBox.Show(this, String.Format("Se va ha eliminar el almacén '{0}' ¿Está seguro?", a.Nombre), "Eliminar almacén", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
-                {
-                    return;
-                }
-                if (a.Delete())
-                {
-                    MessageBox.Show(this, "Se eliminado el almacén correctamente.", "Almacén eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show(this, "Se ha modificado el almacén correctamente.", "Almacén modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }catch (Exception ex)
-            {
-                MessageBox.Show(this, "Se debe seleccionar un almacén", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void dataGridAlmacenes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

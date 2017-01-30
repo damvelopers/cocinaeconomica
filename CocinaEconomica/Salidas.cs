@@ -113,6 +113,12 @@ namespace CocinaEconomica
         {
             cargarDataGridViewProductos();
             cargarDataGridViewSalidas();
+            ArrayList entidades = Entidad.SelectAll();
+            for (int i = 0; i < entidades.Count; i++)
+            {
+                Entidad en = (Entidad)entidades[i];
+                cbxEntidades.Items.Add(en.Nombre + "#" + en.DNI);
+            }
         }
 
         private void btnAñadirSalida_Click(object sender, EventArgs e)
@@ -139,7 +145,8 @@ namespace CocinaEconomica
                 Salida s = new Salida();
                 s.FechaSalida = dtpSalida.Value;
                 s.Alimento = ali;
-                
+                s.entidad = Entidad.SelectByDNI((cbxEntidades.SelectedItem.ToString()).Split('#')[1]);
+
 
                 for (int i = 0; i < cantidad; i++)
                 {
@@ -168,6 +175,11 @@ namespace CocinaEconomica
             int max = (int)dataGridProductos.CurrentRow.Cells["Cantidad"].Value;
             numericCantidad.Maximum = max;
             lblNombreProducto.Text = (string)dataGridProductos.CurrentRow.Cells[0].Value;
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -79,7 +79,6 @@ namespace CocinaEconomica
                 using (SqlCommand query = new SqlCommand(insert))
                 {
                     query.Connection = conexion;
-                    query.Parameters.Add("@Id", SqlDbType.Int).Value = this.Id;
                     query.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = this.Nombre;
                     query.Parameters.Add("@direccion", SqlDbType.VarChar, 200).Value = this.Direccion;
                     query.Parameters.Add("@email", SqlDbType.VarChar, 80).Value = this.Email;

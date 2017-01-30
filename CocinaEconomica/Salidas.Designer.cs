@@ -45,6 +45,8 @@
             this.numericCantidad = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.lblNombreProducto = new System.Windows.Forms.Label();
+            this.cbxEntidades = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCantidad)).BeginInit();
@@ -139,7 +141,7 @@
             // btnAñadirSalida
             // 
             this.btnAñadirSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAñadirSalida.Location = new System.Drawing.Point(461, 334);
+            this.btnAñadirSalida.Location = new System.Drawing.Point(829, 334);
             this.btnAñadirSalida.Name = "btnAñadirSalida";
             this.btnAñadirSalida.Size = new System.Drawing.Size(100, 28);
             this.btnAñadirSalida.TabIndex = 45;
@@ -221,12 +223,37 @@
             this.lblNombreProducto.Size = new System.Drawing.Size(0, 24);
             this.lblNombreProducto.TabIndex = 52;
             // 
+            // cbxEntidades
+            // 
+            this.cbxEntidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEntidades.FormattingEnabled = true;
+            this.cbxEntidades.Location = new System.Drawing.Point(548, 338);
+            this.cbxEntidades.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxEntidades.Name = "cbxEntidades";
+            this.cbxEntidades.Size = new System.Drawing.Size(243, 21);
+            this.cbxEntidades.TabIndex = 54;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(462, 339);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 17);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "Proveedor:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // Salidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(942, 707);
+            this.Controls.Add(this.cbxEntidades);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblNombreProducto);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numericCantidad);
@@ -270,5 +297,7 @@
         private System.Windows.Forms.NumericUpDown numericCantidad;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblNombreProducto;
+        private System.Windows.Forms.ComboBox cbxEntidades;
+        private System.Windows.Forms.Label label5;
     }
 }

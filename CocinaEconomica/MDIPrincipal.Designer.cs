@@ -70,6 +70,7 @@ namespace CocinaEconomica
             this.label1 = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tablaContenedor.SuspendLayout();
@@ -88,7 +89,7 @@ namespace CocinaEconomica
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1197, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1332, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -286,7 +287,7 @@ namespace CocinaEconomica
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 645);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1197, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1332, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -308,7 +309,7 @@ namespace CocinaEconomica
             this.tablaContenedor.Name = "tablaContenedor";
             this.tablaContenedor.RowCount = 1;
             this.tablaContenedor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tablaContenedor.Size = new System.Drawing.Size(1197, 100);
+            this.tablaContenedor.Size = new System.Drawing.Size(1332, 100);
             this.tablaContenedor.TabIndex = 4;
             // 
             // flowLayoutPanel1
@@ -319,11 +320,12 @@ namespace CocinaEconomica
             this.flowLayoutPanel1.Controls.Add(this.btnProductos);
             this.flowLayoutPanel1.Controls.Add(this.btnAlmacenes);
             this.flowLayoutPanel1.Controls.Add(this.btnSalidas);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(128, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1066, 94);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1201, 94);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnFamilias
@@ -388,7 +390,7 @@ namespace CocinaEconomica
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Snap ITC", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(568, 0);
+            this.label1.Location = new System.Drawing.Point(681, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(488, 97);
             this.label1.TabIndex = 5;
@@ -408,12 +410,23 @@ namespace CocinaEconomica
             this.pbLogo.TabIndex = 2;
             this.pbLogo.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button1.Location = new System.Drawing.Point(568, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 91);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Clientes Proveedores";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MDIPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1197, 667);
+            this.ClientSize = new System.Drawing.Size(1332, 667);
             this.Controls.Add(this.tablaContenedor);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
@@ -435,18 +448,7 @@ namespace CocinaEconomica
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            /*MdiClient ctlMDI;
-            foreach (Control ctl in this.Controls)
-            {
-                try
-                {
-                    ctlMDI = (MdiClient)ctl;
-                    ctlMDI.BackColor = System.Drawing.SystemColors.ControlLight;
-                }
-                catch (System.InvalidCastException)
-                {
-                }
-            }*/
+
         }
         #endregion
 
@@ -489,6 +491,7 @@ namespace CocinaEconomica
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem configurarVistaToolStripMenuItem;
         private System.Windows.Forms.FontDialog fontDialog1;
+        private Button button1;
     }
 }
 

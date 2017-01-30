@@ -1,6 +1,6 @@
 ﻿namespace CocinaEconomica
 {
-    partial class MDIAlmacenes
+    partial class MDIEntidad
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIEntidad));
             this.TablaContenido = new System.Windows.Forms.TableLayoutPanel();
             this.panelBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -38,17 +39,16 @@
             this.btnAyuda = new System.Windows.Forms.Button();
             this.gbPrincipal = new System.Windows.Forms.GroupBox();
             this.tablaDatos = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridAlmacenes = new System.Windows.Forms.DataGridView();
+            this.dataGridEntidades = new System.Windows.Forms.DataGridView();
             this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.TablaContenido.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.gbPrincipal.SuspendLayout();
             this.tablaDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlmacenes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEntidades)).BeginInit();
             this.panelBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,8 +65,8 @@
             this.TablaContenido.RowCount = 1;
             this.TablaContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TablaContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 498F));
-            this.TablaContenido.Size = new System.Drawing.Size(1196, 498);
-            this.TablaContenido.TabIndex = 4;
+            this.TablaContenido.Size = new System.Drawing.Size(961, 409);
+            this.TablaContenido.TabIndex = 5;
             // 
             // panelBotones
             // 
@@ -79,7 +79,7 @@
             this.panelBotones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBotones.Location = new System.Drawing.Point(3, 3);
             this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(119, 492);
+            this.panelBotones.Size = new System.Drawing.Size(119, 403);
             this.panelBotones.TabIndex = 0;
             // 
             // btnNuevo
@@ -149,34 +149,34 @@
             this.gbPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPrincipal.Location = new System.Drawing.Point(128, 3);
             this.gbPrincipal.Name = "gbPrincipal";
-            this.gbPrincipal.Size = new System.Drawing.Size(1065, 492);
+            this.gbPrincipal.Size = new System.Drawing.Size(830, 403);
             this.gbPrincipal.TabIndex = 2;
             this.gbPrincipal.TabStop = false;
-            this.gbPrincipal.Text = "Almacenes";
+            this.gbPrincipal.Text = "Clientes/Proveedores";
             // 
             // tablaDatos
             // 
             this.tablaDatos.ColumnCount = 1;
             this.tablaDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tablaDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tablaDatos.Controls.Add(this.dataGridAlmacenes, 0, 0);
+            this.tablaDatos.Controls.Add(this.dataGridEntidades, 0, 0);
             this.tablaDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaDatos.Location = new System.Drawing.Point(3, 53);
             this.tablaDatos.Name = "tablaDatos";
             this.tablaDatos.RowCount = 1;
             this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 436F));
-            this.tablaDatos.Size = new System.Drawing.Size(1059, 436);
+            this.tablaDatos.Size = new System.Drawing.Size(824, 347);
             this.tablaDatos.TabIndex = 1;
             // 
-            // dataGridAlmacenes
+            // dataGridEntidades
             // 
-            this.dataGridAlmacenes.AllowUserToAddRows = false;
-            this.dataGridAlmacenes.AllowUserToDeleteRows = false;
-            this.dataGridAlmacenes.AllowUserToOrderColumns = true;
-            this.dataGridAlmacenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridAlmacenes.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridAlmacenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridEntidades.AllowUserToAddRows = false;
+            this.dataGridEntidades.AllowUserToDeleteRows = false;
+            this.dataGridEntidades.AllowUserToOrderColumns = true;
+            this.dataGridEntidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridEntidades.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridEntidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,14 +184,13 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridAlmacenes.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridAlmacenes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridAlmacenes.Location = new System.Drawing.Point(3, 3);
-            this.dataGridAlmacenes.Name = "dataGridAlmacenes";
-            this.dataGridAlmacenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridAlmacenes.Size = new System.Drawing.Size(1053, 430);
-            this.dataGridAlmacenes.TabIndex = 1;
-            this.dataGridAlmacenes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAlmacenes_CellContentClick);
+            this.dataGridEntidades.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridEntidades.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridEntidades.Location = new System.Drawing.Point(3, 3);
+            this.dataGridEntidades.Name = "dataGridEntidades";
+            this.dataGridEntidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridEntidades.Size = new System.Drawing.Size(818, 341);
+            this.dataGridEntidades.TabIndex = 1;
             // 
             // panelBuscar
             // 
@@ -202,7 +201,7 @@
             this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBuscar.Location = new System.Drawing.Point(3, 22);
             this.panelBuscar.Name = "panelBuscar";
-            this.panelBuscar.Size = new System.Drawing.Size(1059, 31);
+            this.panelBuscar.Size = new System.Drawing.Size(824, 31);
             this.panelBuscar.TabIndex = 0;
             // 
             // txtBuscar
@@ -228,7 +227,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(458, 8);
+            this.label1.Location = new System.Drawing.Point(0, 40);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 8, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(597, 20);
@@ -236,32 +235,21 @@
             this.label1.Text = "En esta ventana se pueden añadir/modificar/eliminar almacenes a la base de datos." +
     "";
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1196, 498);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
-            // 
-            // MDIAlmacenes
+            // MDIEntidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 498);
-            this.ControlBox = false;
+            this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
+            this.ClientSize = new System.Drawing.Size(961, 409);
             this.Controls.Add(this.TablaContenido);
-            this.Controls.Add(this.richTextBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "MDIAlmacenes";
-            this.Text = "MDIAlmacenes";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MDIEntidad";
+            this.Text = "MDIEntidad";
             this.TablaContenido.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
             this.gbPrincipal.ResumeLayout(false);
             this.tablaDatos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlmacenes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEntidades)).EndInit();
             this.panelBuscar.ResumeLayout(false);
             this.panelBuscar.PerformLayout();
             this.ResumeLayout(false);
@@ -279,11 +267,10 @@
         private System.Windows.Forms.Button btnAyuda;
         private System.Windows.Forms.GroupBox gbPrincipal;
         private System.Windows.Forms.TableLayoutPanel tablaDatos;
+        private System.Windows.Forms.DataGridView dataGridEntidades;
         private System.Windows.Forms.FlowLayoutPanel panelBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataGridView dataGridAlmacenes;
         private System.Windows.Forms.Label label1;
     }
 }

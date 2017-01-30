@@ -67,6 +67,12 @@
     <Compile Include="CrearAlmacen.Designer.cs">
       <DependentUpon>CrearAlmacen.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrearEntidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearEntidad.Designer.cs">
+      <DependentUpon>CrearEntidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrearFamilia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
     <Compile Include="MDIAlmacenes.Designer.cs">
       <DependentUpon>MDIAlmacenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="MDIEntidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIEntidad.Designer.cs">
+      <DependentUpon>MDIEntidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIFamilias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +176,12 @@
     </Compile>
     <Compile Include="ModificarAlmacen.Designer.cs">
       <DependentUpon>ModificarAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarEntidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarEntidad.Designer.cs">
+      <DependentUpon>ModificarEntidad.cs</DependentUpon>
     </Compile>
     <Compile Include="ModificarFamilia.cs">
       <SubType>Form</SubType>
@@ -203,6 +221,9 @@
     <EmbeddedResource Include="CrearAlmacen.resx">
       <DependentUpon>CrearAlmacen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrearEntidad.resx">
+      <DependentUpon>CrearEntidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearFamilia.resx">
       <DependentUpon>CrearFamilia.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +254,9 @@
     <EmbeddedResource Include="MDIAlmacenes.resx">
       <DependentUpon>MDIAlmacenes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MDIEntidad.resx">
+      <DependentUpon>MDIEntidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDIFamilias.resx">
       <DependentUpon>MDIFamilias.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarAlmacen.resx">
       <DependentUpon>ModificarAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarEntidad.resx">
+      <DependentUpon>ModificarEntidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarFamilia.resx">
       <DependentUpon>ModificarFamilia.cs</DependentUpon>

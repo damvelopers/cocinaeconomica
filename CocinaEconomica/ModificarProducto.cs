@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace CocinaEconomica
 {
@@ -78,6 +79,19 @@ namespace CocinaEconomica
         private void ModificarProducto_Load(object sender, EventArgs e)
         {
             cargarDataGridView();
+            ArrayList almacenes = Almacen.SelectAll();
+            for (int i = 0; i < almacenes.Count; i++)
+            {
+                Almacen a = (Almacen)almacenes[i];
+                cbxAlmacen.Items.Add(a.Nombre);
+            }
+
+            ArrayList entidades = Entidad.SelectAll();
+            for (int i = 0; i < entidades.Count; i++)
+            {
+                Entidad en = (Entidad)entidades[i];
+                cbxEntidades.Items.Add(en.Nombre + "#" + en.DNI);
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -99,6 +113,8 @@ namespace CocinaEconomica
             this.producto.FechaCaducidad = fechCaducidad.Value;
             this.producto.FechaConsumirPreferente = fechConsPref.Value;
             this.producto.Proveedor = cbOrigen.SelectedItem.ToString();
+            this.producto.Almacen = Almacen.Select(cbxAlmacen.SelectedItem.ToString());
+            this.producto.Entidad = Entidad.SelectByDNI((cbxEntidades.SelectedItem.ToString()).Split('#')[1]);
 
             if (producto.Alimento != null)
             {
@@ -145,6 +161,8 @@ namespace CocinaEconomica
                 fechCaducidad.Value = Convert.ToDateTime(this.producto.FechaCaducidad);
                 fechConsPref.Value = Convert.ToDateTime(this.producto.FechaConsumirPreferente);
                 fechEntrada.Value = Convert.ToDateTime(this.producto.FechaEntrada);
+                cbxAlmacen.SelectedItem = this.producto.Almacen;
+                cbxEntidades.SelectedItem = this.producto.Entidad;
             }
             catch (Exception ex)
             {

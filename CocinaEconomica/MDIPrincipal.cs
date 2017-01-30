@@ -204,5 +204,22 @@ namespace CocinaEconomica
         {
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //comprueba si ya esta abierto el formulario de entidades
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "MDIEntidades").SingleOrDefault<Form>();
+            if (existe == null)
+            {
+                if (ActiveMdiChild != null) { ActiveMdiChild.Close(); }
+
+                this.LayoutMdi(MdiLayout.TileHorizontal);
+                Form f = new MDIEntidad();
+                f.MdiParent = this;
+                f.Show();
+                f.WindowState = FormWindowState.Minimized;
+                f.WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }

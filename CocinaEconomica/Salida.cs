@@ -14,6 +14,7 @@ namespace CocinaEconomica
         public int Id;
         public DateTime FechaSalida;
         public Alimento Alimento;
+        public Entidad entidad;
         
         public Salida()
         {
@@ -22,11 +23,12 @@ namespace CocinaEconomica
             this.Alimento = null;
         }
 
-        public Salida(int Id, DateTime FechaSalida, Alimento Alimento)
+        public Salida(int Id, DateTime FechaSalida, Alimento Alimento,Entidad entidad)
         {
             this.Id = Id;
             this.FechaSalida = FechaSalida;
             this.Alimento = Alimento;
+            this.entidad = entidad;
         }
 
         #region DELETE
@@ -83,6 +85,7 @@ namespace CocinaEconomica
                         s.Id = reader.GetInt32(0);
                         s.FechaSalida = reader.GetDateTime(1);
                         s.Alimento = Alimento.Select(reader.GetInt32(2));
+                        s.entidad = Entidad.Select(reader.GetInt32(3));
                         salidas.Add(s);
                     }
                 }
@@ -113,6 +116,7 @@ namespace CocinaEconomica
                         s.Id = reader.GetInt32(0);
                         s.FechaSalida = reader.GetDateTime(1);
                         s.Alimento = Alimento.Select(reader.GetInt32(2));
+                        s.entidad = Entidad.Select(reader.GetInt32(3));
                     }
                 }
             }
@@ -133,14 +137,15 @@ namespace CocinaEconomica
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 conexion.Open();
-                string insert = "INSERT into dbo.Salida(FechaSalida, Alimento)" +
-                    " VALUES (@fechasalida, @alimento)";
+                string insert = "INSERT into dbo.Salida(FechaSalida, Alimento, Cliente)" +
+                    " VALUES (@fechasalida, @alimento, @cliente)";
 
                 using (SqlCommand query = new SqlCommand(insert))
                 {
                     query.Connection = conexion;
                     query.Parameters.Add("@fechasalida", SqlDbType.VarChar, 50).Value = this.FechaSalida;
                     query.Parameters.Add("@alimento", SqlDbType.VarChar, 200).Value = this.Alimento.Id;
+                    query.Parameters.Add("@cliente", SqlDbType.VarChar, 200).Value = this.entidad.Id;
                     query.ExecuteNonQuery();
                 }
                 conexion.Close();
@@ -165,14 +170,15 @@ namespace CocinaEconomica
                     {
                         for (int i = 0; i < cantidad; i++)
                         {
-                            string insert = "INSERT into dbo.Salida(FechaSalida, Alimento) " +
-                                "VALUES (@fechasalida, @alimento)";
+                            string insert = "INSERT into dbo.Salida(FechaSalida, Alimento, Cliente) " +
+                                "VALUES (@fechasalida, @alimento, @cliente)";
                             using (SqlCommand query = new SqlCommand(insert))
                             {
                                 query.Connection = conexion;
                                 query.Transaction = tx;
                                 query.Parameters.Add("@fechasalida", SqlDbType.VarChar, 50).Value = this.FechaSalida;
                                 query.Parameters.Add("@alimento", SqlDbType.VarChar, 200).Value = this.Alimento.Id;
+                                query.Parameters.Add("@cliente", SqlDbType.VarChar, 200).Value = this.entidad.Id;
                                 query.ExecuteNonQuery();
                             }
                         }

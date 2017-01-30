@@ -48,6 +48,13 @@ namespace CocinaEconomica
                 Almacen a = (Almacen)almacenes[i];
                 cbxAlmacen.Items.Add(a.Nombre);
             }
+
+            ArrayList entidades = Entidad.SelectAll();
+            for (int i = 0; i < entidades.Count; i++)
+            {
+                Entidad en = (Entidad)entidades[i];
+                cbxEntidades.Items.Add(en.Nombre + "#" + en.DNI);
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -87,6 +94,7 @@ namespace CocinaEconomica
             p.FechaCaducidad = dateTimeFechaCad.Value;
             p.FechaConsumirPreferente = dateTimeFechaPref.Value;
             p.Proveedor = comboBoxOrigen.SelectedItem.ToString();
+            p.Entidad = Entidad.SelectByDNI((cbxEntidades.SelectedItem.ToString()).Split('#')[1]);
             bool ok = false;
             var watch = System.Diagnostics.Stopwatch.StartNew();
             if (txtCantidad.Text != "")
