@@ -90,7 +90,7 @@ namespace CocinaEconomica
             for (int i = 0; i < entidades.Count; i++)
             {
                 Entidad en = (Entidad)entidades[i];
-                cbxEntidades.Items.Add(en.Nombre + "#" + en.DNI);
+                cbxEntidades.Items.Add(en.Nombre + "-" + en.Direccion);
             }
         }
 
@@ -114,7 +114,7 @@ namespace CocinaEconomica
             this.producto.FechaConsumirPreferente = fechConsPref.Value;
             this.producto.Proveedor = cbOrigen.SelectedItem.ToString();
             this.producto.Almacen = Almacen.Select(cbxAlmacen.SelectedItem.ToString());
-            this.producto.Entidad = Entidad.SelectByDNI((cbxEntidades.SelectedItem.ToString()).Split('#')[1]);
+            this.producto.Entidad = Entidad.SelectByName((cbxEntidades.SelectedItem.ToString()).Split('-')[0], (cbxEntidades.SelectedItem.ToString()).Split('-')[1]);
 
             if (producto.Alimento != null)
             {

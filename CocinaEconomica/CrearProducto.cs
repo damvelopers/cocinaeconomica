@@ -53,7 +53,7 @@ namespace CocinaEconomica
             for (int i = 0; i < entidades.Count; i++)
             {
                 Entidad en = (Entidad)entidades[i];
-                cbxEntidades.Items.Add(en.Nombre + "#" + en.DNI);
+                cbxEntidades.Items.Add(en.Nombre + "-" + en.Direccion);
             }
         }
 
@@ -94,7 +94,7 @@ namespace CocinaEconomica
             p.FechaCaducidad = dateTimeFechaCad.Value;
             p.FechaConsumirPreferente = dateTimeFechaPref.Value;
             p.Proveedor = comboBoxOrigen.SelectedItem.ToString();
-            p.Entidad = Entidad.SelectByDNI((cbxEntidades.SelectedItem.ToString()).Split('#')[1]);
+            p.Entidad = Entidad.SelectByName((cbxEntidades.SelectedItem.ToString()).Split('-')[0], (cbxEntidades.SelectedItem.ToString()).Split('-')[1]);
             bool ok = false;
             var watch = System.Diagnostics.Stopwatch.StartNew();
             if (txtCantidad.Text != "")

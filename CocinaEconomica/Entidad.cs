@@ -104,7 +104,7 @@ namespace CocinaEconomica
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 conexion.Open();
-                string update = "UPDATE dbo.Producto set Nombre = @nombre, Direccion = @direccion, Email = @email, Telefono = @telefono, " +
+                string update = "UPDATE dbo.Entidad set Nombre = @nombre, Direccion = @direccion, Email = @email, Telefono = @telefono, " +
                     "Descripcion = @descripcion, Web = @web, DNI = @dni, CIF = @cif " +
                     "WHERE Id = @Id";
 
@@ -201,6 +201,43 @@ namespace CocinaEconomica
                 using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
                 {
                     selectCommand.Parameters.Add("@id", SqlDbType.Int).Value = Id;
+                    SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        e = new Entidad();
+                        e.Id = reader.GetInt32(0);
+                        e.Nombre = reader.GetString(1);
+                        e.Direccion = reader.GetString(2);
+                        e.Email = reader.GetString(3);
+                        e.Telefono = reader.GetString(4);
+                        e.Descripcion = reader.GetString(5);
+                        e.Web = reader.GetString(6);
+                        e.DNI = reader.GetString(7);
+                        e.CIF = reader.GetString(8);
+                    }
+                    conn.Close();
+                }
+            }
+            return e;
+        }
+
+        /// <summary>
+        /// Devuelve una entidad dado su Id
+        /// </summary>
+        /// <returns>La entidad</returns>
+        public static Entidad SelectByName(string name, string direccion)
+        {
+            Entidad e = null;
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conn.Open();
+                string selectString = "SELECT * " +
+                                      "FROM Entidad " +
+                                      "WHERE Nombre = @nombre AND Direccion = @direccion";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    selectCommand.Parameters.Add("@nombre", SqlDbType.Int).Value = name;
+                    selectCommand.Parameters.Add("@direccion", SqlDbType.Int).Value = direccion;
                     SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
                     {

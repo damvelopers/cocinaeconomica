@@ -48,10 +48,10 @@
             this.tbCantidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbxEntidades = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cbxAlmacen = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.cbxEntidades = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -244,16 +244,6 @@
             this.label5.TabIndex = 76;
             this.label5.Text = "Fecha de consumición preferente";
             // 
-            // cbxEntidades
-            // 
-            this.cbxEntidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxEntidades.FormattingEnabled = true;
-            this.cbxEntidades.Location = new System.Drawing.Point(850, 96);
-            this.cbxEntidades.Margin = new System.Windows.Forms.Padding(4);
-            this.cbxEntidades.Name = "cbxEntidades";
-            this.cbxEntidades.Size = new System.Drawing.Size(221, 21);
-            this.cbxEntidades.TabIndex = 80;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -287,6 +277,16 @@
             this.label9.Size = new System.Drawing.Size(66, 17);
             this.label9.TabIndex = 77;
             this.label9.Text = "Almacén:";
+            // 
+            // cbxEntidades
+            // 
+            this.cbxEntidades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxEntidades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxEntidades.FormattingEnabled = true;
+            this.cbxEntidades.Location = new System.Drawing.Point(850, 95);
+            this.cbxEntidades.Name = "cbxEntidades";
+            this.cbxEntidades.Size = new System.Drawing.Size(221, 21);
+            this.cbxEntidades.TabIndex = 80;
             // 
             // ModificarProducto
             // 
@@ -349,9 +349,9 @@
         private System.Windows.Forms.TextBox tbCantidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbxEntidades;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbxAlmacen;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbxEntidades;
     }
 }

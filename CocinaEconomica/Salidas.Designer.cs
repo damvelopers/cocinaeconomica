@@ -45,8 +45,8 @@
             this.numericCantidad = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.lblNombreProducto = new System.Windows.Forms.Label();
-            this.cbxEntidades = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.cbxEntidades = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCantidad)).BeginInit();
@@ -223,16 +223,6 @@
             this.lblNombreProducto.Size = new System.Drawing.Size(0, 24);
             this.lblNombreProducto.TabIndex = 52;
             // 
-            // cbxEntidades
-            // 
-            this.cbxEntidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxEntidades.FormattingEnabled = true;
-            this.cbxEntidades.Location = new System.Drawing.Point(548, 338);
-            this.cbxEntidades.Margin = new System.Windows.Forms.Padding(4);
-            this.cbxEntidades.Name = "cbxEntidades";
-            this.cbxEntidades.Size = new System.Drawing.Size(243, 21);
-            this.cbxEntidades.TabIndex = 54;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -245,6 +235,16 @@
             this.label5.TabIndex = 53;
             this.label5.Text = "Proveedor:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // cbxEntidades
+            // 
+            this.cbxEntidades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxEntidades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxEntidades.FormattingEnabled = true;
+            this.cbxEntidades.Location = new System.Drawing.Point(547, 337);
+            this.cbxEntidades.Name = "cbxEntidades";
+            this.cbxEntidades.Size = new System.Drawing.Size(243, 21);
+            this.cbxEntidades.TabIndex = 54;
             // 
             // Salidas
             // 
@@ -297,7 +297,7 @@
         private System.Windows.Forms.NumericUpDown numericCantidad;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblNombreProducto;
-        private System.Windows.Forms.ComboBox cbxEntidades;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbxEntidades;
     }
 }

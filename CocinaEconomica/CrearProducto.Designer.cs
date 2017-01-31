@@ -47,8 +47,8 @@
             this.cmb_alimentos = new System.Windows.Forms.ComboBox();
             this.cbxAlmacen = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbxEntidades = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbxEntidades = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblAlimento
@@ -250,16 +250,6 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Almacén:";
             // 
-            // cbxEntidades
-            // 
-            this.cbxEntidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxEntidades.FormattingEnabled = true;
-            this.cbxEntidades.Location = new System.Drawing.Point(229, 367);
-            this.cbxEntidades.Margin = new System.Windows.Forms.Padding(4);
-            this.cbxEntidades.Name = "cbxEntidades";
-            this.cbxEntidades.Size = new System.Drawing.Size(243, 24);
-            this.cbxEntidades.TabIndex = 30;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -271,6 +261,16 @@
             this.label2.Size = new System.Drawing.Size(78, 17);
             this.label2.TabIndex = 29;
             this.label2.Text = "Proveedor:";
+            // 
+            // cbxEntidades
+            // 
+            this.cbxEntidades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxEntidades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxEntidades.FormattingEnabled = true;
+            this.cbxEntidades.Location = new System.Drawing.Point(229, 367);
+            this.cbxEntidades.Name = "cbxEntidades";
+            this.cbxEntidades.Size = new System.Drawing.Size(243, 24);
+            this.cbxEntidades.TabIndex = 30;
             // 
             // crearProducto
             // 
@@ -331,7 +331,7 @@
         private System.Windows.Forms.ComboBox cmb_alimentos;
         private System.Windows.Forms.ComboBox cbxAlmacen;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbxEntidades;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxEntidades;
     }
 }
