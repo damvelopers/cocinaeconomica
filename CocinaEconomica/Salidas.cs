@@ -72,7 +72,6 @@ namespace CocinaEconomica
                                 "p.FechaConsPref as 'Consumo preferente antes de', Cantidad " +
                                 "FROM Producto p join Alimento a on p.Alimento = a.Id join Almacen al on p.Almacen = al.Id " +
                                  "WHERE a.Nombre like @nombre ";
-                //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = "%" + nombre + "%";

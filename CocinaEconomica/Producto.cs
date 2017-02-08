@@ -204,7 +204,8 @@ namespace CocinaEconomica
                         try
                         {
                             p.Almacen = Almacen.Select(reader.GetInt32(7));
-                        }catch(Exception ex)
+                        }
+                        catch (Exception ex)
                         {
                             p.Almacen = null;
                         }
@@ -216,6 +217,7 @@ namespace CocinaEconomica
                         {
                             p.Entidad = null;
                         }
+                        p.Cantidad = (float)reader.GetDecimal(9);
                     }
                     conn.Close();
                 }
