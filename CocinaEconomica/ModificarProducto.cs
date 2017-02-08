@@ -36,8 +36,8 @@ namespace CocinaEconomica
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 string select = "SELECT p.Id, a.Nombre as 'Alimento', FechaEntrada as 'Fecha de entrada', " +
-                    "FechaCaducidad as 'Fecha de caducidad', FechaConsPref as 'Consumo preferente antes de', " +
-                    "al.Nombre as 'Almacén', Ubicacion as 'Ubicación', Proveedor " +
+                    "FechaCaducidad as 'Fecha de caducidad', Cantidad, FechaConsPref as 'Consumo preferente antes de', " +
+                    "al.Nombre as 'Almacén', Ubicacion as 'Ubicación', Proveedor as 'Origen' " +
                     "FROM Producto p join Alimento a on a.Id = p.Alimento left outer join Almacen al on al.Id = p.Almacen ";
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
@@ -58,8 +58,8 @@ namespace CocinaEconomica
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 string select = "SELECT p.Id, a.Nombre as 'Alimento', FechaEntrada as 'Fecha de entrada', " +
-                    "FechaCaducidad as 'Fecha de caducidad', FechaConsPref as 'Consumo preferente antes de', " +
-                    "al.Nombre as 'Almacén', Ubicacion as 'Ubicación', Proveedor " +
+                    "FechaCaducidad as 'Fecha de caducidad', Cantidad, FechaConsPref as 'Consumo preferente antes de', " +
+                    "al.Nombre as 'Almacén', Ubicacion as 'Ubicación', Proveedor as 'Origen' " +
                     "FROM Producto p join Alimento a on a.Id = p.Alimento left outer join Almacen al on al.Id = p.Almacen " +
                     "WHERE a.Nombre like @nombre";
                 //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO

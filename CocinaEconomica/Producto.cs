@@ -22,6 +22,7 @@ namespace CocinaEconomica
         public Almacen Almacen;
         public string Ubicacion;
         public Entidad Entidad;
+        public float Cantidad;
 
         public Producto()
         {
@@ -33,11 +34,12 @@ namespace CocinaEconomica
             this.Almacen = null;
             this.Ubicacion = "";
             this.Entidad = null;
+            this.Cantidad = 0;
         }
         
         public Producto(int Id, Alimento Alimento, DateTime FechaEntrada, 
             DateTime FechaCaducidad, DateTime FechaConsumirPreferente, 
-            string Proveedor, Almacen Almacen, string Ubicacion, Entidad entidad)
+            string Proveedor, Almacen Almacen, string Ubicacion, Entidad entidad, float Cantidad)
         {
             this.Id = Id;
             this.Alimento = Alimento;
@@ -48,6 +50,7 @@ namespace CocinaEconomica
             this.Almacen = Almacen;
             this.Ubicacion = Ubicacion;
             this.Entidad = entidad;
+            this.Cantidad = Cantidad;
         }
 
         #region MODIFICACIONES
@@ -78,7 +81,7 @@ namespace CocinaEconomica
             {
                 conexion.Open();
                 string update = "UPDATE dbo.Producto set Alimento = @Alimento, FechaEntrada = @FechaEntrada, FechaCaducidad = @FechaCaducidad, " +
-                    "FechaConsPref = @FechaConsPref, Proveedor = @Proveedor, Ubicacion = @Ubicacion, Almacen = @Almacen, Entidad = @Entidad " +
+                    "FechaConsPref = @FechaConsPref, Proveedor = @Proveedor, Ubicacion = @Ubicacion, Almacen = @Almacen, Entidad = @Entidad, Cantidad = @Cantidad " +
                     "WHERE Id = @Id";
 
                 using (SqlCommand query = new SqlCommand(update))
@@ -103,6 +106,7 @@ namespace CocinaEconomica
                     {
                         query.Parameters.Add("@Entidad", SqlDbType.VarChar, 200).Value = DBNull.Value;
                     }
+                    query.Parameters.Add("@Cantidad", SqlDbType.Int, 50).Value = this.Cantidad;
                     rows = query.ExecuteNonQuery();
                 }
                 conexion.Close();
@@ -376,8 +380,8 @@ namespace CocinaEconomica
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 conexion.Open();
-                string insert = "INSERT into dbo.Producto(Alimento, FechaCaducidad, FechaConsPref, Ubicacion, Proveedor, FechaEntrada, Almacen, Entidad)" +
-                    " VALUES (@alimento, @fechacaducidad, @fechaconspref, @ubicacion, @proveedor, @fechaentrada, @almacen, @entidad)";
+                string insert = "INSERT into dbo.Producto(Alimento, FechaCaducidad, FechaConsPref, Ubicacion, Proveedor, FechaEntrada, Almacen, Entidad, Cantidad)" +
+                    " VALUES (@alimento, @fechacaducidad, @fechaconspref, @ubicacion, @proveedor, @fechaentrada, @almacen, @entidad, @cantidad)";
 
                 using (SqlCommand query = new SqlCommand(insert))
                 {
@@ -399,6 +403,7 @@ namespace CocinaEconomica
                         query.Parameters.Add("@almacen", SqlDbType.Int, 50).Value = this.Almacen.Id;
                     else
                         query.Parameters.Add("@almacen", SqlDbType.Int, 50).Value = DBNull.Value;
+                    query.Parameters.Add("@cantidad", SqlDbType.Decimal, 50).Value = this.Cantidad;
                     inserted = query.ExecuteNonQuery() > 0;
                 }
                 conexion.Close();

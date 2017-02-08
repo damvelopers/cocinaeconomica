@@ -55,10 +55,9 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT a.Nombre, p.FechaCaducidad, al.Nombre as 'Almacén', " +
-                                "p.FechaConsPref as 'Consumo preferente antes de', COUNT(p.Id) as 'Cantidad' " +
-                                "FROM Producto p join Alimento a on p.Alimento = a.Id join Almacen al on p.Almacen = al.Id " +
-                                "GROUP BY a.Nombre, p.FechaCaducidad, p.FechaEntrada, p.FechaConsPref, al.Nombre ";
+                string select = "SELECT p.Id, a.Nombre, p.FechaCaducidad, al.Nombre as 'Almacén', " +
+                                "p.FechaConsPref as 'Consumo preferente antes de', Cantidad " +
+                                "FROM Producto p join Alimento a on p.Alimento = a.Id join Almacen al on p.Almacen = al.Id ";
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     conexion.Open();
@@ -68,7 +67,7 @@ namespace CocinaEconomica
                     }
                 }
                 dataGridProductos.DataSource = result;
-                //dataGridProductos.Columns[0].Visible = false;
+                dataGridProductos.Columns[0].Visible = false;
             }
         }
 
@@ -77,11 +76,10 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT a.Nombre, p.FechaCaducidad, al.Nombre as 'Almacén', " +
-                                "p.FechaConsPref as 'Consumo preferente antes de', COUNT(p.Id) as 'Cantidad' " +
+                string select = "SELECT p.Id, a.Nombre, p.FechaCaducidad, al.Nombre as 'Almacén', " +
+                                "p.FechaConsPref as 'Consumo preferente antes de', Cantidad " +
                                 "FROM Producto p join Alimento a on p.Alimento = a.Id join Almacen al on p.Almacen = al.Id " +
-                                 "WHERE a.Nombre like @nombre " +
-                                "GROUP BY a.Nombre, p.FechaCaducidad, p.FechaEntrada, p.FechaConsPref, al.Nombre ";
+                                 "WHERE a.Nombre like @nombre ";
 
                 //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
@@ -94,7 +92,7 @@ namespace CocinaEconomica
                     }
                 }
                 dataGridProductos.DataSource = result;
-                //dataGridProductos.Columns[0].Visible = false;
+                dataGridProductos.Columns[0].Visible = false;
             }
         }
 
@@ -173,13 +171,13 @@ namespace CocinaEconomica
         {
             try
             {
-                //int id = (int)celdas["Id"].Value;
-                //Producto p = Producto.Select(id);
-                int cantidadProducto = (Int32)celdas[4].Value;
-                int cant = 0;
+            //int id = (int)celdas["Id"].Value;
+            //Producto p = Producto.Select(id);
+                decimal cantidadProducto = (decimal)celdas[5].Value;
+                decimal cant = 0;
                 try
                 {
-                    cant = Int32.Parse(cantidad.Text);
+                    cant = decimal.Parse(cantidad.Text);
                 }catch(Exception ex)
                 {
                     //MessageBox.Show(this, "Indique correctamente la cantidad a eliminar.", "Cantidad invalida", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -187,26 +185,22 @@ namespace CocinaEconomica
                 bool todoOk = true;
                 if (cant <= cantidadProducto && cant > 0)
                 {
-                    string alimento = (string)celdas[0].Value;
-                    DateTime fechaCad = (DateTime)celdas[1].Value;
-                    string almacen = (string)celdas[2].Value;
-                    Alimento ali = Alimento.SelectWhereNombreIs(alimento);
-                    Almacen a = Almacen.Select(almacen);
-                    ArrayList productos = Producto.SelectGroupByFechaCadAlmacen(ali, fechaCad, a);
-                    for (int i = 0; i < cant; i++)
-                    {
-                        if (!((Producto)productos[i]).Delete())
+                    //string alimento = (string)celdas[1].Value;
+                    //DateTime fechaCad = (DateTime)celdas[2].Value;
+                    //string almacen = (string)celdas[3].Value;
+                    //Alimento ali = Alimento.SelectWhereNombreIs(alimento);
+                    //Almacen a = Almacen.Select(almacen);
+                    Producto producto = Producto.Select((int)celdas[0].Value);
+                    producto.Cantidad -= (float)cant;
+                        if (!((Producto)producto).Update())
                         {
                             todoOk = false;
                         }
-                    }
+                    
                     if (todoOk)
                     {
                         MessageBox.Show(this, "Se eliminado el producto correctamente.", "Producto eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cargarDataGridView();
-                        /*Salida s = new Salida();
-                        s.Alimento = p.Alimento;
-                        s.Insert();*/
                         frmAbout.Close();
                     }
                     else

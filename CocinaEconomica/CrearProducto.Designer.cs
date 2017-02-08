@@ -38,7 +38,6 @@
             this.dateTimeFechaPref = new System.Windows.Forms.DateTimePicker();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.cantidad = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnCrearAlimento = new System.Windows.Forms.Button();
@@ -49,6 +48,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbxEntidades = new System.Windows.Forms.ComboBox();
+            this.txtCantidad = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAlimento
@@ -147,14 +148,6 @@
             this.cantidad.TabIndex = 16;
             this.cantidad.Text = "Cantidad:";
             this.cantidad.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(229, 407);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(129, 23);
-            this.txtCantidad.TabIndex = 17;
             // 
             // btnCerrar
             // 
@@ -272,12 +265,25 @@
             this.cbxEntidades.Size = new System.Drawing.Size(243, 24);
             this.cbxEntidades.TabIndex = 30;
             // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.txtCantidad.Location = new System.Drawing.Point(229, 410);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(243, 23);
+            this.txtCantidad.TabIndex = 31;
+            // 
             // crearProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(704, 497);
+            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.cbxEntidades);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbxAlmacen);
@@ -288,7 +294,6 @@
             this.Controls.Add(this.btnCrearAlimento);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.cantidad);
             this.Controls.Add(this.btnAnadir);
             this.Controls.Add(this.dateTimeFechaPref);
@@ -307,6 +312,7 @@
             this.Name = "crearProducto";
             this.Text = "Cantidad:";
             this.Load += new System.EventHandler(this.crearProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,7 +328,6 @@
         private System.Windows.Forms.DateTimePicker dateTimeFechaPref;
         private System.Windows.Forms.Button btnAnadir;
         private System.Windows.Forms.Label cantidad;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnCrearAlimento;
@@ -333,5 +338,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxEntidades;
+        private System.Windows.Forms.NumericUpDown txtCantidad;
     }
 }

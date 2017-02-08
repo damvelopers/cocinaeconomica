@@ -236,8 +236,8 @@ namespace CocinaEconomica
                                       "WHERE Nombre = @nombre AND Direccion = @direccion";
                 using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
                 {
-                    selectCommand.Parameters.Add("@nombre", SqlDbType.Int).Value = name;
-                    selectCommand.Parameters.Add("@direccion", SqlDbType.Int).Value = direccion;
+                    selectCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = name;
+                    selectCommand.Parameters.Add("@direccion", SqlDbType.VarChar).Value = direccion;
                     SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
                     {

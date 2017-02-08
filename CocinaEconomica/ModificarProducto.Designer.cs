@@ -45,14 +45,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cbOrigen = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbCantidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbxAlmacen = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbxEntidades = new System.Windows.Forms.ComboBox();
+            this.tbCantidad = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -198,6 +199,10 @@
             // 
             this.cbOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbOrigen.FormattingEnabled = true;
+            this.cbOrigen.Items.AddRange(new object[] {
+            "Donado",
+            "Comprado",
+            "Banco de alimentos"});
             this.cbOrigen.Location = new System.Drawing.Point(848, 139);
             this.cbOrigen.Name = "cbOrigen";
             this.cbOrigen.Size = new System.Drawing.Size(223, 24);
@@ -213,14 +218,6 @@
             this.label7.Size = new System.Drawing.Size(64, 17);
             this.label7.TabIndex = 73;
             this.label7.Text = "Cantidad";
-            // 
-            // tbCantidad
-            // 
-            this.tbCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbCantidad.Location = new System.Drawing.Point(848, 249);
-            this.tbCantidad.Name = "tbCantidad";
-            this.tbCantidad.Size = new System.Drawing.Size(107, 23);
-            this.tbCantidad.TabIndex = 74;
             // 
             // label3
             // 
@@ -288,19 +285,31 @@
             this.cbxEntidades.Size = new System.Drawing.Size(221, 21);
             this.cbxEntidades.TabIndex = 80;
             // 
+            // tbCantidad
+            // 
+            this.tbCantidad.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.tbCantidad.Location = new System.Drawing.Point(848, 255);
+            this.tbCantidad.Name = "tbCantidad";
+            this.tbCantidad.Size = new System.Drawing.Size(223, 20);
+            this.tbCantidad.TabIndex = 81;
+            // 
             // ModificarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1106, 403);
+            this.Controls.Add(this.tbCantidad);
             this.Controls.Add(this.cbxEntidades);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbxAlmacen);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbCantidad);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbOrigen);
             this.Controls.Add(this.label6);
@@ -323,6 +332,7 @@
             this.Text = "ModificarProducto";
             this.Load += new System.EventHandler(this.ModificarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,12 +356,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbOrigen;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbCantidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbxAlmacen;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbxEntidades;
+        private System.Windows.Forms.NumericUpDown tbCantidad;
     }
 }
