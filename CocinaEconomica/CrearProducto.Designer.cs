@@ -314,8 +314,10 @@
             // 
             // crearProducto
             // 
+            this.AcceptButton = this.btnAnadir;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(704, 497);
             this.Controls.Add(this.btn_actualizar);
             this.Controls.Add(this.btn_crearProveedor);

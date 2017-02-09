@@ -56,7 +56,7 @@
             this.txtCIF.Location = new System.Drawing.Point(190, 336);
             this.txtCIF.Name = "txtCIF";
             this.txtCIF.Size = new System.Drawing.Size(457, 23);
-            this.txtCIF.TabIndex = 80;
+            this.txtCIF.TabIndex = 7;
             // 
             // label6
             // 
@@ -76,7 +76,7 @@
             this.txtDNI.Location = new System.Drawing.Point(190, 298);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(457, 23);
-            this.txtDNI.TabIndex = 78;
+            this.txtDNI.TabIndex = 6;
             // 
             // label5
             // 
@@ -96,7 +96,7 @@
             this.txtWeb.Location = new System.Drawing.Point(190, 260);
             this.txtWeb.Name = "txtWeb";
             this.txtWeb.Size = new System.Drawing.Size(457, 23);
-            this.txtWeb.TabIndex = 76;
+            this.txtWeb.TabIndex = 5;
             // 
             // label4
             // 
@@ -116,7 +116,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(190, 222);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(457, 23);
-            this.txtTelefono.TabIndex = 74;
+            this.txtTelefono.TabIndex = 4;
             // 
             // label3
             // 
@@ -136,7 +136,7 @@
             this.txtEmail.Location = new System.Drawing.Point(190, 184);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(457, 23);
-            this.txtEmail.TabIndex = 72;
+            this.txtEmail.TabIndex = 3;
             // 
             // label2
             // 
@@ -156,7 +156,7 @@
             this.txtDireccion.Location = new System.Drawing.Point(190, 146);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(457, 23);
-            this.txtDireccion.TabIndex = 70;
+            this.txtDireccion.TabIndex = 2;
             // 
             // lblUbicacion
             // 
@@ -176,7 +176,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(457, 132);
-            this.txtDescripcion.TabIndex = 68;
+            this.txtDescripcion.TabIndex = 8;
             // 
             // label1
             // 
@@ -196,7 +196,7 @@
             this.txtNombre.Location = new System.Drawing.Point(190, 112);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(457, 23);
-            this.txtNombre.TabIndex = 66;
+            this.txtNombre.TabIndex = 1;
             // 
             // lblTitulo
             // 
@@ -247,6 +247,7 @@
             // 
             // ModificarEntidad
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;

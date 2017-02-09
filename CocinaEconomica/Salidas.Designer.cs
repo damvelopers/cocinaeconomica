@@ -248,6 +248,7 @@
             // 
             // Salidas
             // 
+            this.AcceptButton = this.btnAñadirSalida;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;

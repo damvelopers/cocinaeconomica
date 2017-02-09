@@ -42,6 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
@@ -64,11 +65,12 @@
             this.txtUser.Location = new System.Drawing.Point(12, 74);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(315, 23);
-            this.txtUser.TabIndex = 3;
+            this.txtUser.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.Location = new System.Drawing.Point(12, 54);
             this.label2.Name = "label2";
@@ -83,11 +85,12 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(315, 23);
-            this.txtPassword.TabIndex = 5;
+            this.txtPassword.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.Location = new System.Drawing.Point(12, 100);
             this.label3.Name = "label3";
@@ -120,8 +123,10 @@
             // 
             // FormConexion
             // 
+            this.AcceptButton = this.btnProbarConexion;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(339, 198);
             this.Controls.Add(this.btnProbarConexion);
             this.Controls.Add(this.btnGuardar);

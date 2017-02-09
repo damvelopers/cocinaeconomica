@@ -43,7 +43,7 @@
             this.txtFamilia.Margin = new System.Windows.Forms.Padding(4);
             this.txtFamilia.Name = "txtFamilia";
             this.txtFamilia.Size = new System.Drawing.Size(354, 23);
-            this.txtFamilia.TabIndex = 38;
+            this.txtFamilia.TabIndex = 1;
             // 
             // lblTitulo
             // 
@@ -65,7 +65,7 @@
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(100, 28);
-            this.btnCerrar.TabIndex = 36;
+            this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -89,13 +89,14 @@
             this.btnAnadir.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(100, 28);
-            this.btnAnadir.TabIndex = 33;
+            this.btnAnadir.TabIndex = 2;
             this.btnAnadir.Text = "Añadir";
             this.btnAnadir.UseVisualStyleBackColor = true;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
             // CrearFamilia
             // 
+            this.AcceptButton = this.btnAnadir;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;

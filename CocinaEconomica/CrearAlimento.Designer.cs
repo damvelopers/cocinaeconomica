@@ -106,7 +106,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(300, 155);
-            this.txtDescripcion.TabIndex = 4;
+            this.txtDescripcion.TabIndex = 3;
             // 
             // label2
             // 
@@ -178,6 +178,7 @@
             // 
             // CrearAlimento
             // 
+            this.AcceptButton = this.btnAñadir;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;

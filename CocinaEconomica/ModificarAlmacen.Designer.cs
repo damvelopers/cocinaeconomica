@@ -67,7 +67,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(356, 151);
-            this.txtDescripcion.TabIndex = 42;
+            this.txtDescripcion.TabIndex = 47;
             // 
             // label5
             // 
@@ -108,6 +108,7 @@
             // 
             // ModificarAlmacen
             // 
+            this.AcceptButton = this.button1;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(417, 355);
             this.Controls.Add(this.button3);

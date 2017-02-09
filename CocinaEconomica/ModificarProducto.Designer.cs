@@ -116,7 +116,7 @@
             this.txtAlimento.Name = "txtAlimento";
             this.txtAlimento.ReadOnly = true;
             this.txtAlimento.Size = new System.Drawing.Size(259, 23);
-            this.txtAlimento.TabIndex = 57;
+            this.txtAlimento.TabIndex = 2;
             // 
             // btnBuscarProducto
             // 
@@ -134,7 +134,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(537, 50);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(259, 23);
-            this.txtBuscar.TabIndex = 55;
+            this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dataGridProductos
@@ -166,7 +166,7 @@
             this.fechEntrada.Location = new System.Drawing.Point(538, 225);
             this.fechEntrada.Name = "fechEntrada";
             this.fechEntrada.Size = new System.Drawing.Size(259, 23);
-            this.fechEntrada.TabIndex = 67;
+            this.fechEntrada.TabIndex = 3;
             // 
             // fechCaducidad
             // 
@@ -174,7 +174,7 @@
             this.fechCaducidad.Location = new System.Drawing.Point(537, 280);
             this.fechCaducidad.Name = "fechCaducidad";
             this.fechCaducidad.Size = new System.Drawing.Size(259, 23);
-            this.fechCaducidad.TabIndex = 68;
+            this.fechCaducidad.TabIndex = 4;
             // 
             // fechConsPref
             // 
@@ -182,7 +182,7 @@
             this.fechConsPref.Location = new System.Drawing.Point(537, 335);
             this.fechConsPref.Name = "fechConsPref";
             this.fechConsPref.Size = new System.Drawing.Size(259, 23);
-            this.fechConsPref.TabIndex = 70;
+            this.fechConsPref.TabIndex = 5;
             // 
             // label6
             // 
@@ -208,7 +208,7 @@
             this.cbOrigen.Location = new System.Drawing.Point(848, 139);
             this.cbOrigen.Name = "cbOrigen";
             this.cbOrigen.Size = new System.Drawing.Size(223, 24);
-            this.cbOrigen.TabIndex = 72;
+            this.cbOrigen.TabIndex = 8;
             // 
             // label7
             // 
@@ -263,7 +263,7 @@
             this.cbxAlmacen.Margin = new System.Windows.Forms.Padding(4);
             this.cbxAlmacen.Name = "cbxAlmacen";
             this.cbxAlmacen.Size = new System.Drawing.Size(221, 21);
-            this.cbxAlmacen.TabIndex = 78;
+            this.cbxAlmacen.TabIndex = 6;
             // 
             // label9
             // 
@@ -285,7 +285,7 @@
             this.cbxEntidades.Location = new System.Drawing.Point(850, 95);
             this.cbxEntidades.Name = "cbxEntidades";
             this.cbxEntidades.Size = new System.Drawing.Size(221, 21);
-            this.cbxEntidades.TabIndex = 80;
+            this.cbxEntidades.TabIndex = 7;
             // 
             // tbCantidad
             // 
@@ -297,10 +297,11 @@
             this.tbCantidad.Location = new System.Drawing.Point(848, 255);
             this.tbCantidad.Name = "tbCantidad";
             this.tbCantidad.Size = new System.Drawing.Size(223, 20);
-            this.tbCantidad.TabIndex = 81;
+            this.tbCantidad.TabIndex = 9;
             // 
             // ModificarProducto
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;

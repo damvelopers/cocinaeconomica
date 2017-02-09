@@ -69,7 +69,7 @@
             this.btnAnadir.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(100, 28);
-            this.btnAnadir.TabIndex = 33;
+            this.btnAnadir.TabIndex = 3;
             this.btnAnadir.Text = "Añadir";
             this.btnAnadir.UseVisualStyleBackColor = true;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
@@ -92,7 +92,7 @@
             this.txtNombre.Location = new System.Drawing.Point(137, 80);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(457, 23);
-            this.txtNombre.TabIndex = 38;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtDescripcion
             // 
@@ -100,7 +100,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(457, 132);
-            this.txtDescripcion.TabIndex = 40;
+            this.txtDescripcion.TabIndex = 2;
             // 
             // label1
             // 
@@ -116,6 +116,7 @@
             // 
             // CrearAlmacen
             // 
+            this.AcceptButton = this.btnAnadir;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;

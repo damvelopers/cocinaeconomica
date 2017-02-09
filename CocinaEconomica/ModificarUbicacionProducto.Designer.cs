@@ -83,7 +83,7 @@
             this.cbAlmacenes.Location = new System.Drawing.Point(706, 136);
             this.cbAlmacenes.Name = "cbAlmacenes";
             this.cbAlmacenes.Size = new System.Drawing.Size(276, 24);
-            this.cbAlmacenes.TabIndex = 41;
+            this.cbAlmacenes.TabIndex = 2;
             // 
             // btnAceptar
             // 
@@ -120,14 +120,14 @@
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(276, 132);
-            this.tbDescripcion.TabIndex = 54;
+            this.tbDescripcion.TabIndex = 3;
             // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(709, 44);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(273, 20);
-            this.txtBuscar.TabIndex = 55;
+            this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // button
@@ -152,6 +152,7 @@
             // 
             // ModificarUbicacionProducto
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
