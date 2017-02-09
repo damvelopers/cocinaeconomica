@@ -233,5 +233,58 @@ namespace CocinaEconomica
         {
 
         }
+
+        private void rBCaducados_CheckedChanged(object sender, EventArgs e)
+        {
+            DataTable result = new DataTable();
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string select = "SELECT p.Id, a.Nombre, p.FechaCaducidad, al.Nombre as 'Almacén', " +
+                                "p.FechaConsPref as 'Consumo preferente antes de', Cantidad " +
+                                "FROM Producto p join Alimento a on p.Alimento = a.Id join Almacen al on p.Almacen = al.Id " +
+                                 "WHERE p.FechaCaducidad < @fecha ";
+
+                //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO
+                using (SqlCommand cmd = new SqlCommand(select, conexion))
+                {
+                    DateTime fecha = DateTime.Now;
+                    cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = fecha;
+                    conexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        result.Load(reader);
+                    }
+                }
+                dataGridProductos.DataSource = result;
+                dataGridProductos.Columns[0].Visible = false;
+            }
+        }
+
+        private void rbNoCaducados_CheckedChanged(object sender, EventArgs e)
+        {
+            DataTable result = new DataTable();
+            using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                string select = "SELECT p.Id, a.Nombre, p.FechaCaducidad, al.Nombre as 'Almacén', " +
+                                "p.FechaConsPref as 'Consumo preferente antes de', Cantidad " +
+                                "FROM Producto p join Alimento a on p.Alimento = a.Id join Almacen al on p.Almacen = al.Id " +
+                                 "WHERE p.FechaCaducidad < @fecha ";
+
+                //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO
+                using (SqlCommand cmd = new SqlCommand(select, conexion))
+                {
+                    DateTime fecha = DateTime.Now;
+                    fecha = fecha.AddDays(Properties.Settings.Default.DiasCaducidad);
+                    cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = fecha;
+                    conexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        result.Load(reader);
+                    }
+                }
+                dataGridProductos.DataSource = result;
+                dataGridProductos.Columns[0].Visible = false;
+            }
+        }
     }
 }

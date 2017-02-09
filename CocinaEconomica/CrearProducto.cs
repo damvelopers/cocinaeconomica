@@ -54,7 +54,14 @@ namespace CocinaEconomica
             for (int i = 0; i < entidades.Count; i++)
             {
                 Entidad en = (Entidad)entidades[i];
-                cbxEntidades.Items.Add(en.Nombre + "-" + en.Direccion);
+                if (en.Direccion != "")
+                {
+                    cbxEntidades.Items.Add(en.Nombre + "-" + en.Direccion);
+                }
+                else
+                {
+                    cbxEntidades.Items.Add(en.Nombre);
+                }
             }
         }
 

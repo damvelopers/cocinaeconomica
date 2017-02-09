@@ -232,7 +232,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(597, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "En esta ventana se pueden añadir/modificar/eliminar almacenes a la base de datos." +
+            this.label1.Text = "En esta ventana se pueden añadir/modificar/eliminar clientes/proveedores a la base de datos." +
     "";
             // 
             // MDIEntidad

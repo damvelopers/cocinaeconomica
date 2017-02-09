@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TablaContenido = new System.Windows.Forms.TableLayoutPanel();
             this.panelBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -42,10 +42,10 @@
             this.panelBuscar = new System.Windows.Forms.FlowLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.rbNoCaducados = new System.Windows.Forms.RadioButton();
             this.rBCaducados = new System.Windows.Forms.RadioButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.TablaContenido.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.gbPrincipal.SuspendLayout();
@@ -169,7 +169,7 @@
             this.tablaDatos.Name = "tablaDatos";
             this.tablaDatos.RowCount = 1;
             this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 436F));
+            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 431F));
             this.tablaDatos.Size = new System.Drawing.Size(1059, 431);
             this.tablaDatos.TabIndex = 1;
             // 
@@ -181,14 +181,14 @@
             this.dataGridProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridProductos.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridProductos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridProductos.Location = new System.Drawing.Point(3, 3);
             this.dataGridProductos.Name = "dataGridProductos";
@@ -227,39 +227,6 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // rbNoCaducados
-            // 
-            this.rbNoCaducados.AutoSize = true;
-            this.rbNoCaducados.BackColor = System.Drawing.Color.Transparent;
-            this.rbNoCaducados.Location = new System.Drawing.Point(417, 0);
-            this.rbNoCaducados.Name = "rbNoCaducados";
-            this.rbNoCaducados.Size = new System.Drawing.Size(240, 24);
-            this.rbNoCaducados.TabIndex = 2;
-            this.rbNoCaducados.TabStop = true;
-            this.rbNoCaducados.Text = "Productos proximos a caducar";
-            this.rbNoCaducados.UseVisualStyleBackColor = false;
-            // 
-            // rBCaducados
-            // 
-            this.rBCaducados.AutoSize = true;
-            this.rBCaducados.BackColor = System.Drawing.Color.Transparent;
-            this.rBCaducados.Location = new System.Drawing.Point(221, 0);
-            this.rBCaducados.Name = "rBCaducados";
-            this.rBCaducados.Size = new System.Drawing.Size(181, 24);
-            this.rBCaducados.TabIndex = 2;
-            this.rBCaducados.TabStop = true;
-            this.rBCaducados.Text = "Productos caducados";
-            this.rBCaducados.UseVisualStyleBackColor = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1196, 498);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -272,6 +239,41 @@
             this.label1.Text = "En esta ventana se pueden añadir/modificar/eliminar productos a la base de datos." +
     "";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // rbNoCaducados
+            // 
+            this.rbNoCaducados.AutoSize = true;
+            this.rbNoCaducados.BackColor = System.Drawing.Color.Transparent;
+            this.rbNoCaducados.Location = new System.Drawing.Point(417, 0);
+            this.rbNoCaducados.Name = "rbNoCaducados";
+            this.rbNoCaducados.Size = new System.Drawing.Size(240, 24);
+            this.rbNoCaducados.TabIndex = 2;
+            this.rbNoCaducados.TabStop = true;
+            this.rbNoCaducados.Text = "Productos proximos a caducar";
+            this.rbNoCaducados.UseVisualStyleBackColor = false;
+            this.rbNoCaducados.CheckedChanged += new System.EventHandler(this.rbNoCaducados_CheckedChanged);
+            // 
+            // rBCaducados
+            // 
+            this.rBCaducados.AutoSize = true;
+            this.rBCaducados.BackColor = System.Drawing.Color.Transparent;
+            this.rBCaducados.Location = new System.Drawing.Point(221, 0);
+            this.rBCaducados.Name = "rBCaducados";
+            this.rBCaducados.Size = new System.Drawing.Size(181, 24);
+            this.rBCaducados.TabIndex = 2;
+            this.rBCaducados.TabStop = true;
+            this.rBCaducados.Text = "Productos caducados";
+            this.rBCaducados.UseVisualStyleBackColor = false;
+            this.rBCaducados.CheckedChanged += new System.EventHandler(this.rBCaducados_CheckedChanged);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(1196, 498);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "";
             // 
             // MDIProductos
             // 

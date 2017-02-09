@@ -145,7 +145,7 @@
             this.dataGridProductos.Name = "dataGridProductos";
             this.dataGridProductos.Size = new System.Drawing.Size(505, 340);
             this.dataGridProductos.TabIndex = 54;
-            this.dataGridProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProductos_CellContentClick);
+            this.dataGridProductos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProductos_CellEnter);
             // 
             // lblTitulo
             // 
@@ -289,6 +289,7 @@
             // 
             // tbCantidad
             // 
+            this.tbCantidad.DecimalPlaces = 2;
             this.tbCantidad.Increment = new decimal(new int[] {
             5,
             0,

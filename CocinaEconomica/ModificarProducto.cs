@@ -161,7 +161,7 @@ namespace CocinaEconomica
                 cargarDataGridView();
         }
 
-        private void dataGridProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridProductos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             try
             {

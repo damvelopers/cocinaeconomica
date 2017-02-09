@@ -70,5 +70,17 @@ namespace CocinaEconomica.Properties {
                 this["Server"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public int DiasCaducidad {
+            get {
+                return ((int)(this["DiasCaducidad"]));
+            }
+            set {
+                this["DiasCaducidad"] = value;
+            }
+        }
     }
 }

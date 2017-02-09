@@ -270,6 +270,7 @@
             // 
             // txtCantidad
             // 
+            this.txtCantidad.DecimalPlaces = 2;
             this.txtCantidad.Increment = new decimal(new int[] {
             5,
             0,
