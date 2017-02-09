@@ -67,10 +67,10 @@ namespace CocinaEconomica
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnAlmacenes = new System.Windows.Forms.Button();
             this.btnSalidas = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tablaContenedor.SuspendLayout();
@@ -334,7 +334,7 @@ namespace CocinaEconomica
             this.btnFamilias.Location = new System.Drawing.Point(3, 3);
             this.btnFamilias.Name = "btnFamilias";
             this.btnFamilias.Size = new System.Drawing.Size(107, 91);
-            this.btnFamilias.TabIndex = 2;
+            this.btnFamilias.TabIndex = 1;
             this.btnFamilias.Text = "Familias";
             this.btnFamilias.UseVisualStyleBackColor = true;
             this.btnFamilias.Click += new System.EventHandler(this.btnFamilias_Click);
@@ -345,7 +345,7 @@ namespace CocinaEconomica
             this.btnAlimentos.Location = new System.Drawing.Point(116, 3);
             this.btnAlimentos.Name = "btnAlimentos";
             this.btnAlimentos.Size = new System.Drawing.Size(107, 91);
-            this.btnAlimentos.TabIndex = 0;
+            this.btnAlimentos.TabIndex = 2;
             this.btnAlimentos.Text = "Alimentos";
             this.btnAlimentos.UseVisualStyleBackColor = true;
             this.btnAlimentos.Click += new System.EventHandler(this.btnAlimentos_Click);
@@ -356,7 +356,7 @@ namespace CocinaEconomica
             this.btnProductos.Location = new System.Drawing.Point(229, 3);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(107, 91);
-            this.btnProductos.TabIndex = 1;
+            this.btnProductos.TabIndex = 3;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
@@ -367,7 +367,7 @@ namespace CocinaEconomica
             this.btnAlmacenes.Location = new System.Drawing.Point(342, 3);
             this.btnAlmacenes.Name = "btnAlmacenes";
             this.btnAlmacenes.Size = new System.Drawing.Size(107, 91);
-            this.btnAlmacenes.TabIndex = 3;
+            this.btnAlmacenes.TabIndex = 4;
             this.btnAlmacenes.Text = "Almacenes";
             this.btnAlmacenes.UseVisualStyleBackColor = true;
             this.btnAlmacenes.Click += new System.EventHandler(this.btnAlmacenes_Click);
@@ -378,10 +378,21 @@ namespace CocinaEconomica
             this.btnSalidas.Location = new System.Drawing.Point(455, 3);
             this.btnSalidas.Name = "btnSalidas";
             this.btnSalidas.Size = new System.Drawing.Size(107, 91);
-            this.btnSalidas.TabIndex = 4;
+            this.btnSalidas.TabIndex = 5;
             this.btnSalidas.Text = "Salidas";
             this.btnSalidas.UseVisualStyleBackColor = true;
             this.btnSalidas.Click += new System.EventHandler(this.btnSalidas_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button1.Location = new System.Drawing.Point(568, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 91);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Clientes Proveedores";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -409,17 +420,6 @@ namespace CocinaEconomica
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 2;
             this.pbLogo.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(568, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 91);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Clientes Proveedores";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MDIPrincipal
             // 
