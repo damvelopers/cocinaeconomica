@@ -126,7 +126,7 @@ namespace CocinaEconomica
             cargarDataGridView();
         }
 
-        private void dataGridAlimentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridAlimentos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -135,7 +135,7 @@ namespace CocinaEconomica
                 txtNombre.Text = this.alimento.Nombre;
                 txtFamilia.Text = this.alimento.Familia.Nombre;
                 txtDescripcion.Text = this.alimento.Descripcion;
-                
+
             }
             catch (Exception ex)
             {

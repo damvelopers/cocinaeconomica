@@ -19,8 +19,6 @@ namespace CocinaEconomica
         {
             this.fProductos = fProductos;
             InitializeComponent();
-            
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,6 +34,7 @@ namespace CocinaEconomica
         private void crearProducto_Load(object sender, EventArgs e)
         {
             ArrayList alimentos = Alimento.SelectAll();
+            cmb_alimentos.Items.Clear();
             for (int i = 0; i < alimentos.Count; i++)
             {
                 Alimento a = (Alimento)alimentos[i];
@@ -43,6 +42,7 @@ namespace CocinaEconomica
             }
 
             ArrayList almacenes = Almacen.SelectAll();
+            cbxAlmacen.Items.Clear();
             for (int i = 0; i < almacenes.Count; i++)
             {
                 Almacen a = (Almacen)almacenes[i];
@@ -50,6 +50,7 @@ namespace CocinaEconomica
             }
 
             ArrayList entidades = Entidad.SelectAll();
+            cbxEntidades.Items.Clear();
             for (int i = 0; i < entidades.Count; i++)
             {
                 Entidad en = (Entidad)entidades[i];
@@ -61,6 +62,7 @@ namespace CocinaEconomica
         {
             CrearAlimento f = new CrearAlimento();
             f.ShowDialog();
+            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -81,11 +83,37 @@ namespace CocinaEconomica
                 MessageBox.Show(this, "El Alimento no existe", "Eliga un Alimento ya creado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
+
+            if (comboBoxOrigen.Text == "")
+            {
+                MessageBox.Show(this, "El Origen no existe", "Eliga un Origen ya creado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            if (cbxAlmacen.Text == "")
+            {
+                MessageBox.Show(this, "El Almacen no existe", "Eliga un Almacen ya creado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            if (cbxEntidades.Text == "")
+            {
+                MessageBox.Show(this, "El Proveedor no existe", "Eliga un Proveedor ya creado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
             float cant = float.Parse(txtCantidad.Text);
+            if (cant == 0)
+            {
+                MessageBox.Show(this, "Seleccione una cantidad superior a 0", "Escriba una cantidad", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
             if (MessageBox.Show(this, "Se va" + (cant == 1 ? "" : "n") + " a registrar " + cant + " producto" + (cant == 1 ? "" : "s") +" del alimento " +  cmb_alimentos.Text + ". ¿Está seguro?", "Añadir Productos", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
             {
                 return;
             }
+
+            
 
             Producto p = new Producto();
             p.Alimento = Alimento.SelectWhereNombreIs(cmb_alimentos.Text);
@@ -117,6 +145,23 @@ namespace CocinaEconomica
         private void cbxAlmacen_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CrearAlmacen ca = new CrearAlmacen();
+            ca.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_crearProveedor_Click(object sender, EventArgs e)
+        {
+            CrearEntidad ce = new CrearEntidad();
+            ce.ShowDialog();
         }
     }
 }

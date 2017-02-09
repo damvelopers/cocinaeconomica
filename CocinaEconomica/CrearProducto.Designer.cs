@@ -49,6 +49,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbxEntidades = new System.Windows.Forms.ComboBox();
             this.txtCantidad = new System.Windows.Forms.NumericUpDown();
+            this.btn_crearAlmacen = new System.Windows.Forms.Button();
+            this.btn_crearProveedor = new System.Windows.Forms.Button();
+            this.btn_actualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -277,12 +280,46 @@
             this.txtCantidad.Size = new System.Drawing.Size(243, 23);
             this.txtCantidad.TabIndex = 8;
             // 
+            // btn_crearAlmacen
+            // 
+            this.btn_crearAlmacen.Location = new System.Drawing.Point(483, 323);
+            this.btn_crearAlmacen.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_crearAlmacen.Name = "btn_crearAlmacen";
+            this.btn_crearAlmacen.Size = new System.Drawing.Size(100, 25);
+            this.btn_crearAlmacen.TabIndex = 30;
+            this.btn_crearAlmacen.Text = "Crear";
+            this.btn_crearAlmacen.UseVisualStyleBackColor = true;
+            this.btn_crearAlmacen.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_crearProveedor
+            // 
+            this.btn_crearProveedor.Location = new System.Drawing.Point(483, 367);
+            this.btn_crearProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_crearProveedor.Name = "btn_crearProveedor";
+            this.btn_crearProveedor.Size = new System.Drawing.Size(100, 25);
+            this.btn_crearProveedor.TabIndex = 32;
+            this.btn_crearProveedor.Text = "Crear";
+            this.btn_crearProveedor.UseVisualStyleBackColor = true;
+            this.btn_crearProveedor.Click += new System.EventHandler(this.btn_crearProveedor_Click);
+            // 
+            // btn_actualizar
+            // 
+            this.btn_actualizar.Image = global::CocinaEconomica.Properties.Resources.reload;
+            this.btn_actualizar.Location = new System.Drawing.Point(651, 18);
+            this.btn_actualizar.Name = "btn_actualizar";
+            this.btn_actualizar.Size = new System.Drawing.Size(41, 39);
+            this.btn_actualizar.TabIndex = 33;
+            this.btn_actualizar.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Click += new System.EventHandler(this.crearProducto_Load);
+            // 
             // crearProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(704, 497);
+            this.Controls.Add(this.btn_actualizar);
+            this.Controls.Add(this.btn_crearProveedor);
+            this.Controls.Add(this.btn_crearAlmacen);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.cbxEntidades);
             this.Controls.Add(this.label2);
@@ -339,5 +376,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxEntidades;
         private System.Windows.Forms.NumericUpDown txtCantidad;
+        private System.Windows.Forms.Button btn_crearAlmacen;
+        private System.Windows.Forms.Button btn_crearProveedor;
+        private System.Windows.Forms.Button btn_actualizar;
     }
 }

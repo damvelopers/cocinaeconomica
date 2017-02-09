@@ -19,6 +19,11 @@ namespace CocinaEconomica
             InitializeComponent();
         }
 
+        public CrearAlmacen()
+        {
+            InitializeComponent();
+        }
+
         private void CrearAlmacen_Load(object sender, EventArgs e)
         {
 
@@ -26,7 +31,10 @@ namespace CocinaEconomica
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.fAlmacenes.cargarDataGridView();
+            try
+            {
+                this.fAlmacenes.cargarDataGridView();
+            }catch(Exception ex) { }
             this.Close();
         }
 
@@ -54,7 +62,10 @@ namespace CocinaEconomica
                     MessageBox.Show(this, "Se añadido un nuevo almacén correctamente.", "Almacén añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNombre.Text = "";
                     txtDescripcion.Text = "";
-                    this.fAlmacenes.cargarDataGridView();
+                    try
+                    {
+                        this.fAlmacenes.cargarDataGridView();
+                    }catch(Exception ex) {}
                 }
             }
         }

@@ -177,7 +177,7 @@
             this.dataGridAlimentos.Name = "dataGridAlimentos";
             this.dataGridAlimentos.Size = new System.Drawing.Size(462, 319);
             this.dataGridAlimentos.TabIndex = 41;
-            this.dataGridAlimentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAlimentos_CellContentClick);
+            this.dataGridAlimentos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAlimentos_CellEnter);
             // 
             // ModificarAlimento
             // 

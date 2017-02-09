@@ -19,6 +19,11 @@ namespace CocinaEconomica
             this.fEntidad = fEntidad;
         }
 
+        public CrearEntidad()
+        {
+            InitializeComponent();
+        }
+
         private void btnAnadir_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text == "")
@@ -61,14 +66,20 @@ namespace CocinaEconomica
                     txtCIF.Text = "";
                     txtTelefono.Text = "";
                     txtWeb.Text = "";
-                    this.fEntidad.cargarDataGridView();
+                    try
+                    {
+                        this.fEntidad.cargarDataGridView();
+                    }catch(Exception ex) { }
                 }
             }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.fEntidad.cargarDataGridView();
+            try
+            {
+                this.fEntidad.cargarDataGridView();
+            }catch(Exception ex) { }
             this.Close();
         }
     }

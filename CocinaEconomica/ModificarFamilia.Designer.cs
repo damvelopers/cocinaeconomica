@@ -131,7 +131,7 @@
             this.dataGridFamilia.Name = "dataGridFamilia";
             this.dataGridFamilia.Size = new System.Drawing.Size(188, 228);
             this.dataGridFamilia.TabIndex = 76;
-            this.dataGridFamilia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridFamilia_CellContentClick);
+            this.dataGridFamilia.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridFamilia_CellEnter);
             // 
             // ModificarFamilia
             // 

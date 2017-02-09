@@ -329,6 +329,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\reload.png" />
     <None Include="Resources\fondo.jpg" />
     <None Include="Resources\cocina_economica.png" />
     <Content Include="Resources\Icono.ico" />
