@@ -231,9 +231,9 @@
             this.label5.Location = new System.Drawing.Point(462, 339);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 17);
+            this.label5.Size = new System.Drawing.Size(89, 17);
             this.label5.TabIndex = 53;
-            this.label5.Text = "Proveedor:";
+            this.label5.Text = "Salida hacia:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // cbxEntidades

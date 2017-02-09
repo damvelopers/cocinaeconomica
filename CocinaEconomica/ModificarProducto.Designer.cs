@@ -197,8 +197,10 @@
             // 
             // cbOrigen
             // 
+            this.cbOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbOrigen.FormattingEnabled = true;
+            this.cbOrigen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cbOrigen.Items.AddRange(new object[] {
             "Donado",
             "Comprado",

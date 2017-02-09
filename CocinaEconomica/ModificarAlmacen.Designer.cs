@@ -34,8 +34,6 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtUbicacion = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -57,7 +55,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(21, 142);
+            this.label4.Location = new System.Drawing.Point(21, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 41;
@@ -65,7 +63,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(24, 174);
+            this.txtDescripcion.Location = new System.Drawing.Point(24, 128);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(356, 151);
@@ -88,26 +86,9 @@
             this.txtNombre.Size = new System.Drawing.Size(262, 20);
             this.txtNombre.TabIndex = 44;
             // 
-            // txtUbicacion
-            // 
-            this.txtUbicacion.Location = new System.Drawing.Point(118, 104);
-            this.txtUbicacion.Name = "txtUbicacion";
-            this.txtUbicacion.Size = new System.Drawing.Size(262, 20);
-            this.txtUbicacion.TabIndex = 46;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(21, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 13);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Ubicación:";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 363);
+            this.button1.Location = new System.Drawing.Point(24, 317);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 30);
             this.button1.TabIndex = 47;
@@ -117,7 +98,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(285, 363);
+            this.button3.Location = new System.Drawing.Point(285, 317);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 30);
             this.button3.TabIndex = 49;
@@ -128,11 +109,9 @@
             // ModificarAlmacen
             // 
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(417, 397);
+            this.ClientSize = new System.Drawing.Size(417, 355);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtUbicacion);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDescripcion);
@@ -159,8 +138,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtUbicacion;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
     }

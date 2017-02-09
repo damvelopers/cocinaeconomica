@@ -121,6 +121,7 @@ namespace CocinaEconomica
                 if (f.Delete())
                 {
                     MessageBox.Show(this, "Se eliminado la familia correctamente.", "Familia eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargarDataGridView();
                 }
                 else
                 {

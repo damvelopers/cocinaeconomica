@@ -41,6 +41,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.cmb_familias = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imagenAlimento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,12 +165,24 @@
             this.cmb_familias.Size = new System.Drawing.Size(193, 21);
             this.cmb_familias.TabIndex = 40;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Location = new System.Drawing.Point(12, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 17);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Imagen";
+            // 
             // CrearAlimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(546, 399);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cmb_familias);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblTitulo);
@@ -209,5 +222,6 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ComboBox cmb_familias;
+        private System.Windows.Forms.Label label3;
     }
 }

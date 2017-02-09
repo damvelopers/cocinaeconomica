@@ -84,6 +84,10 @@ namespace CocinaEconomica
             {
                 Almacen a = (Almacen)almacenes[i];
                 cbxAlmacen.Items.Add(a.Nombre);
+                if (a.Nombre == producto.Almacen.Nombre)
+                {
+                    cbxAlmacen.SelectedItem = a.Nombre;
+                }
             }
 
             ArrayList entidades = Entidad.SelectAll();
@@ -91,7 +95,14 @@ namespace CocinaEconomica
             {
                 Entidad en = (Entidad)entidades[i];
                 cbxEntidades.Items.Add(en.Nombre + "-" + en.Direccion);
+                if (en.Nombre == producto.Entidad.Nombre)
+                {
+                    cbxEntidades.SelectedItem = en.Nombre + "-" + en.Direccion;
+                }
             }
+
+            cbOrigen.SelectedValue = producto.Proveedor;
+            tbCantidad.Value = (decimal)producto.Cantidad;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

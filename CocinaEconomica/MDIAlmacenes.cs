@@ -114,6 +114,7 @@ namespace CocinaEconomica
                 if (a.Delete())
                 {
                     MessageBox.Show(this, "Se eliminado el almacén correctamente.", "Almacén eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargarDataGridView();
                 }
                 else
                 {

@@ -171,8 +171,6 @@ namespace CocinaEconomica
         {
             try
             {
-            //int id = (int)celdas["Id"].Value;
-            //Producto p = Producto.Select(id);
                 decimal cantidadProducto = (decimal)celdas[5].Value;
                 decimal cant = 0;
                 try
@@ -185,11 +183,6 @@ namespace CocinaEconomica
                 bool todoOk = true;
                 if (cant <= cantidadProducto && cant > 0)
                 {
-                    //string alimento = (string)celdas[1].Value;
-                    //DateTime fechaCad = (DateTime)celdas[2].Value;
-                    //string almacen = (string)celdas[3].Value;
-                    //Alimento ali = Alimento.SelectWhereNombreIs(alimento);
-                    //Almacen a = Almacen.Select(almacen);
                     Producto producto = Producto.Select((int)celdas[0].Value);
                     producto.Cantidad -= (float)cant;
                         if (!((Producto)producto).Update())
@@ -199,13 +192,29 @@ namespace CocinaEconomica
                     
                     if (todoOk)
                     {
-                        MessageBox.Show(this, "Se eliminado el producto correctamente.", "Producto eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this, "Se modificado la cantidad del producto correctamente.", "Producto rebajado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if(producto.Cantidad == 0)
+                        {
+                            todoOk = producto.Delete();
+                            if (todoOk)
+                            {
+                                MessageBox.Show(this, "Se ha eliminado el producto correctamente al llegar su cantidad a 0.", "Producto eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                cargarDataGridView();
+                                frmAbout.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show(this, "No se ha eliminado el producto.", "Producto no eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            }
+                        }
                         cargarDataGridView();
                         frmAbout.Close();
+
                     }
                     else
                     {
-                        MessageBox.Show(this, "No se ha eliminado el producto.", "Producto no eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this, "No se ha eliminado la cantidad del producto.", "Producto no rebajado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                 }else

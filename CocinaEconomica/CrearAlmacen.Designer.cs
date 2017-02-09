@@ -36,8 +36,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtUbicacion = new System.Windows.Forms.TextBox();
-            this.lblUbicacion = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
@@ -56,7 +54,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(494, 306);
+            this.btnCerrar.Location = new System.Drawing.Point(494, 275);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(100, 28);
@@ -67,7 +65,7 @@
             // 
             // btnAnadir
             // 
-            this.btnAnadir.Location = new System.Drawing.Point(13, 306);
+            this.btnAnadir.Location = new System.Drawing.Point(13, 275);
             this.btnAnadir.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(100, 28);
@@ -98,7 +96,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(137, 151);
+            this.txtDescripcion.Location = new System.Drawing.Point(137, 120);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(457, 132);
@@ -109,41 +107,19 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 151);
+            this.label1.Location = new System.Drawing.Point(14, 120);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 39;
             this.label1.Text = "Descripción:";
             // 
-            // txtUbicacion
-            // 
-            this.txtUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtUbicacion.Location = new System.Drawing.Point(137, 114);
-            this.txtUbicacion.Name = "txtUbicacion";
-            this.txtUbicacion.Size = new System.Drawing.Size(457, 23);
-            this.txtUbicacion.TabIndex = 42;
-            // 
-            // lblUbicacion
-            // 
-            this.lblUbicacion.AutoSize = true;
-            this.lblUbicacion.BackColor = System.Drawing.Color.Transparent;
-            this.lblUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUbicacion.Location = new System.Drawing.Point(14, 115);
-            this.lblUbicacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUbicacion.Name = "lblUbicacion";
-            this.lblUbicacion.Size = new System.Drawing.Size(74, 17);
-            this.lblUbicacion.TabIndex = 41;
-            this.lblUbicacion.Text = "Ubicación:";
-            // 
             // CrearAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(606, 347);
-            this.Controls.Add(this.txtUbicacion);
-            this.Controls.Add(this.lblUbicacion);
+            this.ClientSize = new System.Drawing.Size(606, 311);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
@@ -171,8 +147,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUbicacion;
-        private System.Windows.Forms.Label lblUbicacion;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

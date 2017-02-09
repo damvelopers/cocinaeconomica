@@ -20,7 +20,6 @@ namespace CocinaEconomica
             this.fAlmacenes = fAlmacenes;
             InitializeComponent();
             txtNombre.Text = this.almacen.Nombre;
-            txtUbicacion.Text = "";
             txtDescripcion.Text = this.almacen.Descripcion;
         }
 

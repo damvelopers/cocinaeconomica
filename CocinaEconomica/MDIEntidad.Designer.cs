@@ -165,7 +165,7 @@
             this.tablaDatos.Name = "tablaDatos";
             this.tablaDatos.RowCount = 1;
             this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 436F));
+            this.tablaDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 347F));
             this.tablaDatos.Size = new System.Drawing.Size(824, 347);
             this.tablaDatos.TabIndex = 1;
             // 
@@ -241,6 +241,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(961, 409);
+            this.ControlBox = false;
             this.Controls.Add(this.TablaContenido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MDIEntidad";

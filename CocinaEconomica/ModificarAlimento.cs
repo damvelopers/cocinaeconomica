@@ -30,8 +30,8 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT * FROM Alimento a" +
-                    " WHERE Nombre like @nombre";
+                string select = "SELECT a.Id, a.Nombre, f.Nombre as 'Familia', a.Descripcion FROM Alimento a left outer join Familia f on a.Familia = f.Id " +
+                    " WHERE a.Nombre like @nombre";
                 //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
@@ -43,6 +43,7 @@ namespace CocinaEconomica
                     }
                 }
                 dataGridAlimentos.DataSource = result;
+                dataGridAlimentos.Columns[0].Visible = false;
             }
         }
 
@@ -51,7 +52,7 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT * from Alimento";
+                string select = "SELECT a.Id, a.Nombre, f.Nombre as 'Familia', a.Descripcion FROM Alimento a left outer join Familia f on a.Familia = f.Id ";
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     conexion.Open();
