@@ -60,9 +60,9 @@
             this.lblAlimento.Location = new System.Drawing.Point(13, 108);
             this.lblAlimento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAlimento.Name = "lblAlimento";
-            this.lblAlimento.Size = new System.Drawing.Size(66, 17);
+            this.lblAlimento.Size = new System.Drawing.Size(85, 17);
             this.lblAlimento.TabIndex = 6;
-            this.lblAlimento.Text = "Alimento:";
+            this.lblAlimento.Text = "Alimento: (*)";
             this.lblAlimento.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblFechaEn
@@ -85,9 +85,9 @@
             this.fechaCad.Location = new System.Drawing.Point(13, 197);
             this.fechaCad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fechaCad.Name = "fechaCad";
-            this.fechaCad.Size = new System.Drawing.Size(120, 17);
+            this.fechaCad.Size = new System.Drawing.Size(139, 17);
             this.fechaCad.TabIndex = 8;
-            this.fechaCad.Text = "Fecha caducidad:";
+            this.fechaCad.Text = "Fecha caducidad: (*)";
             // 
             // fechaPref
             // 
@@ -107,7 +107,7 @@
             this.dateTimeFechaEn.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeFechaEn.Name = "dateTimeFechaEn";
             this.dateTimeFechaEn.Size = new System.Drawing.Size(354, 23);
-            this.dateTimeFechaEn.TabIndex = 12;
+            this.dateTimeFechaEn.TabIndex = 2;
             // 
             // dateTimeFechaCad
             // 
@@ -115,7 +115,7 @@
             this.dateTimeFechaCad.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeFechaCad.Name = "dateTimeFechaCad";
             this.dateTimeFechaCad.Size = new System.Drawing.Size(354, 23);
-            this.dateTimeFechaCad.TabIndex = 13;
+            this.dateTimeFechaCad.TabIndex = 3;
             // 
             // dateTimeFechaPref
             // 
@@ -123,7 +123,7 @@
             this.dateTimeFechaPref.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeFechaPref.Name = "dateTimeFechaPref";
             this.dateTimeFechaPref.Size = new System.Drawing.Size(354, 23);
-            this.dateTimeFechaPref.TabIndex = 14;
+            this.dateTimeFechaPref.TabIndex = 4;
             // 
             // btnAnadir
             // 
@@ -131,7 +131,7 @@
             this.btnAnadir.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(100, 28);
-            this.btnAnadir.TabIndex = 15;
+            this.btnAnadir.TabIndex = 9;
             this.btnAnadir.Text = "Añadir";
             this.btnAnadir.UseVisualStyleBackColor = true;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
@@ -155,7 +155,7 @@
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(100, 28);
-            this.btnCerrar.TabIndex = 19;
+            this.btnCerrar.TabIndex = 10;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -208,7 +208,7 @@
             this.comboBoxOrigen.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxOrigen.Name = "comboBoxOrigen";
             this.comboBoxOrigen.Size = new System.Drawing.Size(243, 24);
-            this.comboBoxOrigen.TabIndex = 25;
+            this.comboBoxOrigen.TabIndex = 5;
             // 
             // cmb_alimentos
             // 
@@ -218,7 +218,7 @@
             this.cmb_alimentos.Location = new System.Drawing.Point(229, 102);
             this.cmb_alimentos.Name = "cmb_alimentos";
             this.cmb_alimentos.Size = new System.Drawing.Size(354, 24);
-            this.cmb_alimentos.TabIndex = 26;
+            this.cmb_alimentos.TabIndex = 1;
             // 
             // cbxAlmacen
             // 
@@ -228,7 +228,7 @@
             this.cbxAlmacen.Margin = new System.Windows.Forms.Padding(4);
             this.cbxAlmacen.Name = "cbxAlmacen";
             this.cbxAlmacen.Size = new System.Drawing.Size(243, 24);
-            this.cbxAlmacen.TabIndex = 28;
+            this.cbxAlmacen.TabIndex = 6;
             this.cbxAlmacen.SelectedIndexChanged += new System.EventHandler(this.cbxAlmacen_SelectedIndexChanged);
             // 
             // label1
@@ -263,7 +263,7 @@
             this.cbxEntidades.Location = new System.Drawing.Point(229, 367);
             this.cbxEntidades.Name = "cbxEntidades";
             this.cbxEntidades.Size = new System.Drawing.Size(243, 24);
-            this.cbxEntidades.TabIndex = 30;
+            this.cbxEntidades.TabIndex = 7;
             // 
             // txtCantidad
             // 
@@ -275,7 +275,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(229, 410);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(243, 23);
-            this.txtCantidad.TabIndex = 31;
+            this.txtCantidad.TabIndex = 8;
             // 
             // crearProducto
             // 

@@ -78,9 +78,9 @@
             this.lblNombre.Location = new System.Drawing.Point(13, 88);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(62, 17);
+            this.lblNombre.Size = new System.Drawing.Size(81, 17);
             this.lblNombre.TabIndex = 26;
-            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.Text = "Nombre: (*)";
             // 
             // btnAnadir
             // 

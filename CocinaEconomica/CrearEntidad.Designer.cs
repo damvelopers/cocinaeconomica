@@ -56,7 +56,7 @@
             this.txtDireccion.Location = new System.Drawing.Point(157, 158);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(457, 23);
-            this.txtDireccion.TabIndex = 51;
+            this.txtDireccion.TabIndex = 2;
             // 
             // lblUbicacion
             // 
@@ -76,7 +76,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(457, 132);
-            this.txtDescripcion.TabIndex = 49;
+            this.txtDescripcion.TabIndex = 8;
             // 
             // label1
             // 
@@ -96,7 +96,7 @@
             this.txtNombre.Location = new System.Drawing.Point(157, 124);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(457, 23);
-            this.txtNombre.TabIndex = 47;
+            this.txtNombre.TabIndex = 1;
             // 
             // lblTitulo
             // 
@@ -117,7 +117,7 @@
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(100, 28);
-            this.btnCerrar.TabIndex = 45;
+            this.btnCerrar.TabIndex = 10;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -128,7 +128,7 @@
             this.btnAnadir.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(100, 28);
-            this.btnAnadir.TabIndex = 44;
+            this.btnAnadir.TabIndex = 9;
             this.btnAnadir.Text = "Añadir";
             this.btnAnadir.UseVisualStyleBackColor = true;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
@@ -141,9 +141,9 @@
             this.lblNombre.Location = new System.Drawing.Point(34, 125);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(62, 17);
+            this.lblNombre.Size = new System.Drawing.Size(81, 17);
             this.lblNombre.TabIndex = 43;
-            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.Text = "Nombre: (*)";
             // 
             // txtEmail
             // 
@@ -151,7 +151,7 @@
             this.txtEmail.Location = new System.Drawing.Point(157, 196);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(457, 23);
-            this.txtEmail.TabIndex = 53;
+            this.txtEmail.TabIndex = 3;
             // 
             // label2
             // 
@@ -171,7 +171,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(157, 234);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(457, 23);
-            this.txtTelefono.TabIndex = 55;
+            this.txtTelefono.TabIndex = 4;
             // 
             // label3
             // 
@@ -191,7 +191,7 @@
             this.txtWeb.Location = new System.Drawing.Point(157, 272);
             this.txtWeb.Name = "txtWeb";
             this.txtWeb.Size = new System.Drawing.Size(457, 23);
-            this.txtWeb.TabIndex = 57;
+            this.txtWeb.TabIndex = 5;
             // 
             // label4
             // 
@@ -211,7 +211,7 @@
             this.txtDNI.Location = new System.Drawing.Point(157, 310);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(457, 23);
-            this.txtDNI.TabIndex = 59;
+            this.txtDNI.TabIndex = 6;
             // 
             // label5
             // 
@@ -231,7 +231,7 @@
             this.txtCIF.Location = new System.Drawing.Point(157, 348);
             this.txtCIF.Name = "txtCIF";
             this.txtCIF.Size = new System.Drawing.Size(457, 23);
-            this.txtCIF.TabIndex = 61;
+            this.txtCIF.TabIndex = 7;
             // 
             // label6
             // 

@@ -209,9 +209,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(14, 338);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 51;
-            this.label4.Text = "Cantidad";
+            this.label4.Text = "Cantidad (*)";
             // 
             // lblNombreProducto
             // 
@@ -241,7 +241,7 @@
             this.cbxEntidades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxEntidades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxEntidades.FormattingEnabled = true;
-            this.cbxEntidades.Location = new System.Drawing.Point(547, 337);
+            this.cbxEntidades.Location = new System.Drawing.Point(558, 338);
             this.cbxEntidades.Name = "cbxEntidades";
             this.cbxEntidades.Size = new System.Drawing.Size(243, 21);
             this.cbxEntidades.TabIndex = 54;

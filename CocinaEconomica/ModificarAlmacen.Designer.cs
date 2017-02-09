@@ -75,9 +75,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(21, 70);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 43;
-            this.label5.Text = "Nombre:";
+            this.label5.Text = "Nombre: (*)";
             // 
             // txtNombre
             // 

@@ -65,9 +65,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(231, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre (*)";
             // 
             // label4
             // 
@@ -76,9 +76,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.Location = new System.Drawing.Point(231, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.Size = new System.Drawing.Size(71, 17);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Familia";
+            this.label4.Text = "Familia (*)";
             // 
             // btnAñadir
             // 
@@ -86,7 +86,7 @@
             this.btnAñadir.Location = new System.Drawing.Point(12, 358);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(100, 28);
-            this.btnAñadir.TabIndex = 11;
+            this.btnAñadir.TabIndex = 5;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
             this.btnAñadir.Click += new System.EventHandler(this.btnInsertar_Click);
@@ -97,7 +97,7 @@
             this.txtNombre.Location = new System.Drawing.Point(234, 89);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(300, 23);
-            this.txtNombre.TabIndex = 17;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtDescripcion
             // 
@@ -106,7 +106,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(300, 155);
-            this.txtDescripcion.TabIndex = 18;
+            this.txtDescripcion.TabIndex = 4;
             // 
             // label2
             // 
@@ -138,7 +138,7 @@
             this.btnAddFamilia.Location = new System.Drawing.Point(433, 129);
             this.btnAddFamilia.Name = "btnAddFamilia";
             this.btnAddFamilia.Size = new System.Drawing.Size(100, 28);
-            this.btnAddFamilia.TabIndex = 20;
+            this.btnAddFamilia.TabIndex = 3;
             this.btnAddFamilia.Text = "Crear";
             this.btnAddFamilia.UseVisualStyleBackColor = true;
             this.btnAddFamilia.Click += new System.EventHandler(this.btnAddFamilia_Click);
@@ -150,7 +150,7 @@
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(100, 28);
-            this.btnCerrar.TabIndex = 39;
+            this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -163,7 +163,7 @@
             this.cmb_familias.Location = new System.Drawing.Point(234, 134);
             this.cmb_familias.Name = "cmb_familias";
             this.cmb_familias.Size = new System.Drawing.Size(193, 21);
-            this.cmb_familias.TabIndex = 40;
+            this.cmb_familias.TabIndex = 2;
             // 
             // label3
             // 

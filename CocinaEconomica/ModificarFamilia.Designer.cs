@@ -108,9 +108,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(215, 150);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 80;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre (*)";
             // 
             // label4
             // 
