@@ -134,10 +134,12 @@ namespace CocinaEconomica
                 if (a.Delete())
                 {
                     MessageBox.Show(this, "Se eliminado el alimento correctamente.", "Alimento eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargarDataGridView();
                 }
                 else
                 {
                     MessageBox.Show(this, "Se ha modificado el alimento correctamente.", "Alimento modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargarDataGridView();
                 }
             }catch (Exception ex)
             {

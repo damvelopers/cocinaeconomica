@@ -129,7 +129,14 @@ namespace CocinaEconomica
             p.FechaCaducidad = dateTimeFechaCad.Value;
             p.FechaConsumirPreferente = dateTimeFechaPref.Value;
             p.Proveedor = comboBoxOrigen.SelectedItem.ToString();
-            p.Entidad = Entidad.SelectByName((cbxEntidades.SelectedItem.ToString()).Split('-')[0], (cbxEntidades.SelectedItem.ToString()).Split('-')[1]);
+            try
+            {
+                p.Entidad = Entidad.SelectByName((cbxEntidades.SelectedItem.ToString()).Split('-')[0], (cbxEntidades.SelectedItem.ToString()).Split('-')[1]);
+            }
+            catch(Exception ex) {
+                p.Entidad = Entidad.SelectByName((cbxEntidades.SelectedItem.ToString()), "");
+            }
+            
             p.Cantidad = cant;
             bool ok = false;
             if (txtCantidad.Text != "")

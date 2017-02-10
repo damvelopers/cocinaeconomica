@@ -21,7 +21,10 @@ namespace CocinaEconomica
             this.fAlimentos = fAlimentos;
             InitializeComponent();
             txtNombre.Text = this.alimento.Nombre;
-            txtFamilia.Text = this.alimento.Familia.Nombre;
+            try
+            {
+                txtFamilia.Text = this.alimento.Familia.Nombre;
+            }catch(Exception e) { txtFamilia.Text = ""; }
             txtDescripcion.Text = this.alimento.Descripcion;
         }
 
@@ -133,7 +136,12 @@ namespace CocinaEconomica
                 int id = (int)dataGridAlimentos.CurrentRow.Cells["Id"].Value;
                 this.alimento = Alimento.Select(id);
                 txtNombre.Text = this.alimento.Nombre;
-                txtFamilia.Text = this.alimento.Familia.Nombre;
+                try
+                {
+                    txtFamilia.Text = this.alimento.Familia.Nombre;
+                }
+                catch(Exception ex) { txtFamilia.Text = ""; }
+                
                 txtDescripcion.Text = this.alimento.Descripcion;
 
             }

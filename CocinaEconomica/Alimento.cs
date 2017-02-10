@@ -186,8 +186,12 @@ namespace CocinaEconomica
                         {
                             a.Imagen = null;
                         }
-                       
-                        a.Familia = Familia.Select(reader.GetInt32(3));            
+                       try
+                        {
+                            a.Familia = Familia.Select(reader.GetInt32(3));
+                        }
+                        catch(Exception e) { a.Familia = null; }
+                                  
                         a.Descripcion = reader.GetString(4);
                     }
                 }
