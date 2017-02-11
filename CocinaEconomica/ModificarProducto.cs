@@ -22,7 +22,7 @@ namespace CocinaEconomica
             this.producto = producto;
             this.fProductos = fProductos;
             InitializeComponent();
-            txtAlimento.Text = this.producto.Alimento.Nombre;
+            cmb_alimentos.Text = this.producto.Alimento.Nombre;
             cbOrigen.SelectedItem = this.producto.Proveedor;
             tbCantidad.Text = Producto.SelectWhereAlimentoIs(this.producto.Alimento).Count + "";
             fechCaducidad.Value = Convert.ToDateTime(this.producto.FechaCaducidad);
@@ -79,6 +79,15 @@ namespace CocinaEconomica
         private void ModificarProducto_Load(object sender, EventArgs e)
         {
             cargarDataGridView();
+
+            ArrayList alimentos = Alimento.SelectAll();
+            cmb_alimentos.Items.Clear();
+            for (int i = 0; i < alimentos.Count; i++)
+            {
+                Alimento a = (Alimento)alimentos[i];
+                cmb_alimentos.Items.Add(a.Nombre);
+            }
+
             ArrayList almacenes = Almacen.SelectAll();
             for (int i = 0; i < almacenes.Count; i++)
             {
@@ -113,13 +122,13 @@ namespace CocinaEconomica
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtAlimento.Text == "")
+            if (cmb_alimentos.Text == "")
             {
                 MessageBox.Show(this, "El campo Alimento es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
             
-            this.producto.Alimento = Alimento.SelectWhereNombreIs(txtAlimento.Text);
+            this.producto.Alimento = Alimento.SelectWhereNombreIs(cmb_alimentos.Text);
             this.producto.FechaEntrada = fechEntrada.Value;
             this.producto.FechaCaducidad = fechCaducidad.Value;
             this.producto.FechaConsumirPreferente = fechConsPref.Value;
@@ -167,7 +176,7 @@ namespace CocinaEconomica
             {
                 int id = (int)dataGridProductos.CurrentRow.Cells["Id"].Value;
                 this.producto = Producto.Select(id);
-                txtAlimento.Text = this.producto.Alimento.Nombre;
+                cmb_alimentos.Text = this.producto.Alimento.Nombre;
                 cbOrigen.SelectedItem = this.producto.Proveedor;
                 tbCantidad.Text = Producto.SelectWhereAlimentoIs(this.producto.Alimento).Count + "";
                 fechCaducidad.Value = Convert.ToDateTime(this.producto.FechaCaducidad);

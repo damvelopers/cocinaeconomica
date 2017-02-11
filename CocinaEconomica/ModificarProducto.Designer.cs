@@ -34,7 +34,6 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtAlimento = new System.Windows.Forms.TextBox();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dataGridProductos = new System.Windows.Forms.DataGridView();
@@ -52,6 +51,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cbxEntidades = new System.Windows.Forms.ComboBox();
             this.tbCantidad = new System.Windows.Forms.NumericUpDown();
+            this.cmb_alimentos = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbCantidad)).BeginInit();
             this.SuspendLayout();
@@ -108,15 +108,6 @@
             this.label1.Size = new System.Drawing.Size(81, 17);
             this.label1.TabIndex = 58;
             this.label1.Text = "Alimento (*)";
-            // 
-            // txtAlimento
-            // 
-            this.txtAlimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtAlimento.Location = new System.Drawing.Point(537, 140);
-            this.txtAlimento.Name = "txtAlimento";
-            this.txtAlimento.ReadOnly = true;
-            this.txtAlimento.Size = new System.Drawing.Size(259, 23);
-            this.txtAlimento.TabIndex = 2;
             // 
             // btnBuscarProducto
             // 
@@ -300,6 +291,16 @@
             this.tbCantidad.Size = new System.Drawing.Size(223, 20);
             this.tbCantidad.TabIndex = 9;
             // 
+            // cmb_alimentos
+            // 
+            this.cmb_alimentos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_alimentos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_alimentos.FormattingEnabled = true;
+            this.cmb_alimentos.Location = new System.Drawing.Point(538, 155);
+            this.cmb_alimentos.Name = "cmb_alimentos";
+            this.cmb_alimentos.Size = new System.Drawing.Size(258, 21);
+            this.cmb_alimentos.TabIndex = 80;
+            // 
             // ModificarProducto
             // 
             this.AcceptButton = this.btnAceptar;
@@ -307,6 +308,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1106, 403);
+            this.Controls.Add(this.cmb_alimentos);
             this.Controls.Add(this.tbCantidad);
             this.Controls.Add(this.cbxEntidades);
             this.Controls.Add(this.label8);
@@ -325,7 +327,6 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtAlimento);
             this.Controls.Add(this.btnBuscarProducto);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dataGridProductos);
@@ -349,7 +350,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtAlimento;
         private System.Windows.Forms.Button btnBuscarProducto;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridView dataGridProductos;
@@ -367,5 +367,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbxEntidades;
         private System.Windows.Forms.NumericUpDown tbCantidad;
+        private System.Windows.Forms.ComboBox cmb_alimentos;
     }
 }

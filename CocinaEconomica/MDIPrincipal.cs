@@ -13,6 +13,8 @@ namespace CocinaEconomica
     public partial class MDIPrincipal : Form
     {
         private int childFormNumber = 0;
+        private Form frmAbout;
+        private TextBox dias;
 
         public MDIPrincipal()
         {
@@ -219,6 +221,59 @@ namespace CocinaEconomica
                 f.Show();
                 f.WindowState = FormWindowState.Minimized;
                 f.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAbout = new Form();
+            frmAbout.FormBorderStyle = FormBorderStyle.None;
+            frmAbout.BackColor = Color.LightGray;
+            frmAbout.Width = 280;
+            frmAbout.Height = 90;
+            frmAbout.StartPosition = FormStartPosition.CenterParent;
+            Label texto = new Label();
+            texto.Text = "Días a mostrar caducidad:";
+            texto.Left = 30;
+            texto.Top = 20;
+            texto.Width = 200;
+            dias = new TextBox();
+            dias.Left = 170;
+            dias.Top = 15;
+            dias.Text = "0";
+            dias.Width = 50;
+            Button aceptar = new Button();
+            aceptar.Text = "Aceptar";
+            aceptar.Left = 70;
+            aceptar.Top = 60;
+            aceptar.BackColor = Color.White;
+            aceptar.Click += new EventHandler(cambiarDias);
+            Button cerrar = new Button();
+            cerrar.Text = "Cerrar";
+            cerrar.Left = 170;
+            cerrar.Top = 60;
+            cerrar.BackColor = Color.White;
+            cerrar.Click += new EventHandler(cerrarDialog);
+
+            frmAbout.Controls.Add(dias);
+            frmAbout.Controls.Add(texto);
+            frmAbout.Controls.Add(aceptar);
+            frmAbout.Controls.Add(cerrar);
+            frmAbout.ShowDialog();
+        }
+
+        private void cerrarDialog(object sender, EventArgs e)
+        {
+            frmAbout.Close();
+        }
+
+        private void cambiarDias(object sender, EventArgs e)
+        {
+            if (dias.Text != "0" && dias.Text != "")
+            {
+                Properties.Settings.Default.DiasCaducidad = Int32.Parse(dias.Text);
+                Properties.Settings.Default.Save();
+                frmAbout.Close();
             }
         }
     }

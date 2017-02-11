@@ -35,13 +35,13 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtFamilia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridAlimentos = new System.Windows.Forms.DataGridView();
+            this.txtFamilia = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlimentos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,14 +108,6 @@
             this.label2.TabIndex = 46;
             this.label2.Text = "Familia (*)";
             // 
-            // txtFamilia
-            // 
-            this.txtFamilia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtFamilia.Location = new System.Drawing.Point(485, 241);
-            this.txtFamilia.Name = "txtFamilia";
-            this.txtFamilia.Size = new System.Drawing.Size(259, 23);
-            this.txtFamilia.TabIndex = 47;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -179,6 +171,16 @@
             this.dataGridAlimentos.TabIndex = 41;
             this.dataGridAlimentos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAlimentos_CellEnter);
             // 
+            // txtFamilia
+            // 
+            this.txtFamilia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtFamilia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txtFamilia.FormattingEnabled = true;
+            this.txtFamilia.Location = new System.Drawing.Point(485, 253);
+            this.txtFamilia.Name = "txtFamilia";
+            this.txtFamilia.Size = new System.Drawing.Size(259, 21);
+            this.txtFamilia.TabIndex = 53;
+            // 
             // ModificarAlimento
             // 
             this.AcceptButton = this.btnAceptar;
@@ -186,12 +188,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CocinaEconomica.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1207, 387);
+            this.Controls.Add(this.txtFamilia);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtFamilia);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
@@ -218,12 +220,12 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtFamilia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridAlimentos;
+        private System.Windows.Forms.ComboBox txtFamilia;
     }
 }

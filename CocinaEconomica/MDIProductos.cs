@@ -286,5 +286,12 @@ namespace CocinaEconomica
                 dataGridProductos.Columns[0].Visible = false;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            rbNoCaducados.Checked = false;
+            rBCaducados.Checked = false;
+            cargarDataGridView();
+        }
     }
 }

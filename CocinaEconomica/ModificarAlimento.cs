@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace CocinaEconomica
 {
@@ -127,6 +128,14 @@ namespace CocinaEconomica
         private void ModificarAlimento_Load(object sender, EventArgs e)
         {
             cargarDataGridView();
+            ArrayList familias = Familia.SelectAll();
+            for (int i = 0; i < familias.Count; i++)
+            {
+
+                Familia f = (Familia)familias[i];
+                txtFamilia.Items.Add(f.Nombre);
+            }
+
         }
 
         private void dataGridAlimentos_CellEnter(object sender, DataGridViewCellEventArgs e)
