@@ -94,6 +94,7 @@ namespace CocinaEconomica
                 if (en.Delete())
                 {
                     MessageBox.Show(this, "Se eliminado el cliente/proveedor correctamente.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargarDataGridView();
                 }
                 else
                 {

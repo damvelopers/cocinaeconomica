@@ -138,7 +138,7 @@ namespace CocinaEconomica
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 conexion.Open();
-                string insert = "DELETE FROM dbo.Producto WHERE Id = @id";
+                string insert = "DELETE FROM dbo.Entidad WHERE Id = @id";
 
                 using (SqlCommand query = new SqlCommand(insert))
                 {

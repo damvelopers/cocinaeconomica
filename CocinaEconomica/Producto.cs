@@ -276,6 +276,56 @@ namespace CocinaEconomica
         }
 
         /// <summary>
+        /// Devuelve un ArrayList de los productos que estan en un determinado almacen
+        /// </summary>
+        /// <param name="a">El alimento</param>
+        /// <returns>La lista de Productos</returns>
+        public static ArrayList SelectWhereAlmacenIs(Almacen a)
+        {
+            ArrayList productos = new ArrayList();
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                conn.Open();
+                string selectString = "select * from Producto where Almacen = @almacen";
+                using (SqlCommand selectCommand = new SqlCommand(selectString, conn))
+                {
+                    selectCommand.Parameters.Add("@almacen", SqlDbType.Int).Value = a.Id;
+                    SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    while (reader.Read())
+                    {
+                        Producto p = new Producto();
+                        p.Id = reader.GetInt32(0);
+                        p.Alimento = Alimento.Select(reader.GetInt32(1));
+                        p.FechaEntrada = reader.GetDateTime(2);
+                        p.FechaCaducidad = reader.GetDateTime(3);
+                        p.FechaConsumirPreferente = reader.GetDateTime(4);
+                        p.Proveedor = reader.GetString(5);
+                        p.Ubicacion = reader.GetString(6);
+                        try
+                        {
+                            p.Almacen = Almacen.Select(reader.GetInt32(7));
+                        }
+                        catch (Exception ex)
+                        {
+                            p.Almacen = null;
+                        }
+                        try
+                        {
+                            p.Entidad = Entidad.Select(reader.GetInt32(8));
+                        }
+                        catch (Exception ex)
+                        {
+                            p.Entidad = null;
+                        }
+                        productos.Add(p);
+                    }
+                    conn.Close();
+                }
+            }
+            return productos;
+        }
+
+        /// <summary>
         /// Devuelve un ArrayList de los productos que son de un determinado alimento
         /// </summary>
         /// <param name="a">El alimento</param>

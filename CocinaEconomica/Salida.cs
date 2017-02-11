@@ -154,7 +154,7 @@ namespace CocinaEconomica
             return inserted;
         }
 
-        public bool Insert(int cantidad)
+        public bool Insert(float cantidad)
         {
             if (this.Alimento == null || this.Alimento.Id < 0)
                 return false;
@@ -168,20 +168,19 @@ namespace CocinaEconomica
                 {
                     try
                     {
-                        for (int i = 0; i < cantidad; i++)
+                        string insert = "INSERT into dbo.Salida(FechaSalida, Alimento, Cliente,Cantidad) " +
+                                "VALUES (@fechasalida, @alimento, @cliente,@cantidad)";
+                        using (SqlCommand query = new SqlCommand(insert))
                         {
-                            string insert = "INSERT into dbo.Salida(FechaSalida, Alimento, Cliente) " +
-                                "VALUES (@fechasalida, @alimento, @cliente)";
-                            using (SqlCommand query = new SqlCommand(insert))
-                            {
-                                query.Connection = conexion;
-                                query.Transaction = tx;
-                                query.Parameters.Add("@fechasalida", SqlDbType.VarChar, 50).Value = this.FechaSalida;
-                                query.Parameters.Add("@alimento", SqlDbType.VarChar, 200).Value = this.Alimento.Id;
-                                query.Parameters.Add("@cliente", SqlDbType.VarChar, 200).Value = this.entidad.Id;
-                                query.ExecuteNonQuery();
-                            }
+                            query.Connection = conexion;
+                            query.Transaction = tx;
+                            query.Parameters.Add("@fechasalida", SqlDbType.VarChar, 50).Value = this.FechaSalida;
+                            query.Parameters.Add("@alimento", SqlDbType.VarChar, 200).Value = this.Alimento.Id;
+                            query.Parameters.Add("@cliente", SqlDbType.VarChar, 200).Value = this.entidad.Id;
+                            query.Parameters.Add("@cantidad", SqlDbType.Float).Value = cantidad;
+                            query.ExecuteNonQuery();
                         }
+
                         tx.Commit();
                         inserted = true;
                     }

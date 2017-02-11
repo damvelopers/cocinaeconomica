@@ -147,9 +147,11 @@ namespace CocinaEconomica
                         try
                         {
                             a.Imagen = Alimento.GetImagen(reader.GetInt32(2));
-                        }catch(System.Data.SqlTypes.SqlNullValueException ex) {}
+                            a.Familia = Familia.Select(reader.GetInt32(3));
+                        }
+                        catch(System.Data.SqlTypes.SqlNullValueException ex) {}
                         
-                        a.Familia = Familia.Select(reader.GetInt32(3));
+                        
                         a.Descripcion = reader.GetString(4);
                         alimentos.Add(a);
                     }

@@ -24,9 +24,8 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT a.Nombre, FechaSalida, count(*) as Cantidad " +
-                                "FROM Salida s join Alimento a on s.Alimento = a.Id " +
-                                "GROUP BY a.Nombre, FechaSalida";
+                string select = "SELECT a.Nombre, FechaSalida, Cantidad " +
+                                "FROM Salida s join Alimento a on s.Alimento = a.Id ";
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     conexion.Open();

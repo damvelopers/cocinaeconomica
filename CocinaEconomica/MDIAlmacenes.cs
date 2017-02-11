@@ -111,6 +111,20 @@ namespace CocinaEconomica
                 {
                     return;
                 }
+
+                System.Collections.ArrayList productos = Producto.SelectWhereAlmacenIs(a);
+                if (productos.Count > 0)
+                {
+                    if (MessageBox.Show(this, String.Format("El almacén '{0}' tiene productos, si se elimina se eliminarán también los productos ¿Está seguro?", a.Nombre), "Eliminar almacén", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    return;
+                }
+
                 if (a.Delete())
                 {
                     MessageBox.Show(this, "Se eliminado el almacén correctamente.", "Almacén eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);

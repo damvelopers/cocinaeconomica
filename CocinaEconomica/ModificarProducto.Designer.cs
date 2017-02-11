@@ -108,6 +108,7 @@
             this.label1.Size = new System.Drawing.Size(81, 17);
             this.label1.TabIndex = 58;
             this.label1.Text = "Alimento (*)";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnBuscarProducto
             // 
@@ -182,9 +183,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.Location = new System.Drawing.Point(845, 119);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 17);
+            this.label6.Size = new System.Drawing.Size(70, 17);
             this.label6.TabIndex = 71;
-            this.label6.Text = "Origen";
+            this.label6.Text = "Origen (*)";
             // 
             // cbOrigen
             // 
@@ -242,9 +243,9 @@
             this.label8.Location = new System.Drawing.Point(847, 75);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 17);
+            this.label8.Size = new System.Drawing.Size(93, 17);
             this.label8.TabIndex = 79;
-            this.label8.Text = "Proveedor:";
+            this.label8.Text = "Proveedor (*)";
             // 
             // cbxAlmacen
             // 
@@ -264,9 +265,9 @@
             this.label9.Location = new System.Drawing.Point(847, 30);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 17);
+            this.label9.Size = new System.Drawing.Size(81, 17);
             this.label9.TabIndex = 77;
-            this.label9.Text = "Almacén:";
+            this.label9.Text = "Almacén (*)";
             // 
             // cbxEntidades
             // 

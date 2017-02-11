@@ -194,6 +194,12 @@
             // 
             // numericCantidad
             // 
+            this.numericCantidad.DecimalPlaces = 2;
+            this.numericCantidad.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.numericCantidad.Location = new System.Drawing.Point(73, 336);
             this.numericCantidad.Maximum = new decimal(new int[] {
             10000,

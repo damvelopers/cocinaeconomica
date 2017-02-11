@@ -130,10 +130,19 @@ namespace CocinaEconomica
                 {
                     return;
                 }
-                
+
+                ArrayList productos = Producto.SelectWhereAlimentoIs(a);
+                if (productos.Count > 0)
+                {
+                    if (MessageBox.Show(this, String.Format("Hay productos pertenecientes al alimento '{0}', si se elimina el alimento se eliminarán los productos ¿Está seguro?", a.Nombre), "Eliminar alimento", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+
                 if (a.Delete())
                 {
-                    MessageBox.Show(this, "Se eliminado el alimento correctamente.", "Alimento eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "Se ha eliminado el alimento correctamente.", "Alimento eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cargarDataGridView();
                 }
                 else

@@ -110,6 +110,7 @@ namespace CocinaEconomica
             }
 
             float cant = float.Parse(txtCantidad.Text);
+            
             if (cant == 0)
             {
                 MessageBox.Show(this, "Seleccione una cantidad superior a 0", "Escriba una cantidad", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -151,7 +152,7 @@ namespace CocinaEconomica
             {
                 //MessageBox.Show(this, "Se añadido un nuevo producto correctamente.", "Producto añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cmb_alimentos.Text = "";
-                txtCantidad.Text = "";
+                txtCantidad.Text = "0";
                 this.fProductos.cargarDataGridView();
             }
         }

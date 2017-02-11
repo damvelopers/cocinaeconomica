@@ -93,23 +93,37 @@ namespace CocinaEconomica
             {
                 Almacen a = (Almacen)almacenes[i];
                 cbxAlmacen.Items.Add(a.Nombre);
-                if (a.Nombre == producto.Almacen.Nombre)
+                try
                 {
-                    cbxAlmacen.SelectedItem = a.Nombre;
-                }
+                    if (a.Nombre == producto.Almacen.Nombre)
+                    {
+                        cbxAlmacen.SelectedItem = a.Nombre;
+                    }
+                }catch(Exception ex) { }
             }
 
             ArrayList entidades = Entidad.SelectAll();
             for (int i = 0; i < entidades.Count; i++)
             {
                 Entidad en = (Entidad)entidades[i];
-                cbxEntidades.Items.Add(en.Nombre + "-" + en.Direccion);
-                if (en.Nombre == producto.Entidad.Nombre)
+                if(en.Direccion == "")
                 {
-                    cbxEntidades.SelectedItem = en.Nombre + "-" + en.Direccion;
+                    cbxEntidades.Items.Add(en.Nombre);
                 }
+                else
+                {
+                    cbxEntidades.Items.Add(en.Nombre + "-" + en.Direccion);
+                }
+                
+                try
+                {
+                    if (en.Nombre == producto.Entidad.Nombre)
+                    {
+                        cbxEntidades.SelectedItem = en.Nombre + "-" + en.Direccion;
+                    }
+                }
+                catch (Exception ex) { }
             }
-
             cbOrigen.SelectedValue = producto.Proveedor;
             tbCantidad.Value = (decimal)producto.Cantidad;
         }
@@ -127,14 +141,40 @@ namespace CocinaEconomica
                 MessageBox.Show(this, "El campo Alimento es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
-            
+
+            if (cbxAlmacen.Text == "")
+            {
+                MessageBox.Show(this, "El campo Almacen es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            if (cbxEntidades.Text == "")
+            {
+                MessageBox.Show(this, "El campo Proveedor es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            if (cbOrigen.Text == "")
+            {
+                MessageBox.Show(this, "El campo Origen es obligatorio", "Rellena los campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
             this.producto.Alimento = Alimento.SelectWhereNombreIs(cmb_alimentos.Text);
             this.producto.FechaEntrada = fechEntrada.Value;
             this.producto.FechaCaducidad = fechCaducidad.Value;
             this.producto.FechaConsumirPreferente = fechConsPref.Value;
             this.producto.Proveedor = cbOrigen.SelectedItem.ToString();
             this.producto.Almacen = Almacen.Select(cbxAlmacen.SelectedItem.ToString());
-            this.producto.Entidad = Entidad.SelectByName((cbxEntidades.SelectedItem.ToString()).Split('-')[0], (cbxEntidades.SelectedItem.ToString()).Split('-')[1]);
+            try
+            {
+                this.producto.Entidad = Entidad.SelectByName((cbxEntidades.SelectedItem.ToString()).Split('-')[0], (cbxEntidades.SelectedItem.ToString()).Split('-')[1]);
+            }
+            catch(Exception ex)
+            {
+                this.producto.Entidad = Entidad.SelectByName((cbxEntidades.SelectedItem.ToString()), "");
+            }
+            
             this.producto.Cantidad = (float)tbCantidad.Value;
 
             if (producto.Alimento != null)
@@ -189,6 +229,11 @@ namespace CocinaEconomica
             {
                 MessageBox.Show(this, "Se debe seleccionar un alimento", "Seleccione uno", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

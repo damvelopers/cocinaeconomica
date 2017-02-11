@@ -147,9 +147,9 @@
             this.cantidad.Location = new System.Drawing.Point(13, 410);
             this.cantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cantidad.Name = "cantidad";
-            this.cantidad.Size = new System.Drawing.Size(68, 17);
+            this.cantidad.Size = new System.Drawing.Size(87, 17);
             this.cantidad.TabIndex = 16;
-            this.cantidad.Text = "Cantidad:";
+            this.cantidad.Text = "Cantidad: (*)";
             this.cantidad.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnCerrar
@@ -195,9 +195,9 @@
             this.origen.Location = new System.Drawing.Point(13, 284);
             this.origen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.origen.Name = "origen";
-            this.origen.Size = new System.Drawing.Size(55, 17);
+            this.origen.Size = new System.Drawing.Size(74, 17);
             this.origen.TabIndex = 24;
-            this.origen.Text = "Origen:";
+            this.origen.Text = "Origen: (*)";
             // 
             // comboBoxOrigen
             // 
@@ -242,9 +242,9 @@
             this.label1.Location = new System.Drawing.Point(13, 326);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.Size = new System.Drawing.Size(85, 17);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Almacén:";
+            this.label1.Text = "Almacén: (*)";
             // 
             // label2
             // 
@@ -254,9 +254,9 @@
             this.label2.Location = new System.Drawing.Point(13, 370);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 17);
+            this.label2.Size = new System.Drawing.Size(97, 17);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Proveedor:";
+            this.label2.Text = "Proveedor: (*)";
             // 
             // cbxEntidades
             // 

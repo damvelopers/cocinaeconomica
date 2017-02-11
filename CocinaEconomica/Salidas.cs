@@ -27,9 +27,8 @@ namespace CocinaEconomica
             DataTable result = new DataTable();
             using (SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string select = "SELECT a.Nombre, FechaSalida, count(*) as Cantidad " +
-                                "FROM Salida s join Alimento a on s.Alimento = a.Id " + 
-                                "GROUP BY a.Nombre, FechaSalida";
+                string select = "SELECT a.Nombre, FechaSalida, Cantidad " +
+                                "FROM Salida s join Alimento a on s.Alimento = a.Id ";
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     conexion.Open();
@@ -116,13 +115,21 @@ namespace CocinaEconomica
             for (int i = 0; i < entidades.Count; i++)
             {
                 Entidad en = (Entidad)entidades[i];
-                cbxEntidades.Items.Add(en.Nombre + "-" + en.Direccion);
+                if(en.Direccion == "")
+                {
+                    cbxEntidades.Items.Add(en.Nombre);
+                }
+                else
+                {
+                    cbxEntidades.Items.Add(en.Nombre + "-" + en.Direccion);
+                }
+                
             }
         }
 
         private void btnAñadirSalida_Click(object sender, EventArgs e)
         {
-            int cantidad = (int)numericCantidad.Value;
+            float cantidad = (float)numericCantidad.Value;
             if (cantidad == 0)
             {
                 MessageBox.Show(this, "Se debe introducir una cantidad mayor de cero", "Cantidad incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -144,7 +151,16 @@ namespace CocinaEconomica
                 Salida s = new Salida();
                 s.FechaSalida = dtpSalida.Value;
                 s.Alimento = ali;
-                s.entidad = Entidad.SelectByName((cbxEntidades.SelectedItem.ToString()).Split('-')[0], (cbxEntidades.SelectedItem.ToString()).Split('-')[1]);
+
+                try
+                {
+                    s.entidad = Entidad.SelectByName((cbxEntidades.SelectedItem.ToString()).Split('-')[0], (cbxEntidades.SelectedItem.ToString()).Split('-')[1]);
+                }
+                catch (Exception ex)
+                {
+                    s.entidad = Entidad.SelectByName((cbxEntidades.SelectedItem.ToString()), "");
+                }
+                
 
                 producto.Cantidad = producto.Cantidad -  cantidad;
                 producto.Update();
