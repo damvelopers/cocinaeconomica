@@ -277,6 +277,11 @@
             0,
             65536});
             this.txtCantidad.Location = new System.Drawing.Point(229, 410);
+            this.txtCantidad.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(243, 23);
             this.txtCantidad.TabIndex = 8;

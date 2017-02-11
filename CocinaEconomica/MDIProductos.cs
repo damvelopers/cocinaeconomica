@@ -99,6 +99,7 @@ namespace CocinaEconomica
         private void MDIProductos_Load(object sender, EventArgs e)
         {
             cargarDataGridView();
+            rbNoCaducados.Text = "Productos proximos a caducar en " + Properties.Settings.Default.DiasCaducidad + " días";
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -268,14 +269,16 @@ namespace CocinaEconomica
                 string select = "SELECT p.Id, a.Nombre, p.FechaCaducidad, al.Nombre as 'Almacén', " +
                                 "p.FechaConsPref as 'Consumo preferente antes de', Cantidad " +
                                 "FROM Producto p join Alimento a on p.Alimento = a.Id join Almacen al on p.Almacen = al.Id " +
-                                 "WHERE p.FechaCaducidad < @fecha ";
+                                 "WHERE p.FechaCaducidad >= @today and p.FechaCaducidad < @fecha ";
 
                 //"WHERE a.Nombre like '%" + nombre +"%'";  // ES PELIGROSO
                 using (SqlCommand cmd = new SqlCommand(select, conexion))
                 {
                     DateTime fecha = DateTime.Now;
+                    DateTime today = DateTime.Now;
                     fecha = fecha.AddDays(Properties.Settings.Default.DiasCaducidad);
                     cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = fecha;
+                    cmd.Parameters.Add("@today", SqlDbType.Date).Value = today;
                     conexion.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
